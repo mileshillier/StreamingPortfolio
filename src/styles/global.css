@@ -837,12 +837,7 @@ p {
     visibility: visible;
     transition-delay: 0.25s;
   }
-  .row__track > .card:first-child {
-    transform-origin: left center;
-  }
-  .row__track > .card:last-child {
-    transform-origin: right center;
-  }
+
 }
 
 /* Top 10 ranked cards */
