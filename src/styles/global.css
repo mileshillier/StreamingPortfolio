@@ -601,7 +601,13 @@ p {
 }
 .row {
   position: relative;
+  z-index: 1;
   padding: 10px 0;
+}
+/* Lift the active row so an enlarged card paints over its neighbours. */
+.row:hover,
+.row:focus-within {
+  z-index: 20;
 }
 .row__heading {
   font-size: clamp(17px, 1.5vw, 21px);
@@ -637,12 +643,23 @@ p {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  overflow-y: visible;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scroll-padding: 0 var(--gutter);
-  padding: 4px var(--gutter) 80px;
-  margin-bottom: -76px;
+  padding: 4px var(--gutter);
   scrollbar-width: none;
+}
+/* Paged mode (pointer devices): no scroll container, so nothing clips vertically. */
+.row__viewport--paged {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+.row__viewport--paged .row__track {
+  overflow: visible;
+  scroll-snap-type: none;
+  transition: transform 0.75s var(--ease);
+  will-change: transform;
 }
 .row__track::-webkit-scrollbar {
   display: none;
@@ -657,8 +674,8 @@ p {
 .row__arrow {
   position: absolute;
   top: 4px;
-  bottom: 80px;
-  z-index: 15;
+  bottom: 4px;
+  z-index: 30;
   width: var(--gutter);
   display: grid;
   place-items: center;
@@ -808,11 +825,8 @@ p {
 }
 
 @media (hover: hover) and (min-width: 900px) {
-  .card {
-    transform-origin: center top;
-  }
   .card:hover {
-    transform: scale(1.14);
+    transform: scale(1.3);
     z-index: 10;
     transition: transform 0.3s var(--ease) 0.25s, z-index 0s;
   }
@@ -825,10 +839,10 @@ p {
     transition-delay: 0.25s;
   }
   .row__track > .card:first-child {
-    transform-origin: left top;
+    transform-origin: left center;
   }
   .row__track > .card:last-child {
-    transform-origin: right top;
+    transform-origin: right center;
   }
 }
 
@@ -1629,13 +1643,7 @@ p {
   .row__arrow {
     display: none;
   }
-  .row__track {
-    padding-bottom: 4px;
-    margin-bottom: 0;
-  }
-  .row__arrow {
-    bottom: 4px;
-  }
+
   .card__hover {
     display: none;
   }
