@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { CATEGORIES } from '../data/titles';
+import { LINKEDIN_URL } from '../config';
+import { useOpenModal } from '../hooks/useOpenTitle';
 import Avatar from './Avatar';
 import { BellIcon, ChevronIcon, SearchIcon } from './Icons';
 
@@ -27,6 +29,7 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(onSearch);
   const inputRef = useRef<HTMLInputElement>(null);
   const navRef = useRef<HTMLElement>(null);
+  const openModal = useOpenModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -149,8 +152,12 @@ export default function Navbar() {
                 </div>
               </div>
               <a className="dropdown__item" href="#about">About Me</a>
-              <a className="dropdown__item" href="#" onClick={(e) => e.preventDefault()}>Résumé (PDF)</a>
-              <a className="dropdown__item" href="#" onClick={(e) => e.preventDefault()}>LinkedIn</a>
+              <button className="dropdown__item" role="menuitem" onClick={() => openModal('/resume')}>
+                Résumé
+              </button>
+              <a className="dropdown__item" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
               <a className="dropdown__item" href="mailto:hello@example.com">Get in Touch</a>
             </div>
           )}

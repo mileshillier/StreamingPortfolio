@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
+import { LINKEDIN_URL } from '../config';
 import { CATEGORIES } from '../data/titles';
+import { useOpenModal } from '../hooks/useOpenTitle';
 
 export default function Footer() {
+  const openModal = useOpenModal();
+
   return (
     <footer className="footer" id="about">
       <div className="footer__intro">
@@ -29,14 +33,18 @@ export default function Footer() {
         </div>
         <div>
           <h4>Connect</h4>
-          <a href="#" onClick={(e) => e.preventDefault()}>LinkedIn</a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
           <a href="#" onClick={(e) => e.preventDefault()}>Dribbble</a>
           <a href="#" onClick={(e) => e.preventDefault()}>Read.cv</a>
           <a href="mailto:hello@example.com">Email</a>
         </div>
         <div>
           <h4>Help Center</h4>
-          <a href="#" onClick={(e) => e.preventDefault()}>Résumé (PDF)</a>
+          <button className="footer__link" onClick={() => openModal('/resume')}>
+            Résumé
+          </button>
           <a href="#" onClick={(e) => e.preventDefault()}>Speaking & Workshops</a>
           <a href="#" onClick={(e) => e.preventDefault()}>Press Kit</a>
         </div>

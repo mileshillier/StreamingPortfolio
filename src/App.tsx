@@ -3,6 +3,7 @@ import { Route, Routes, useLocation, type Location } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import DetailModal from './components/DetailModal';
+import ResumeModal from './components/ResumeModal';
 import HomePage from './pages/HomePage';
 import BrowsePage from './pages/BrowsePage';
 import MyListPage from './pages/MyListPage';
@@ -27,6 +28,7 @@ export default function App() {
       <Routes location={background ?? location}>
         <Route path="/" element={<HomePage />} />
         <Route path="/title/:id" element={<HomePage />} />
+        <Route path="/resume" element={<HomePage />} />
         <Route path="/browse/:category" element={<BrowsePage />} />
         <Route path="/my-list" element={<MyListPage />} />
         <Route path="/search" element={<SearchPage />} />
@@ -35,6 +37,7 @@ export default function App() {
       </Routes>
       <Routes>
         <Route path="/title/:id" element={<DetailModal />} />
+        <Route path="/resume" element={<ResumeModal />} />
         <Route path="*" element={null} />
       </Routes>
       {!isWatch && <Footer />}

@@ -5,7 +5,7 @@ import { useMyList } from '../context/MyListContext';
 import { useOpenTitle } from '../hooks/useOpenTitle';
 import Artwork from './Artwork';
 import TitleLogo from './TitleLogo';
-import { CheckIcon, ChevronIcon, PlusIcon } from './Icons';
+import { ChevronIcon, PlusIcon, TrashIcon } from './Icons';
 
 type Origin = 'left center' | 'center' | 'right center';
 
@@ -80,7 +80,7 @@ export default function TitleCard({ title, rank, progress }: TitleCardProps) {
             onClick={() => toggleSaved(title.id)}
             title={saved ? 'Remove from My List' : 'Add to My List'}
           >
-            {saved ? <CheckIcon size={14} /> : <PlusIcon size={14} />}
+            {saved ? <TrashIcon size={14} /> : <PlusIcon size={14} />}
           </button>
           <button className="round-btn round-btn--sm round-btn--push" tabIndex={-1} onClick={() => openTitle(title.id)} title="More info">
             <ChevronIcon size={14} />

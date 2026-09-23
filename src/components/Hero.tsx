@@ -6,6 +6,7 @@ import { useOpenTitle } from '../hooks/useOpenTitle';
 import logo from '../assets/logo.svg';
 import Artwork from './Artwork';
 import TitleLogo from './TitleLogo';
+import { SHOW_SOUND_CONTROLS } from '../config';
 import { InfoIcon, PlayIcon, SparkIcon, VolumeIcon } from './Icons';
 
 const CAPTIONS = [
@@ -32,9 +33,11 @@ export default function Hero({ title }: { title: Title }) {
         <div className="hero__shade" />
 
         <img className="hero__mark" src={logo} alt="" aria-hidden />
-        <button className="hero__mute" onClick={() => setMuted((m) => !m)} aria-label={muted ? 'Unmute trailer' : 'Mute trailer'}>
-          <VolumeIcon muted={muted} size={16} />
-        </button>
+        {SHOW_SOUND_CONTROLS && (
+          <button className="hero__mute" onClick={() => setMuted((m) => !m)} aria-label={muted ? 'Unmute trailer' : 'Mute trailer'}>
+            <VolumeIcon muted={muted} size={16} />
+          </button>
+        )}
 
         <div className="hero__content">
           <span className="hero__eyebrow">

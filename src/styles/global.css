@@ -428,6 +428,8 @@ p {
 }
 .dropdown__item {
   display: block;
+  width: 100%;
+  text-align: left;
   padding: 9px 16px;
   font-size: 14px;
   color: var(--text-2);
@@ -1248,6 +1250,74 @@ p {
   font-size: 14px;
 }
 
+/* Résumé modal */
+.resume__hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 24px;
+  padding: 48px clamp(20px, 5%, 48px) 32px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(2, 203, 249, 0.22), transparent 55%),
+    linear-gradient(180deg, #202020, var(--bg-elev));
+  border-bottom: 1px solid var(--line);
+}
+.resume__hero .avatar {
+  border-radius: 12px;
+}
+.resume__heading {
+  flex: 1;
+  min-width: 220px;
+  display: grid;
+  gap: 4px;
+}
+.resume__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.resume__name {
+  font-family: 'Bebas Neue', var(--font);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 60px);
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+}
+.resume__role {
+  color: var(--text-2);
+  font-size: 15px;
+}
+.resume__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.resume__body {
+  padding: 24px clamp(20px, 5%, 48px) 40px;
+}
+.resume__viewer {
+  display: block;
+  width: 100%;
+  height: min(80vh, 1100px);
+  border: 0;
+  border-radius: 6px;
+  background: #fff;
+}
+.resume__note {
+  color: var(--text-2);
+  padding: 24px 0;
+}
+.resume__note a {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
 /* ————————————————————————————————————————————————
    Pages
    ———————————————————————————————————————————————— */
@@ -1546,11 +1616,14 @@ p {
   font-size: 14px;
   margin: 0 0 12px;
 }
-.footer__cols a {
+.footer__cols a,
+.footer__link {
   display: block;
   padding: 4px 0;
+  text-align: left;
 }
-.footer__cols a:hover {
+.footer__cols a:hover,
+.footer__link:hover {
   color: #fff;
   text-decoration: underline;
 }

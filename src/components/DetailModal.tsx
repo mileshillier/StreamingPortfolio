@@ -1,34 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useLocation, useNavigate, useParams, type Location } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { SHOW_SOUND_CONTROLS } from '../config';
 import { categoryById, chapterCount, getTitle, similarTitles } from '../data/titles';
 import type { Title } from '../data/types';
 import { useMyList } from '../context/MyListContext';
+import { useModal } from '../hooks/useModal';
 import { useOpenTitle } from '../hooks/useOpenTitle';
 import Artwork from './Artwork';
 import TitleLogo from './TitleLogo';
-import { CheckIcon, ChevronIcon, CloseIcon, PlayIcon, PlusIcon, ThumbIcon, VolumeIcon } from './Icons';
+import { ChevronIcon, CloseIcon, PlayIcon, PlusIcon, ThumbIcon, TrashIcon, VolumeIcon } from './Icons';
 
 export default function DetailModal() {
   const { id } = useParams();
   const title = getTitle(id);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const hasBackground = Boolean((location.state as { background?: Location } | null)?.background);
   const dialogRef = useRef<HTMLDivElement>(null);
-
-  const close = () => (hasBackground ? navigate(-1) : navigate('/', { replace: true }));
-
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && close();
-    window.addEventListener('keydown', onKey);
-    return () => {
-      document.body.style.overflow = prev;
-      window.removeEventListener('keydown', onKey);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const close = useModal();
 
   // Moving between titles inside the modal should start at the top.
   useEffect(() => {
@@ -98,7 +84,7 @@ function DetailHeader({ title }: { title: Title }) {
               aria-label={saved ? 'Remove from My List' : 'Add to My List'}
               title={saved ? 'Remove from My List' : 'Add to My List'}
             >
-              {saved ? <CheckIcon size={18} /> : <PlusIcon size={18} />}
+              {saved ? <TrashIcon size={18} /> : <PlusIcon size={18} />}
             </button>
             <button
               className={`round-btn ${liked ? 'is-on' : ''}`}
@@ -111,9 +97,11 @@ function DetailHeader({ title }: { title: Title }) {
             </button>
           </div>
           <p className="detail-hero__tagline">{title.tagline}</p>
-          <button className="round-btn round-btn--ghost" onClick={() => setMuted((m) => !m)} aria-label={muted ? 'Unmute' : 'Mute'}>
-            <VolumeIcon muted={muted} size={18} />
-          </button>
+          {SHOW_SOUND_CONTROLS && (
+            <button className="round-btn round-btn--ghost" onClick={() => setMuted((m) => !m)} aria-label={muted ? 'Unmute' : 'Mute'}>
+              <VolumeIcon muted={muted} size={18} />
+            </button>
+          )}
         </div>
       </div>
     </header>
@@ -274,7 +262,7 @@ function MoreLikeThis({ title }: { title: Title }) {
                     onClick={() => toggleSaved(t.id)}
                     aria-label={saved ? `Remove ${t.title} from My List` : `Add ${t.title} to My List`}
                   >
-                    {saved ? <CheckIcon size={14} /> : <PlusIcon size={14} />}
+                    {saved ? <TrashIcon size={14} /> : <PlusIcon size={14} />}
                   </button>
                 </div>
                 <p>{t.description}</p>
