@@ -1,0 +1,25 @@
+# Streaming Portfolio
+
+A design portfolio presented as a streaming service. Case studies are "titles", project phases are "seasons", and each step of the work is a "chapter".
+
+## Run it
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # type-check + production build
+```
+
+## What's here
+
+- **Home** (`/`): a featured hero case study, then rows for Continue Watching, the three categories (Product Design (UX/UI), Brand & Art Direction, Design Leadership), Top 10, Award-Winning Work, and New Releases.
+- **Title detail** (`/title/:id`): opens as a modal over the current page, with key art, Play / My List / Like, metadata, outcomes, a chapter list with a season picker, More Like This, and About.
+- **Case study player** (`/watch/:id`): the long-form case study, with a reading-progress scrubber and a "Next Episode" link.
+- **Browse** (`/browse/:category`), **My List** (`/my-list`, saved in localStorage), and **Search** (`/search?q=`).
+
+## Editing content
+
+All content is placeholder copy and lives in `src/data/titles.ts`. Edit the `TITLES` entries to swap in real projects.
+Imagery comes from `picsum.photos` via `imageUrl()`. Point that function at your own files (for example `/images/${seed}.jpg` in `public/`) to use real project art. If an image fails to load, a gradient in the title's accent color shows instead.
+
+Stack: React 18, React Router 6, TypeScript, Vite, and plain CSS (`src/styles/global.css`).
