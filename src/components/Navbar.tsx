@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { CATEGORIES } from '../data/titles';
-import { LINKEDIN_URL } from '../config';
+import { GET_IN_TOUCH_URL, LINKEDIN_URL } from '../config';
 import { useOpenModal } from '../hooks/useOpenTitle';
 import Avatar from './Avatar';
 import { BellIcon, ChevronIcon, SearchIcon } from './Icons';
@@ -158,7 +158,9 @@ export default function Navbar() {
               <a className="dropdown__item" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a className="dropdown__item" href="mailto:hello@example.com">Get in Touch</a>
+              <a className="dropdown__item" href={GET_IN_TOUCH_URL} target="_blank" rel="noopener noreferrer">
+                Get in Touch
+              </a>
             </div>
           )}
         </div>

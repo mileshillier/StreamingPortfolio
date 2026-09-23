@@ -304,6 +304,15 @@ p {
   line-height: 1;
   white-space: nowrap;
 }
+.footer__brand {
+  display: flex;
+  align-items: center;
+}
+.footer__logo {
+  height: 22px;
+  width: auto;
+  margin-right: 12px;
+}
 .navbar__brand span,
 .footer__brand span {
   color: #fff;
