@@ -2,13 +2,28 @@
 
 A design portfolio presented as a streaming service. Case studies are "titles", project phases are "seasons", and each step of the work is a "chapter".
 
-## Run it
+## Run it locally
+
+Requires [Node.js](https://nodejs.org) 20 or newer.
 
 ```bash
+git clone https://github.com/mileshillier/StreamingPortfolio.git
+cd StreamingPortfolio
 npm install
 npm run dev      # http://localhost:5173
-npm run build    # type-check + production build
 ```
+
+`npm run build` type-checks and builds the site into `dist/`. `npm run preview` serves that build locally.
+
+## Deploy to GitHub Pages
+
+`.github/workflows/deploy.yml` builds the site and publishes it on every push to `main`.
+
+One-time setup:
+1. In the repo, go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+2. Push to `main`, or run the workflow from the **Actions** tab.
+
+The site goes live at `https://mileshillier.github.io/StreamingPortfolio/`. The workflow builds with the repo name as the base path and publishes `404.html` as a copy of the app, so shared links such as `/title/northstar` open correctly.
 
 ## What's here
 

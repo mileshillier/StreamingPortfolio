@@ -8,10 +8,11 @@ import './styles/global.css';
 // Sandboxed hosts (e.g. embedded previews) can't use URL routing; build with
 // VITE_ROUTER=memory to keep navigation in memory instead.
 const Router = import.meta.env.VITE_ROUTER === 'memory' ? MemoryRouter : BrowserRouter;
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Router>
+    <Router basename={Router === BrowserRouter ? basename : undefined}>
       <MyListProvider>
         <App />
       </MyListProvider>
