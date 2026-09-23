@@ -8,7 +8,8 @@
   --text: #ffffff;
   --text-2: #d2d2d2;
   --text-3: #8c8c8c;
-  --brand: #e50914;
+  --brand: #02cbf9;
+  --on-brand: #03161c;
   --match: #46d369;
   --line: rgba(255, 255, 255, 0.14);
   --gutter: clamp(16px, 4vw, 60px);
@@ -356,6 +357,7 @@ p {
   height: 16px;
   border-radius: 8px;
   background: var(--brand);
+  color: var(--on-brand);
   font-size: 10px;
   font-weight: 700;
   display: grid;
@@ -367,15 +369,12 @@ p {
   gap: 6px;
 }
 .avatar {
-  display: inline-grid;
-  place-items: center;
+  display: block;
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  background: linear-gradient(135deg, #e50914, #7c3aed);
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.02em;
+  object-fit: cover;
+  background: var(--bg-card);
   flex-shrink: 0;
 }
 
@@ -510,11 +509,9 @@ p {
   position: absolute;
   top: 24px;
   left: 28px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
-  line-height: 1;
-  color: var(--brand);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  width: auto;
+  height: 36px;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
 }
 .hero__mute {
   position: absolute;
@@ -740,6 +737,7 @@ p {
   padding: 3px 8px;
   border-radius: 3px 3px 0 0;
   background: var(--brand);
+  color: var(--on-brand);
   font-size: 11px;
   font-weight: 700;
   white-space: nowrap;
@@ -762,6 +760,7 @@ p {
   width: 26px;
   padding: 3px 0 4px;
   background: var(--brand);
+  color: var(--on-brand);
   font-size: 7px;
   font-weight: 800;
   line-height: 1;

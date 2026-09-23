@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { CATEGORIES } from '../data/titles';
+import Avatar from './Avatar';
 import { BellIcon, ChevronIcon, SearchIcon } from './Icons';
 
 const NAV = [
@@ -135,13 +136,13 @@ export default function Navbar() {
 
         <div className="navbar__menu">
           <button className="navbar__profile" aria-label="Profile menu" onClick={() => toggle('profile')} aria-expanded={menu === 'profile'}>
-            <span className="avatar">MH</span>
+            <Avatar />
             <ChevronIcon size={14} />
           </button>
           {menu === 'profile' && (
             <div className="dropdown" role="menu">
               <div className="dropdown__header">
-                <span className="avatar">MH</span>
+                <Avatar />
                 <div>
                   <strong>Miles Hillier</strong>
                   <span>Product Designer & Design Leader</span>
