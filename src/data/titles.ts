@@ -619,7 +619,7 @@ export const TITLES: Title[] = [
     tools: ['Pencils', 'Photoshop', 'Figma', 'Curiosity'],
     moods: ['Inspiring', 'Candid', 'Heartfelt'],
     outcomes: [
-      { value: '15+', label: 'Years in design' },
+      { value: '20', label: 'Years in design' },
       { value: '3', label: 'Disciplines mastered' },
       { value: '∞', label: 'Miles to go' },
     ],

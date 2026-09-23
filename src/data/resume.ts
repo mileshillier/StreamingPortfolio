@@ -23,12 +23,12 @@ export const RESUME = {
     website: 'mileshillier.com',
   },
   summary:
-    'Product designer with 15+ years of experience across fintech, SaaS, education, and health tech, working at every level from hands-on UX/UI and front-end development to principal-level design system leadership. Equally at home as a startup’s sole designer or as a systems lead aligning multiple product teams. Brings a dual identity as both product and brand designer, a track record of measurable outcomes, and an AI-forward workflow that moves ideas from research to working prototype in days instead of weeks.',
+    'Product designer with 20 years of experience across fintech, SaaS, education, and health tech, working at every level from hands-on UX/UI and front-end development to principal-level design system leadership. Equally at home as a startup’s sole designer or as a systems lead aligning multiple product teams. Brings a dual identity as both product and brand designer, a track record of measurable outcomes, and an AI-forward workflow that moves ideas from research to working prototype in days instead of weeks.',
   highlights: [
     { value: '$35–45M', label: 'Annual GMV lift' },
     { value: '67%', label: 'Faster completion' },
     { value: '82%', label: 'Less drop-off' },
-    { value: '15+', label: 'Years in design' },
+    { value: '20', label: 'Years in design' },
   ],
   skills: [
     {
@@ -56,23 +56,12 @@ export const RESUME = {
       ],
     },
     {
+      name: 'AI-Focused',
+      items: ['Claude', 'Claude Code', 'Cursor', 'ChatGPT', 'Perplexity', 'Midjourney', 'Figma Make'],
+    },
+    {
       name: 'Tools',
-      items: [
-        'Figma',
-        'FigJam',
-        'Figma Make',
-        'Storybook',
-        'Notion',
-        'Airtable',
-        'Jira',
-        'Linear',
-        'Claude',
-        'Claude Code',
-        'Cursor',
-        'ChatGPT',
-        'Perplexity',
-        'Midjourney',
-      ],
+      items: ['Figma', 'FigJam', 'Storybook', 'Notion', 'Airtable', 'Jira', 'Linear'],
     },
     { name: 'Code literacy', items: ['HTML', 'CSS', 'React', 'Tailwind', 'TypeScript', 'Vite'] },
   ],

@@ -3,7 +3,7 @@ import { LINKEDIN_URL, RESUME_DOWNLOAD_NAME, RESUME_PDF_URL } from '../config';
 import { RESUME } from '../data/resume';
 import { useModal } from '../hooks/useModal';
 import Avatar from './Avatar';
-import { CloseIcon, DownloadIcon, ExternalIcon } from './Icons';
+import { CloseIcon, DownloadIcon, LinkedInIcon } from './Icons';
 
 /**
  * The résumé as a page, presented like a title's detail screen. The Download
@@ -71,7 +71,7 @@ export default function ResumeModal() {
               aria-label="Open LinkedIn profile in a new window"
               title="LinkedIn"
             >
-              <ExternalIcon size={18} />
+              <LinkedInIcon size={18} />
             </a>
           </div>
         </header>
