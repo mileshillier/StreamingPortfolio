@@ -181,7 +181,7 @@ export const TITLES: Title[] = [
       { value: '15-20 hrs', label: 'Design hours saved per week' },
     ],
     imageSeed: 'common-ground-meltwater',
-    accent: '#ef4444',
+    accent: '#1D9F9F',
     logo: { font: "'Space Grotesk', sans-serif", weight: 700, letterSpacing: '-0.03em' },
     match: 96,
     outline: [
