@@ -14,6 +14,8 @@ export interface Chapter {
   minutes: number;
   synopsis: string;
   imageSeed: string;
+  /** Real chapter image (`chN.jpg` in the case study folder). Placeholder art when absent. */
+  image?: string;
   /** Full chapter text. Chapters without it show placeholder copy on the watch page. */
   body?: ChapterBlock[];
   /** Caption for the chapter image. */
@@ -64,8 +66,10 @@ export interface Title {
   accent: string;
   /** Optional second brand colour for outcome figures, pull quotes, and the reading progress bar. Falls back to `accent`. */
   highlight?: string;
-  /** Optional client logo (imported image URL), shown in place of the client name. */
+  /** Client logo (`logo.png` in the case study folder), shown in place of the client name. */
   clientLogo?: string;
+  /** Real cover image (`cover.jpg` in the case study folder). Placeholder art when absent. */
+  cover?: string;
   logo: LogoStyle;
   badge?: Badge;
   match: number;
