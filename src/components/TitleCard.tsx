@@ -58,7 +58,7 @@ export default function TitleCard({ title, rank, progress }: TitleCardProps) {
         </span>
       )}
       <button className="card__button" onClick={() => openTitle(title.id)} aria-label={`${title.title} — ${categoryById(title.category).shortName}. Open details`}>
-        <Artwork seed={title.imageSeed} accent={title.accent} width={640} height={360} className="card__art" />
+        <Artwork seed={title.imageSeed} src={title.cover} accent={title.accent} width={640} height={360} className="card__art" />
         <div className="card__shade" />
         <TitleLogo title={title} size="sm" />
         {title.badge && title.badge !== 'Top 10' && progress === undefined && (

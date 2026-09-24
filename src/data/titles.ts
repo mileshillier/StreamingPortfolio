@@ -1,4 +1,4 @@
-import meltwaterLogo from '../assets/clients/meltwater.png';
+import { caseStudyImages, type CaseStudyImages } from './caseStudyImages';
 import type { Category, CategoryId, Chapter, Season, Title } from './types';
 
 /*
@@ -101,7 +101,7 @@ const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]
   ],
 };
 
-const buildSeasons = (id: string, outline: SeasonSeed[]): Season[] => {
+const buildSeasons = (id: string, outline: SeasonSeed[], images: CaseStudyImages): Season[] => {
   let n = 0;
   return outline.map((season) => ({
     name: season.name,
@@ -112,6 +112,7 @@ const buildSeasons = (id: string, outline: SeasonSeed[]): Season[] => {
         title,
         synopsis,
         imageSeed: `${id}-ch${n}`,
+        image: images.chapter(n),
         ...extras,
         minutes: extras.minutes ?? 3 + ((n * 7 + id.length) % 9),
       };
@@ -123,10 +124,15 @@ type TitleInput =
   | (Omit<Title, 'seasons' | 'category'> & { category: Exclude<CategoryId, 'documentary'>; outline?: SeasonSeed[] })
   | (Omit<Title, 'seasons' | 'category'> & { category: 'documentary'; outline: SeasonSeed[] });
 
-const define = ({ outline, ...t }: TitleInput): Title => ({
-  ...t,
-  seasons: buildSeasons(t.id, outline ?? CHAPTER_TEMPLATES[t.category as Exclude<CategoryId, 'documentary'>]),
-});
+const define = ({ outline, ...t }: TitleInput): Title => {
+  const images = caseStudyImages(t.client);
+  return {
+    ...t,
+    cover: images.cover,
+    clientLogo: images.logo,
+    seasons: buildSeasons(t.id, outline ?? CHAPTER_TEMPLATES[t.category as Exclude<CategoryId, 'documentary'>], images),
+  };
+};
 
 export const TITLES: Title[] = [
   // ——— Product Design (UX/UI) ———
@@ -167,7 +173,6 @@ export const TITLES: Title[] = [
     tagline: 'One system, many products, and the trust it took to bring them together.',
     category: 'product',
     client: 'Meltwater',
-    clientLogo: meltwaterLogo,
     role: 'Lead Product Designer',
     year: 2022,
     format: 'Limited Series',

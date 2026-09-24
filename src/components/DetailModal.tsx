@@ -70,7 +70,7 @@ function DetailHeader({ title }: { title: Title }) {
 
   return (
     <header className="detail-hero">
-      <Artwork key={title.id} seed={title.imageSeed} accent={title.accent} width={1600} height={900} className="detail-hero__art" eager />
+      <Artwork key={title.id} seed={title.imageSeed} src={title.cover} accent={title.accent} width={1600} height={900} className="detail-hero__art" eager />
       <div className="detail-hero__shade" />
       <div className="detail-hero__content">
         <TitleLogo title={title} size="lg" showSubtitle as="h2" />
@@ -213,7 +213,7 @@ function Chapters({ title }: { title: Title }) {
             <Link to={`/watch/${title.id}#chapter-${seasonIndex + 1}-${ch.number}`} className="chapter">
               <span className="chapter__num">{ch.number}</span>
               <span className="chapter__thumb">
-                <Artwork seed={ch.imageSeed} accent={title.accent} width={320} height={180} />
+                <Artwork seed={ch.imageSeed} src={ch.image} accent={title.accent} width={320} height={180} />
                 <span className="chapter__play">
                   <PlayIcon size={18} />
                 </span>
@@ -246,7 +246,7 @@ function MoreLikeThis({ title }: { title: Title }) {
           return (
             <article key={t.id} className="mini-card">
               <button className="mini-card__art" onClick={() => openTitle(t.id)} aria-label={`Open ${t.title}`}>
-                <Artwork seed={t.imageSeed} accent={t.accent} width={480} height={270} />
+                <Artwork seed={t.imageSeed} src={t.cover} accent={t.accent} width={480} height={270} />
                 <TitleLogo title={t} size="sm" />
                 <span className="mini-card__len">{chapterCount(t)} Chapters</span>
               </button>
