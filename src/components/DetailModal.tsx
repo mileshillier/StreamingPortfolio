@@ -7,6 +7,7 @@ import { useMyList } from '../context/MyListContext';
 import { useModal } from '../hooks/useModal';
 import { useOpenTitle } from '../hooks/useOpenTitle';
 import Artwork from './Artwork';
+import ClientName from './ClientName';
 import TitleLogo from './TitleLogo';
 import { ChevronIcon, CloseIcon, PlayIcon, PlusIcon, ThumbIcon, TrashIcon, VolumeIcon } from './Icons';
 
@@ -133,7 +134,7 @@ function DetailInfo({ title }: { title: Title }) {
         <ul className="outcomes">
           {title.outcomes.map((o) => (
             <li key={o.label}>
-              <strong style={{ color: title.accent }}>{o.value}</strong>
+              <strong style={{ color: title.highlight ?? title.accent }}>{o.value}</strong>
               <span>{o.label}</span>
             </li>
           ))}
@@ -164,7 +165,7 @@ function DetailInfo({ title }: { title: Title }) {
         </div>
         <div>
           <dt>Client:</dt>
-          <dd>{title.client}</dd>
+          <dd><ClientName title={title} /></dd>
         </div>
         <div>
           <dt>This Project Is:</dt>

@@ -14,7 +14,15 @@ export interface Chapter {
   minutes: number;
   synopsis: string;
   imageSeed: string;
+  /** Full chapter text. Chapters without it show placeholder copy on the watch page. */
+  body?: ChapterBlock[];
+  /** Caption for the chapter image. */
+  figure?: string;
+  quote?: { text: string; cite: string };
 }
+
+/** A paragraph, or a list of short items. */
+export type ChapterBlock = string | { list: string[]; ordered?: boolean };
 
 export interface Season {
   name: string;
@@ -54,6 +62,10 @@ export interface Title {
   outcomes: { value: string; label: string }[];
   imageSeed: string;
   accent: string;
+  /** Optional second brand colour for outcome figures, pull quotes, and the reading progress bar. Falls back to `accent`. */
+  highlight?: string;
+  /** Optional client logo (imported image URL), shown in place of the client name. */
+  clientLogo?: string;
   logo: LogoStyle;
   badge?: Badge;
   match: number;

@@ -1677,6 +1677,16 @@ p {
   font-size: 19px;
   margin-top: 0;
 }
+.watch__list {
+  margin: 16px 0 0;
+  padding-left: 24px;
+  color: var(--text-2);
+  font-size: 17px;
+  line-height: 1.7;
+}
+.watch__list li + li {
+  margin-top: 8px;
+}
 .watch__chapter figure {
   margin: 28px 0 8px;
 }
@@ -1985,4 +1995,13 @@ p {
   .next-card {
     aspect-ratio: 4 / 3;
   }
+}
+
+/* Client logo shown in place of the client name. Source files are dark, so render them white. */
+.client-logo {
+  display: inline-block;
+  height: 0.9em;
+  width: auto;
+  vertical-align: -0.05em;
+  filter: brightness(0) invert(1);
 }
