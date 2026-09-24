@@ -8,6 +8,7 @@ import { useModal } from '../hooks/useModal';
 import { useOpenTitle } from '../hooks/useOpenTitle';
 import Artwork from './Artwork';
 import ClientName from './ClientName';
+import Flagged from './Flagged';
 import TitleLogo from './TitleLogo';
 import { ChevronIcon, CloseIcon, PlayIcon, PlusIcon, ThumbIcon, TrashIcon, VolumeIcon } from './Icons';
 
@@ -145,7 +146,7 @@ function DetailInfo({ title }: { title: Title }) {
         <div>
           <dt>Team:</dt>
           <dd>
-            {[first, second].filter(Boolean).join(', ')}
+            <Flagged text={[first, second].filter(Boolean).join(', ')} />
             {rest.length > 0 && (
               <>
                 ,{' '}
@@ -298,7 +299,9 @@ function About({ title }: { title: Title }) {
         {rows.map(([k, v]) => (
           <div key={k}>
             <dt>{k}:</dt>
-            <dd>{v}</dd>
+            <dd>
+              <Flagged text={v} />
+            </dd>
           </div>
         ))}
         <div>

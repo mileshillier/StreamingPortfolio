@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Artwork from '../components/Artwork';
 import ClientName from '../components/ClientName';
+import Flagged from '../components/Flagged';
 import TitleLogo from '../components/TitleLogo';
 import { BackIcon, PlayIcon } from '../components/Icons';
 import { TITLES, categoryById, chapterCount, getTitle, titlesInCategory } from '../data/titles';
@@ -14,12 +15,19 @@ const PLACEHOLDER_BODY = [
 ];
 
 function Block({ block }: { block: ChapterBlock }) {
-  if (typeof block === 'string') return <p>{block}</p>;
+  if (typeof block === 'string')
+    return (
+      <p>
+        <Flagged text={block} />
+      </p>
+    );
   const List = block.ordered ? 'ol' : 'ul';
   return (
     <List className="watch__list">
       {block.list.map((item) => (
-        <li key={item}>{item}</li>
+        <li key={item}>
+          <Flagged text={item} />
+        </li>
       ))}
     </List>
   );
@@ -116,21 +124,31 @@ export default function WatchPage() {
                 <p className="watch__lede">{ch.synopsis}</p>
                 <figure>
                   <Artwork seed={ch.imageSeed} accent={title.accent} width={1600} height={900} />
-                  <figcaption>{ch.figure ?? 'Placeholder — project artifact, screen, or process photo.'}</figcaption>
+                  <figcaption>
+                    <Flagged text={ch.figure ?? 'Placeholder — project artifact, screen, or process photo.'} all />
+                  </figcaption>
                 </figure>
                 {ch.body
                   ? ch.body.map((block, i) => <Block key={i} block={block} />)
-                  : PLACEHOLDER_BODY.map((p) => <p key={p}>{p}</p>)}
+                  : PLACEHOLDER_BODY.map((p) => (
+                      <p key={p}>
+                        <Flagged text={p} all />
+                      </p>
+                    ))}
                 {ch.quote && (
                   <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
-                    “{ch.quote.text}”
-                    <cite>— {ch.quote.cite}</cite>
+                    “<Flagged text={ch.quote.text} />”
+                    <cite>
+                      — <Flagged text={ch.quote.cite} />
+                    </cite>
                   </blockquote>
                 )}
                 {!ch.body && !ch.quote && ch.number === 2 && (
                   <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
-                    “Placeholder pull quote from a stakeholder, customer, or teammate about the impact of this work.”
-                    <cite>— Name, Title at {title.client}</cite>
+                    <Flagged text="“Placeholder pull quote from a stakeholder, customer, or teammate about the impact of this work.”" all />
+                    <cite>
+                      <Flagged text={`— Name, Title at ${title.client}`} all />
+                    </cite>
                   </blockquote>
                 )}
               </section>
