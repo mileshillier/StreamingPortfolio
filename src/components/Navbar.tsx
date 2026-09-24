@@ -15,7 +15,7 @@ const NAV = [
 const NOTIFICATIONS = [
   { title: 'New Chapter', body: 'Northstar — “Epilogue: What We Learned” is now streaming.' },
   { title: 'Coming Soon', body: 'The Merger premieres this fall.' },
-  { title: 'Recently Added', body: 'Atlas: Building a Design System.' },
+  { title: 'Recently Added', body: 'Flux: Building a usable Design System.' },
 ];
 
 export default function Navbar() {
