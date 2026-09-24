@@ -35,7 +35,7 @@ export const CATEGORIES: Category[] = [
 export const categoryById = (id: CategoryId): Category =>
   CATEGORIES.find((c) => c.id === id) ?? CATEGORIES[0];
 
-type ChapterSeed = [title: string, synopsis: string];
+type ChapterSeed = [title: string, synopsis: string, minutes?: number];
 
 type SeasonSeed = { name: string; chapters: ChapterSeed[] };
 
@@ -102,13 +102,13 @@ const buildSeasons = (id: string, outline: SeasonSeed[]): Season[] => {
   let n = 0;
   return outline.map((season) => ({
     name: season.name,
-    chapters: season.chapters.map(([title, synopsis], i) => {
+    chapters: season.chapters.map(([title, synopsis, minutes], i) => {
       n += 1;
       return {
         number: i + 1,
         title,
         synopsis,
-        minutes: 3 + ((n * 7 + id.length) % 9),
+        minutes: minutes ?? 3 + ((n * 7 + id.length) % 9),
         imageSeed: `${id}-ch${n}`,
       };
     }),
@@ -157,34 +157,52 @@ export const TITLES: Title[] = [
     match: 98,
   }),
   define({
-    id: 'pulse',
-    title: 'Pulse',
-    subtitle: 'The Patient Portal Story',
-    tagline: 'Healthcare, finally designed for the people it serves.',
+    id: 'common-ground',
+    title: 'Common Ground',
+    subtitle: 'The Meltwater Design System Story',
+    tagline: 'One system, many products, and the trust it took to bring them together.',
     category: 'product',
-    client: 'Harborview Health',
-    role: 'Senior UX Designer',
-    year: 2025,
+    client: 'Meltwater',
+    role: 'Lead Product Designer',
+    year: 2022,
     format: 'Limited Series',
-    genre: 'Healthcare',
+    genre: 'B2B SaaS',
     rating: 'UX-PG',
-    advisories: ['accessibility', 'compliance', 'empathy'],
+    advisories: ['adoption', 'governance', 'trust'],
     description:
-      'A regional health network’s patient portal is confusing, inaccessible, and ignored. This is the story of redesigning it with patients, nurses, and a WCAG checklist at the table.',
-    team: ['Miles Hillier', 'Dana Okafor', 'Sam Whitfield'],
-    disciplines: ['Accessibility', 'Service Design', 'UI Design'],
-    tools: ['Figma', 'Stark', 'UserTesting'],
-    moods: ['Heartfelt', 'Human-Centered'],
+      'Meltwater’s product suite grew through acquisitions and internal builds, and its design system didn’t keep up. This is the story of rebuilding that system around the people who use it, and turning skeptics into contributors.',
+    team: ['Miles Hillier'],
+    disciplines: ['Design Systems', 'Documentation', 'Design Enablement'],
+    tools: ['Figma', 'Trello', 'GitHub', 'CodePen'],
+    moods: ['Collaborative', 'Optimistic'],
     outcomes: [
-      { value: '3×', label: 'Portal adoption' },
-      { value: 'AA', label: 'WCAG 2.2 compliance' },
-      { value: '-52%', label: 'Missed appointments' },
+      { value: '7+', label: 'Product teams adopted in year one' },
+      { value: '~80%', label: 'Less time to find components' },
+      { value: '15-20 hrs', label: 'Design hours saved per week' },
     ],
-    imageSeed: 'pulse-health',
+    imageSeed: 'common-ground-meltwater',
     accent: '#ef4444',
     logo: { font: "'Space Grotesk', sans-serif", weight: 700, letterSpacing: '-0.03em' },
-    badge: 'Award Winner',
     match: 96,
+    outline: [
+      {
+        name: 'Discovery',
+        chapters: [
+          ['The Brief', 'A suite built through acquisitions, a pile of scattered libraries, and a design system nobody trusted.', 2],
+          ['Into the Field', 'A library audit, designer interviews, and candid talks with PMs and developers reframe the problem.', 2],
+          ['The Synthesis Wall', 'Audit findings and interview notes collapse into four insights, three audiences, and one shared goal.', 2],
+        ],
+      },
+      {
+        name: 'Design & Delivery',
+        chapters: [
+          ['Rough Cuts', 'The libraries are torn down and rebuilt around Atomic Design, then tested with the designers who use them.', 2],
+          ['The System', 'Shared documentation, a request pipeline, and roadmap alignment turn a component library into a system teams can ship with.', 2],
+          ['Launch Day', 'Training and office hours turn skeptics into contributors, and adoption spreads to 7+ product teams.', 2],
+          ['Epilogue: What We Learned', 'A design system is as much about people as it is about components.', 1],
+        ],
+      },
+    ],
   }),
   define({
     id: 'checkout-zero',
@@ -760,7 +778,7 @@ export const TOP_10_IDS = [
   'ember-and-oak',
   'atlas',
   'north-of-now',
-  'pulse',
+  'common-ground',
   'terra',
   'the-merger',
 ];
