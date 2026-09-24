@@ -14,7 +14,15 @@ export interface Chapter {
   minutes: number;
   synopsis: string;
   imageSeed: string;
+  /** Full chapter text. Chapters without it show placeholder copy on the watch page. */
+  body?: ChapterBlock[];
+  /** Caption for the chapter image. */
+  figure?: string;
+  quote?: { text: string; cite: string };
 }
+
+/** A paragraph, or a list of short items. */
+export type ChapterBlock = string | { list: string[]; ordered?: boolean };
 
 export interface Season {
   name: string;

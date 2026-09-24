@@ -5,12 +5,25 @@ import ClientName from '../components/ClientName';
 import TitleLogo from '../components/TitleLogo';
 import { BackIcon, PlayIcon } from '../components/Icons';
 import { TITLES, categoryById, chapterCount, getTitle, titlesInCategory } from '../data/titles';
+import type { ChapterBlock } from '../data/types';
 import NotFoundPage from './NotFoundPage';
 
 const PLACEHOLDER_BODY = [
   'Placeholder narrative: describe the situation, the constraints, and what was at stake. Keep it human — who was affected, and why did it matter to the business?',
   'Placeholder narrative: walk through the decisions made in this phase, the alternatives considered, and the evidence that tipped the balance. Show the messy middle, not just the polished result.',
 ];
+
+function Block({ block }: { block: ChapterBlock }) {
+  if (typeof block === 'string') return <p>{block}</p>;
+  const List = block.ordered ? 'ol' : 'ul';
+  return (
+    <List className="watch__list">
+      {block.list.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </List>
+  );
+}
 
 export default function WatchPage() {
   const { id } = useParams();
@@ -103,12 +116,18 @@ export default function WatchPage() {
                 <p className="watch__lede">{ch.synopsis}</p>
                 <figure>
                   <Artwork seed={ch.imageSeed} accent={title.accent} width={1600} height={900} />
-                  <figcaption>Placeholder — project artifact, screen, or process photo.</figcaption>
+                  <figcaption>{ch.figure ?? 'Placeholder — project artifact, screen, or process photo.'}</figcaption>
                 </figure>
-                {PLACEHOLDER_BODY.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-                {ch.number === 2 && (
+                {ch.body
+                  ? ch.body.map((block, i) => <Block key={i} block={block} />)
+                  : PLACEHOLDER_BODY.map((p) => <p key={p}>{p}</p>)}
+                {ch.quote && (
+                  <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
+                    “{ch.quote.text}”
+                    <cite>— {ch.quote.cite}</cite>
+                  </blockquote>
+                )}
+                {!ch.body && !ch.quote && ch.number === 2 && (
                   <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
                     “Placeholder pull quote from a stakeholder, customer, or teammate about the impact of this work.”
                     <cite>— Name, Title at {title.client}</cite>

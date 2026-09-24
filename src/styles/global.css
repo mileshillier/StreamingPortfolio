@@ -1677,6 +1677,16 @@ p {
   font-size: 19px;
   margin-top: 0;
 }
+.watch__list {
+  margin: 16px 0 0;
+  padding-left: 24px;
+  color: var(--text-2);
+  font-size: 17px;
+  line-height: 1.7;
+}
+.watch__list li + li {
+  margin-top: 8px;
+}
 .watch__chapter figure {
   margin: 28px 0 8px;
 }

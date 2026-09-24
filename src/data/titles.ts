@@ -1,5 +1,5 @@
 import meltwaterLogo from '../assets/clients/meltwater.png';
-import type { Category, CategoryId, Season, Title } from './types';
+import type { Category, CategoryId, Chapter, Season, Title } from './types';
 
 /*
  * All content below is placeholder copy. Swap in real case studies by editing
@@ -36,7 +36,9 @@ export const CATEGORIES: Category[] = [
 export const categoryById = (id: CategoryId): Category =>
   CATEGORIES.find((c) => c.id === id) ?? CATEGORIES[0];
 
-type ChapterSeed = [title: string, synopsis: string, minutes?: number];
+type ChapterExtras = Partial<Pick<Chapter, 'minutes' | 'body' | 'figure' | 'quote'>>;
+
+type ChapterSeed = [title: string, synopsis: string, extras?: ChapterExtras];
 
 type SeasonSeed = { name: string; chapters: ChapterSeed[] };
 
@@ -103,14 +105,15 @@ const buildSeasons = (id: string, outline: SeasonSeed[]): Season[] => {
   let n = 0;
   return outline.map((season) => ({
     name: season.name,
-    chapters: season.chapters.map(([title, synopsis, minutes], i) => {
+    chapters: season.chapters.map(([title, synopsis, extras = {}], i) => {
       n += 1;
       return {
         number: i + 1,
         title,
         synopsis,
-        minutes: minutes ?? 3 + ((n * 7 + id.length) % 9),
         imageSeed: `${id}-ch${n}`,
+        ...extras,
+        minutes: extras.minutes ?? 3 + ((n * 7 + id.length) % 9),
       };
     }),
   }));
@@ -191,18 +194,112 @@ export const TITLES: Title[] = [
       {
         name: 'Discovery',
         chapters: [
-          ['The Brief', 'A suite built through acquisitions, a pile of scattered libraries, and a design system nobody trusted.', 2],
-          ['Into the Field', 'A library audit, designer interviews, and candid talks with PMs and developers reframe the problem.', 2],
-          ['The Synthesis Wall', 'Audit findings and interview notes collapse into four insights, three audiences, and one shared goal.', 2],
+          [
+            'The Brief',
+            'A suite built through acquisitions, a pile of scattered libraries, and a design system nobody trusted.',
+            {
+              minutes: 2,
+              figure: 'Placeholder — a “before” collage of duplicate buttons, inputs, or cards pulled from different product libraries.',
+              body: [
+                'By 2022, Meltwater’s products were a patchwork of in-house builds and acquired tools. Each one came with its own libraries, naming, and habits. Designers couldn’t find or reuse components, documentation was scattered, and there was no training or governance. Customers moving between products felt the seams, and every inconsistency meant duplicate work for design and engineering.',
+                'I stepped in as Lead Product Designer to own the system. On paper the brief was a cleanup: consolidate the libraries. It quickly became clear the real problem was trust. Designers had stopped relying on the system, PMs saw it as overhead, and developers had no clear way to request changes. So I defined success by adoption, not by component count.',
+              ],
+            },
+          ],
+          [
+            'Into the Field',
+            'A library audit, designer interviews, and candid talks with PMs and developers reframe the problem.',
+            {
+              minutes: 2,
+              figure: 'Placeholder — audit spreadsheet or FigJam board showing duplicates and naming conflicts by library.',
+              body: [
+                'I started with a full audit of the four or so Figma libraries in use, logging duplicates, naming conflicts, and components that had drifted from code. In parallel, I interviewed about a dozen designers across product teams about how they actually searched for and used components day to day.',
+                'Conversations with PMs and developers filled in the rest. PMs didn’t see system work on their roadmaps, so it always lost to features. Developers fielded ad hoc requests with no way to prioritize them. The pattern was clear: the libraries were fragmented, but the bigger gap was education and communication between siloed teams.',
+              ],
+            },
+          ],
+          [
+            'The Synthesis Wall',
+            'Audit findings and interview notes collapse into four insights, three audiences, and one shared goal.',
+            {
+              minutes: 2,
+              figure: 'Placeholder — affinity map or a simple diagram of the three audiences and what each needed.',
+              body: [
+                'Synthesis surfaced four insights that explained why adoption had stalled:',
+                {
+                  ordered: true,
+                  list: [
+                    'Designers couldn’t find what already existed. Inconsistent naming and tagging made search unreliable, so people rebuilt instead.',
+                    'Documentation was split and single-audience. Guidance lived in several places and rarely served designers and engineers at once.',
+                    'System work had no home on roadmaps. Without PM buy-in, it was always the first thing cut.',
+                    'Developers had no intake process. Requests arrived ad hoc, with no way to balance shared resources.',
+                  ],
+                },
+                'Instead of one big fix, I split the work by audience: designers, product managers, and developers. Each group needed different tools, education, and reasons to buy in. The goal that tied them together: help any team find, use, and trust the right component without having to ask around.',
+              ],
+            },
+          ],
         ],
       },
       {
         name: 'Design & Delivery',
         chapters: [
-          ['Rough Cuts', 'The libraries are torn down and rebuilt around Atomic Design, then tested with the designers who use them.', 2],
-          ['The System', 'Shared documentation, a request pipeline, and roadmap alignment turn a component library into a system teams can ship with.', 2],
-          ['Launch Day', 'Training and office hours turn skeptics into contributors, and adoption spreads to 7+ product teams.', 2],
-          ['Epilogue: What We Learned', 'A design system is as much about people as it is about components.', 1],
+          [
+            'Rough Cuts',
+            'The libraries are torn down and rebuilt around Atomic Design, then tested with the designers who use them.',
+            {
+              minutes: 2,
+              figure: 'Placeholder — before and after of the library structure, showing atoms, molecules, and organisms.',
+              body: [
+                'I restructured the libraries with Brad Frost’s Atomic Design approach, organizing everything into atoms, molecules, and organisms. Naming and tagging were rebuilt so a search returned the right component the first time. Figma’s new component properties let me collapse near-duplicate variants into flexible, configurable components that were easier to reuse.',
+                'I didn’t treat the new structure as finished until designers had used it. In working sessions, I watched where people got lost, then adjusted names and groupings.',
+              ],
+            },
+          ],
+          [
+            'The System',
+            'Shared documentation, a request pipeline, and roadmap alignment turn a component library into a system teams can ship with.',
+            {
+              minutes: 2,
+              figure: 'Placeholder — a documentation page showing the Usage, Code, and Accessibility tabs.',
+              body: [
+                'For developers, I built a Trello pipeline to intake and prioritize requests and balance shared resources. I also consolidated scattered documentation into a trifecta structure: Usage, Code, and Accessibility. Each component had one home that designers, engineers, and stakeholders could all act on, with code references in GitHub and live examples in CodePen.',
+                'For product managers, I aligned roadmaps so design system work became part of team goals instead of a side project. I also led the evangelizing, showing PMs and stakeholders how the system saved time and reduced rework on their own teams.',
+              ],
+            },
+          ],
+          [
+            'Launch Day',
+            'Training and office hours turn skeptics into contributors, and adoption spreads to 7+ product teams.',
+            {
+              minutes: 2,
+              figure: 'Placeholder — office hours or training session snapshot, or an adoption chart by team.',
+              body: [
+                'A design system only works if people use it, so the rollout was an education program as much as a release. I ran weekly training, open office hours, and one-on-one working sessions to build confidence and speed. Designers soon started contributing back to the system instead of working around it.',
+                'Within the first year, the results showed up across teams:',
+                {
+                  list: [
+                    'Adoption: 7+ product teams in year one',
+                    'Time to find and apply components: reduced by ~80%',
+                    'Redundant design work: 15-20 design hours saved per week across teams',
+                    'Cross-team miscommunication: ~30% fewer incidents, based on PM feedback',
+                  ],
+                },
+              ],
+            },
+          ],
+          [
+            'Epilogue: What We Learned',
+            'A design system is as much about people as it is about components.',
+            {
+              minutes: 1,
+              figure: 'Placeholder — the final system overview page or a team photo.',
+              body: [
+                'The biggest lesson was that education, transparency, and trust mattered as much as the technical fixes. Splitting the work by audience worked because each group got what it needed to say yes. Clear documentation turned the system into a bridge between teams that had been siloed.',
+                'The system set Meltwater up for scalable, consistent product design.',
+              ],
+            },
+          ],
         ],
       },
     ],
