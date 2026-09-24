@@ -11,6 +11,7 @@
   --brand: #02cbf9;
   --on-brand: #03161c;
   --match: #46d369;
+  --attention: #ff4d4f;
   --line: rgba(255, 255, 255, 0.14);
   --gutter: clamp(16px, 4vw, 60px);
   --radius: 6px;
@@ -103,6 +104,18 @@ p {
 }
 .artwork img.is-loaded {
   opacity: 1;
+}
+/* Review mode (FLAG_PLACEHOLDERS): stand-in imagery and copy still to be replaced. */
+.artwork.is-flagged::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--attention);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.needs-attention {
+  color: var(--attention);
 }
 
 .btn {

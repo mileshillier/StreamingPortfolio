@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FLAG_PLACEHOLDERS } from '../config';
 import { imageUrl } from '../data/titles';
 
 interface ArtworkProps {
@@ -20,7 +21,7 @@ export default function Artwork({ seed, accent, width = 1280, height = 720, alt 
 
   return (
     <div
-      className={`artwork ${className}`}
+      className={`artwork ${FLAG_PLACEHOLDERS ? 'is-flagged' : ''} ${className}`}
       style={{ background: `radial-gradient(120% 90% at 70% 20%, ${accent}66, transparent 60%), linear-gradient(135deg, #1f1f1f, #0b0b0b)` }}
     >
       {state !== 'error' && (

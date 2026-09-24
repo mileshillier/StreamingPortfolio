@@ -176,7 +176,7 @@ export const TITLES: Title[] = [
     advisories: ['adoption', 'governance', 'trust'],
     description:
       'Meltwater’s product suite grew through acquisitions and internal builds, and its design system didn’t keep up. This is the story of rebuilding that system around the people who use it, and turning skeptics into contributors.',
-    team: ['Miles Hillier'],
+    team: ['Miles Hillier', '[engineering partner names]'],
     disciplines: ['Design Systems', 'Documentation', 'Design Enablement'],
     tools: ['Figma', 'Trello', 'GitHub', 'CodePen'],
     moods: ['Collaborative', 'Optimistic'],
@@ -213,9 +213,13 @@ export const TITLES: Title[] = [
               minutes: 2,
               figure: 'Placeholder — audit spreadsheet or FigJam board showing duplicates and naming conflicts by library.',
               body: [
-                'I started with a full audit of the four or so Figma libraries in use, logging duplicates, naming conflicts, and components that had drifted from code. In parallel, I interviewed about a dozen designers across product teams about how they actually searched for and used components day to day.',
+                'I started with a full audit of the [~4] Figma libraries in use, logging duplicates, naming conflicts, and components that had drifted from code. In parallel, I interviewed [about a dozen] designers across product teams about how they actually searched for and used components day to day.',
                 'Conversations with PMs and developers filled in the rest. PMs didn’t see system work on their roadmaps, so it always lost to features. Developers fielded ad hoc requests with no way to prioritize them. The pattern was clear: the libraries were fragmented, but the bigger gap was education and communication between siloed teams.',
               ],
+              quote: {
+                text: '[DRAFT, needs sign-off] I used to spend more time hunting for the right component than designing with it. Now I search, drop it in, and move on.',
+                cite: '[Name], Product Designer at Meltwater',
+              },
             },
           ],
           [
@@ -252,7 +256,7 @@ export const TITLES: Title[] = [
               figure: 'Placeholder — before and after of the library structure, showing atoms, molecules, and organisms.',
               body: [
                 'I restructured the libraries with Brad Frost’s Atomic Design approach, organizing everything into atoms, molecules, and organisms. Naming and tagging were rebuilt so a search returned the right component the first time. Figma’s new component properties let me collapse near-duplicate variants into flexible, configurable components that were easier to reuse.',
-                'I didn’t treat the new structure as finished until designers had used it. In working sessions, I watched where people got lost, then adjusted names and groupings.',
+                'I didn’t treat the new structure as finished until designers had used it. In working sessions, I watched where people got lost, then adjusted names and groupings. [If true: I weighed keeping separate per-product libraries against one unified library, and chose unified because designers regularly worked across products.]',
               ],
             },
           ],
@@ -266,6 +270,10 @@ export const TITLES: Title[] = [
                 'For developers, I built a Trello pipeline to intake and prioritize requests and balance shared resources. I also consolidated scattered documentation into a trifecta structure: Usage, Code, and Accessibility. Each component had one home that designers, engineers, and stakeholders could all act on, with code references in GitHub and live examples in CodePen.',
                 'For product managers, I aligned roadmaps so design system work became part of team goals instead of a side project. I also led the evangelizing, showing PMs and stakeholders how the system saved time and reduced rework on their own teams.',
               ],
+              quote: {
+                text: '[DRAFT, needs sign-off] For the first time, design and engineering were reading from the same page. The Usage, Code, and Accessibility docs ended a lot of back-and-forth before it started.',
+                cite: '[Name], [Engineering Lead or Product Manager] at Meltwater',
+              },
             },
           ],
           [
@@ -296,7 +304,7 @@ export const TITLES: Title[] = [
               figure: 'Placeholder — the final system overview page or a team photo.',
               body: [
                 'The biggest lesson was that education, transparency, and trust mattered as much as the technical fixes. Splitting the work by audience worked because each group got what it needed to say yes. Clear documentation turned the system into a bridge between teams that had been siloed.',
-                'The system set Meltwater up for scalable, consistent product design.',
+                '[Add one honest miss, for example: I’d bring developers into the audit earlier, or start tracking adoption metrics from day one.] The system set Meltwater up for scalable, consistent product design [and a natural next step was design tokens once Figma variables arrived in 2023].',
               ],
             },
           ],
