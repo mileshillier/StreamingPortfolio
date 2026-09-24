@@ -1,15 +1,37 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Artwork from '../components/Artwork';
+import ClientName from '../components/ClientName';
+import Flagged from '../components/Flagged';
 import TitleLogo from '../components/TitleLogo';
 import { BackIcon, PlayIcon } from '../components/Icons';
 import { TITLES, categoryById, chapterCount, getTitle, titlesInCategory } from '../data/titles';
+import type { ChapterBlock } from '../data/types';
 import NotFoundPage from './NotFoundPage';
 
 const PLACEHOLDER_BODY = [
   'Placeholder narrative: describe the situation, the constraints, and what was at stake. Keep it human — who was affected, and why did it matter to the business?',
   'Placeholder narrative: walk through the decisions made in this phase, the alternatives considered, and the evidence that tipped the balance. Show the messy middle, not just the polished result.',
 ];
+
+function Block({ block }: { block: ChapterBlock }) {
+  if (typeof block === 'string')
+    return (
+      <p>
+        <Flagged text={block} />
+      </p>
+    );
+  const List = block.ordered ? 'ol' : 'ul';
+  return (
+    <List className="watch__list">
+      {block.list.map((item) => (
+        <li key={item}>
+          <Flagged text={item} />
+        </li>
+      ))}
+    </List>
+  );
+}
 
 export default function WatchPage() {
   const { id } = useParams();
@@ -50,12 +72,12 @@ export default function WatchPage() {
           <span>{categoryById(title.category).name}</span>
         </div>
         <div className="watch__scrubber" role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100} aria-label="Reading progress">
-          <span style={{ width: `${progress}%`, background: title.accent }} />
+          <span style={{ width: `${progress}%`, background: title.highlight ?? title.accent }} />
         </div>
       </div>
 
       <header className="watch__hero">
-        <Artwork seed={title.imageSeed} accent={title.accent} width={1920} height={1080} className="watch__hero-art" eager />
+        <Artwork seed={title.imageSeed} src={title.cover} accent={title.accent} width={1920} height={1080} className="watch__hero-art" eager />
         <div className="watch__hero-shade" />
         <div className="watch__hero-content">
           <TitleLogo title={title} size="xl" showSubtitle as="h1" />
@@ -63,7 +85,9 @@ export default function WatchPage() {
           <ul className="meta-dots">
             <li>{title.year}</li>
             <li>{title.role}</li>
-            <li>{title.client}</li>
+            <li>
+              <ClientName title={title} />
+            </li>
             <li>{chapterCount(title)} Chapters</li>
           </ul>
         </div>
@@ -78,7 +102,7 @@ export default function WatchPage() {
           <ul className="outcomes outcomes--large">
             {title.outcomes.map((o) => (
               <li key={o.label}>
-                <strong style={{ color: title.accent }}>{o.value}</strong>
+                <strong style={{ color: title.highlight ?? title.accent }}>{o.value}</strong>
                 <span>{o.label}</span>
               </li>
             ))}
@@ -99,16 +123,41 @@ export default function WatchPage() {
                 <h3>{ch.title}</h3>
                 <p className="watch__lede">{ch.synopsis}</p>
                 <figure>
-                  <Artwork seed={ch.imageSeed} accent={title.accent} width={1600} height={900} />
-                  <figcaption>Placeholder — project artifact, screen, or process photo.</figcaption>
+                  <Artwork seed={ch.imageSeed} src={ch.image} accent={title.accent} width={1600} height={900} />
+                  {!ch.image ? (
+                    <figcaption>
+                      <Flagged text={ch.figure ?? 'Placeholder — project artifact, screen, or process photo.'} all />
+                    </figcaption>
+                  ) : (
+                    ch.figure &&
+                    !ch.figure.startsWith('Placeholder') && (
+                      <figcaption>
+                        <Flagged text={ch.figure} />
+                      </figcaption>
+                    )
+                  )}
                 </figure>
-                {PLACEHOLDER_BODY.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-                {ch.number === 2 && (
-                  <blockquote style={{ borderColor: title.accent }}>
-                    “Placeholder pull quote from a stakeholder, customer, or teammate about the impact of this work.”
-                    <cite>— Name, Title at {title.client}</cite>
+                {ch.body
+                  ? ch.body.map((block, i) => <Block key={i} block={block} />)
+                  : PLACEHOLDER_BODY.map((p) => (
+                      <p key={p}>
+                        <Flagged text={p} all />
+                      </p>
+                    ))}
+                {ch.quote && (
+                  <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
+                    “<Flagged text={ch.quote.text} />”
+                    <cite>
+                      — <Flagged text={ch.quote.cite} />
+                    </cite>
+                  </blockquote>
+                )}
+                {!ch.body && !ch.quote && ch.number === 2 && (
+                  <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
+                    <Flagged text="“Placeholder pull quote from a stakeholder, customer, or teammate about the impact of this work.”" all />
+                    <cite>
+                      <Flagged text={`— Name, Title at ${title.client}`} all />
+                    </cite>
                   </blockquote>
                 )}
               </section>
@@ -119,7 +168,7 @@ export default function WatchPage() {
         <section className="watch__next">
           <p>Next Episode</p>
           <Link to={`/watch/${next.id}`} className="next-card">
-            <Artwork seed={next.imageSeed} accent={next.accent} width={960} height={540} />
+            <Artwork seed={next.imageSeed} src={next.cover} accent={next.accent} width={960} height={540} />
             <div className="next-card__shade" />
             <div className="next-card__content">
               <TitleLogo title={next} size="md" />

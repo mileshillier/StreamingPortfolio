@@ -11,6 +11,7 @@
   --brand: #02cbf9;
   --on-brand: #03161c;
   --match: #46d369;
+  --attention: #ff4d4f;
   --line: rgba(255, 255, 255, 0.14);
   --gutter: clamp(16px, 4vw, 60px);
   --radius: 6px;
@@ -103,6 +104,18 @@ p {
 }
 .artwork img.is-loaded {
   opacity: 1;
+}
+/* Review mode (FLAG_PLACEHOLDERS): stand-in imagery and copy still to be replaced. */
+.artwork.is-flagged::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--attention);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.needs-attention {
+  color: var(--attention);
 }
 
 .btn {
@@ -1677,6 +1690,16 @@ p {
   font-size: 19px;
   margin-top: 0;
 }
+.watch__list {
+  margin: 16px 0 0;
+  padding-left: 24px;
+  color: var(--text-2);
+  font-size: 17px;
+  line-height: 1.7;
+}
+.watch__list li + li {
+  margin-top: 8px;
+}
 .watch__chapter figure {
   margin: 28px 0 8px;
 }
@@ -1985,4 +2008,13 @@ p {
   .next-card {
     aspect-ratio: 4 / 3;
   }
+}
+
+/* Client logo shown in place of the client name. Source files are dark, so render them white. */
+.client-logo {
+  display: inline-block;
+  height: 0.9em;
+  width: auto;
+  vertical-align: -0.05em;
+  filter: brightness(0) invert(1);
 }

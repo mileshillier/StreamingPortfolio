@@ -14,7 +14,17 @@ export interface Chapter {
   minutes: number;
   synopsis: string;
   imageSeed: string;
+  /** Real chapter image (`chN.jpg` in the case study folder). Placeholder art when absent. */
+  image?: string;
+  /** Full chapter text. Chapters without it show placeholder copy on the watch page. */
+  body?: ChapterBlock[];
+  /** Caption for the chapter image. */
+  figure?: string;
+  quote?: { text: string; cite: string };
 }
+
+/** A paragraph, or a list of short items. */
+export type ChapterBlock = string | { list: string[]; ordered?: boolean };
 
 export interface Season {
   name: string;
@@ -54,6 +64,12 @@ export interface Title {
   outcomes: { value: string; label: string }[];
   imageSeed: string;
   accent: string;
+  /** Optional second brand colour for outcome figures, pull quotes, and the reading progress bar. Falls back to `accent`. */
+  highlight?: string;
+  /** Client logo (`logo.png` in the case study folder), shown in place of the client name. */
+  clientLogo?: string;
+  /** Real cover image (`cover.jpg` in the case study folder). Placeholder art when absent. */
+  cover?: string;
   logo: LogoStyle;
   badge?: Badge;
   match: number;

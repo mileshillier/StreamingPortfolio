@@ -1,4 +1,6 @@
-import type { Category, CategoryId, Season, Title } from './types';
+import { caseStudy } from './caseStudyContent';
+import { caseStudyImages, type CaseStudyImages } from './caseStudyImages';
+import type { Category, CategoryId, Chapter, Season, Title } from './types';
 
 /*
  * All content below is placeholder copy. Swap in real case studies by editing
@@ -35,7 +37,9 @@ export const CATEGORIES: Category[] = [
 export const categoryById = (id: CategoryId): Category =>
   CATEGORIES.find((c) => c.id === id) ?? CATEGORIES[0];
 
-type ChapterSeed = [title: string, synopsis: string];
+type ChapterExtras = Partial<Pick<Chapter, 'minutes' | 'body' | 'figure' | 'quote'>>;
+
+type ChapterSeed = [title: string, synopsis: string, extras?: ChapterExtras];
 
 type SeasonSeed = { name: string; chapters: ChapterSeed[] };
 
@@ -98,18 +102,20 @@ const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]
   ],
 };
 
-const buildSeasons = (id: string, outline: SeasonSeed[]): Season[] => {
+const buildSeasons = (id: string, outline: SeasonSeed[], images: CaseStudyImages): Season[] => {
   let n = 0;
   return outline.map((season) => ({
     name: season.name,
-    chapters: season.chapters.map(([title, synopsis], i) => {
+    chapters: season.chapters.map(([title, synopsis, extras = {}], i) => {
       n += 1;
       return {
         number: i + 1,
         title,
         synopsis,
-        minutes: 3 + ((n * 7 + id.length) % 9),
         imageSeed: `${id}-ch${n}`,
+        image: images.chapter(n),
+        ...extras,
+        minutes: extras.minutes ?? 3 + ((n * 7 + id.length) % 9),
       };
     }),
   }));
@@ -119,10 +125,15 @@ type TitleInput =
   | (Omit<Title, 'seasons' | 'category'> & { category: Exclude<CategoryId, 'documentary'>; outline?: SeasonSeed[] })
   | (Omit<Title, 'seasons' | 'category'> & { category: 'documentary'; outline: SeasonSeed[] });
 
-const define = ({ outline, ...t }: TitleInput): Title => ({
-  ...t,
-  seasons: buildSeasons(t.id, outline ?? CHAPTER_TEMPLATES[t.category as Exclude<CategoryId, 'documentary'>]),
-});
+const define = ({ outline, ...t }: TitleInput): Title => {
+  const images = caseStudyImages(t.client);
+  return {
+    ...t,
+    cover: images.cover,
+    clientLogo: images.logo,
+    seasons: buildSeasons(t.id, outline ?? CHAPTER_TEMPLATES[t.category as Exclude<CategoryId, 'documentary'>], images),
+  };
+};
 
 export const TITLES: Title[] = [
   // ——— Product Design (UX/UI) ———
@@ -156,36 +167,7 @@ export const TITLES: Title[] = [
     badge: 'New Chapter',
     match: 98,
   }),
-  define({
-    id: 'pulse',
-    title: 'Pulse',
-    subtitle: 'The Patient Portal Story',
-    tagline: 'Healthcare, finally designed for the people it serves.',
-    category: 'product',
-    client: 'Harborview Health',
-    role: 'Senior UX Designer',
-    year: 2025,
-    format: 'Limited Series',
-    genre: 'Healthcare',
-    rating: 'UX-PG',
-    advisories: ['accessibility', 'compliance', 'empathy'],
-    description:
-      'A regional health network’s patient portal is confusing, inaccessible, and ignored. This is the story of redesigning it with patients, nurses, and a WCAG checklist at the table.',
-    team: ['Miles Hillier', 'Dana Okafor', 'Sam Whitfield'],
-    disciplines: ['Accessibility', 'Service Design', 'UI Design'],
-    tools: ['Figma', 'Stark', 'UserTesting'],
-    moods: ['Heartfelt', 'Human-Centered'],
-    outcomes: [
-      { value: '3×', label: 'Portal adoption' },
-      { value: 'AA', label: 'WCAG 2.2 compliance' },
-      { value: '-52%', label: 'Missed appointments' },
-    ],
-    imageSeed: 'pulse-health',
-    accent: '#ef4444',
-    logo: { font: "'Space Grotesk', sans-serif", weight: 700, letterSpacing: '-0.03em' },
-    badge: 'Award Winner',
-    match: 96,
-  }),
+  caseStudy('Meltwater'),
   define({
     id: 'checkout-zero',
     title: 'Checkout Zero',
@@ -779,7 +761,7 @@ export const TOP_10_IDS = [
   'ember-and-oak',
   'atlas',
   'north-of-now',
-  'pulse',
+  'common-ground',
   'terra',
   'the-merger',
 ];

@@ -6,7 +6,7 @@ import { useMyList } from '../context/MyListContext';
 
 const byIds = (ids: string[]): Title[] => ids.map((id) => getTitle(id)).filter((t): t is Title => Boolean(t));
 
-const LATEST_WORK = ['atlas', 'ember-and-oak', 'the-hiring-season', 'pulse', 'signal-noise'];
+const LATEST_WORK = ['atlas', 'ember-and-oak', 'the-hiring-season', 'common-ground', 'signal-noise'];
 
 export default function HomePage() {
   const featured = getTitle(FEATURED_ID) ?? TITLES[0];

@@ -29,7 +29,7 @@ export default function Hero({ title }: { title: Title }) {
   return (
     <section className="hero" aria-label={`Featured: ${title.title}`}>
       <div className="hero__frame">
-        <Artwork seed={title.imageSeed} accent={title.accent} width={1920} height={1080} className="hero__art" eager />
+        <Artwork seed={title.imageSeed} src={title.cover} accent={title.accent} width={1920} height={1080} className="hero__art" eager />
         <div className="hero__shade" />
 
         <img className="hero__mark" src={logo} alt="" aria-hidden />
