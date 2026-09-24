@@ -6,8 +6,7 @@ import { useMyList } from '../context/MyListContext';
 
 const byIds = (ids: string[]): Title[] => ids.map((id) => getTitle(id)).filter((t): t is Title => Boolean(t));
 
-// Stubbed "viewing progress" so the first row reads like Continue Watching.
-const CONTINUE = { 'atlas': 64, 'ember-and-oak': 30, 'the-hiring-season': 82, 'pulse': 45, 'signal-noise': 15 };
+const LATEST_WORK = ['atlas', 'ember-and-oak', 'the-hiring-season', 'pulse', 'signal-noise'];
 
 export default function HomePage() {
   const featured = getTitle(FEATURED_ID) ?? TITLES[0];
@@ -17,7 +16,7 @@ export default function HomePage() {
     <main className="home">
       <Hero title={featured} />
       <div className="home__rows">
-        <Row heading="Continue Watching for You" titles={byIds(Object.keys(CONTINUE))} progress={CONTINUE} />
+        <Row heading="Latest Work" titles={byIds(LATEST_WORK)} />
         {saved.length > 0 && <Row heading="My List" titles={byIds(saved)} seeAllHref="/my-list" />}
         {CATEGORIES.map((c) => (
           <Row key={c.id} id={`row-${c.id}`} heading={c.name} titles={titlesInCategory(c.id)} seeAllHref={`/browse/${c.id}`} />

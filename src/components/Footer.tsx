@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.svg';
+import { CONTACT_EMAIL, DRIBBBLE_URL, GET_IN_TOUCH_URL, LINKEDIN_URL, MEDIUM_URL } from '../config';
 import { CATEGORIES } from '../data/titles';
+import { useOpenModal } from '../hooks/useOpenTitle';
 
 export default function Footer() {
+  const openModal = useOpenModal();
+
   return (
     <footer className="footer" id="about">
       <div className="footer__intro">
         <p className="footer__brand">
+          <img className="footer__logo" src={logo} alt="" aria-hidden />
           MILES<span>HILLIER</span>
         </p>
         <p>
@@ -13,7 +19,7 @@ export default function Footer() {
           be on. This portfolio is presented as a streaming service — every case study is a title, and every phase of the
           work is a chapter.
         </p>
-        <a className="btn btn--primary btn--sm" href="mailto:hello@example.com">
+        <a className="btn btn--primary btn--sm" href={GET_IN_TOUCH_URL} target="_blank" rel="noopener noreferrer">
           Get in Touch
         </a>
       </div>
@@ -29,15 +35,23 @@ export default function Footer() {
         </div>
         <div>
           <h4>Connect</h4>
-          <a href="#" onClick={(e) => e.preventDefault()}>LinkedIn</a>
-          <a href="#" onClick={(e) => e.preventDefault()}>Dribbble</a>
+          <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href={DRIBBBLE_URL} target="_blank" rel="noopener noreferrer">
+            Dribbble
+          </a>
           <a href="#" onClick={(e) => e.preventDefault()}>Read.cv</a>
-          <a href="mailto:hello@example.com">Email</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>Email</a>
         </div>
         <div>
           <h4>Help Center</h4>
-          <a href="#" onClick={(e) => e.preventDefault()}>Résumé (PDF)</a>
-          <a href="#" onClick={(e) => e.preventDefault()}>Speaking & Workshops</a>
+          <button className="footer__link" onClick={() => openModal('/resume')}>
+            Résumé
+          </button>
+          <a href={MEDIUM_URL} target="_blank" rel="noopener noreferrer">
+            Articles and Posts
+          </a>
           <a href="#" onClick={(e) => e.preventDefault()}>Press Kit</a>
         </div>
       </nav>

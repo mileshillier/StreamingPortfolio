@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { categoryById, chapterCount } from '../data/titles';
 import type { Title } from '../data/types';
 import { useOpenTitle } from '../hooks/useOpenTitle';
+import logo from '../assets/logo.svg';
 import Artwork from './Artwork';
 import TitleLogo from './TitleLogo';
+import { SHOW_SOUND_CONTROLS } from '../config';
 import { InfoIcon, PlayIcon, SparkIcon, VolumeIcon } from './Icons';
 
 const CAPTIONS = [
@@ -30,10 +32,12 @@ export default function Hero({ title }: { title: Title }) {
         <Artwork seed={title.imageSeed} accent={title.accent} width={1920} height={1080} className="hero__art" eager />
         <div className="hero__shade" />
 
-        <span className="hero__mark" aria-hidden>M</span>
-        <button className="hero__mute" onClick={() => setMuted((m) => !m)} aria-label={muted ? 'Unmute trailer' : 'Mute trailer'}>
-          <VolumeIcon muted={muted} size={16} />
-        </button>
+        <img className="hero__mark" src={logo} alt="" aria-hidden />
+        {SHOW_SOUND_CONTROLS && (
+          <button className="hero__mute" onClick={() => setMuted((m) => !m)} aria-label={muted ? 'Unmute trailer' : 'Mute trailer'}>
+            <VolumeIcon muted={muted} size={16} />
+          </button>
+        )}
 
         <div className="hero__content">
           <span className="hero__eyebrow">

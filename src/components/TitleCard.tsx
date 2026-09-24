@@ -1,10 +1,40 @@
+import { useState, type MouseEvent } from 'react';
 import type { Title } from '../data/types';
 import { categoryById } from '../data/titles';
 import { useMyList } from '../context/MyListContext';
 import { useOpenTitle } from '../hooks/useOpenTitle';
 import Artwork from './Artwork';
 import TitleLogo from './TitleLogo';
-import { CheckIcon, ChevronIcon, PlusIcon } from './Icons';
+import { ChevronIcon, PlusIcon, TrashIcon } from './Icons';
+
+type Origin = 'left center' | 'center' | 'right center';
+
+/** Keep in sync with `.card:hover` in global.css. */
+const HOVER_SCALE = 1.3;
+
+/**
+ * Cards enlarge on hover. A card with no visible neighbour on one side is at
+ * the edge of its row or grid line, so it grows inward from that edge instead
+ * of spilling off screen.
+ */
+const originFor = (card: HTMLElement): Origin => {
+  // offsetTop ignores transforms, so a neighbour still animating back from its
+  // own hover is judged by its layout position, not its scaled box.
+  const vw = document.documentElement.clientWidth;
+  const center = (rect: DOMRect) => rect.left + rect.width / 2;
+  const r = card.getBoundingClientRect();
+  const x = center(r);
+  const visibleOnLine = Array.from(card.parentElement?.children ?? [])
+    .filter((el): el is HTMLElement => el !== card && (el as HTMLElement).offsetTop === card.offsetTop)
+    .map((el) => el.getBoundingClientRect())
+    .filter((s) => s.left >= -1 && s.right <= vw + 1);
+  if (!visibleOnLine.some((s) => center(s) < x)) return 'left center';
+  // Only anchor right when growing from the center would run off the screen
+  // (a short last line in a grid has room to grow normally).
+  const overflowsRight = r.right + r.width * (HOVER_SCALE - 1) / 2 > vw;
+  if (overflowsRight && !visibleOnLine.some((s) => center(s) > x)) return 'right center';
+  return 'center';
+};
 
 interface TitleCardProps {
   title: Title;
@@ -16,9 +46,12 @@ export default function TitleCard({ title, rank, progress }: TitleCardProps) {
   const openTitle = useOpenTitle();
   const { isSaved, toggleSaved } = useMyList();
   const saved = isSaved(title.id);
+  const [origin, setOrigin] = useState<Origin>('center');
+
+  const onMouseEnter = (e: MouseEvent<HTMLDivElement>) => setOrigin(originFor(e.currentTarget));
 
   return (
-    <div className={`card ${rank ? 'card--ranked' : ''}`}>
+    <div className={`card ${rank ? 'card--ranked' : ''}`} style={{ transformOrigin: origin }} onMouseEnter={onMouseEnter}>
       {rank && (
         <span className="card__rank" aria-hidden>
           {rank}
@@ -47,7 +80,7 @@ export default function TitleCard({ title, rank, progress }: TitleCardProps) {
             onClick={() => toggleSaved(title.id)}
             title={saved ? 'Remove from My List' : 'Add to My List'}
           >
-            {saved ? <CheckIcon size={14} /> : <PlusIcon size={14} />}
+            {saved ? <TrashIcon size={14} /> : <PlusIcon size={14} />}
           </button>
           <button className="round-btn round-btn--sm round-btn--push" tabIndex={-1} onClick={() => openTitle(title.id)} title="More info">
             <ChevronIcon size={14} />

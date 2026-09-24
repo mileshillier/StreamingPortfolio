@@ -8,7 +8,8 @@
   --text: #ffffff;
   --text-2: #d2d2d2;
   --text-3: #8c8c8c;
-  --brand: #e50914;
+  --brand: #02cbf9;
+  --on-brand: #03161c;
   --match: #46d369;
   --line: rgba(255, 255, 255, 0.14);
   --gutter: clamp(16px, 4vw, 60px);
@@ -303,6 +304,15 @@ p {
   line-height: 1;
   white-space: nowrap;
 }
+.footer__brand {
+  display: flex;
+  align-items: center;
+}
+.footer__logo {
+  height: 22px;
+  width: auto;
+  margin-right: 12px;
+}
 .navbar__brand span,
 .footer__brand span {
   color: #fff;
@@ -356,6 +366,7 @@ p {
   height: 16px;
   border-radius: 8px;
   background: var(--brand);
+  color: var(--on-brand);
   font-size: 10px;
   font-weight: 700;
   display: grid;
@@ -367,15 +378,12 @@ p {
   gap: 6px;
 }
 .avatar {
-  display: inline-grid;
-  place-items: center;
+  display: block;
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  background: linear-gradient(135deg, #e50914, #7c3aed);
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 0.02em;
+  object-fit: cover;
+  background: var(--bg-card);
   flex-shrink: 0;
 }
 
@@ -429,6 +437,8 @@ p {
 }
 .dropdown__item {
   display: block;
+  width: 100%;
+  text-align: left;
   padding: 9px 16px;
   font-size: 14px;
   color: var(--text-2);
@@ -510,11 +520,9 @@ p {
   position: absolute;
   top: 24px;
   left: 28px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
-  line-height: 1;
-  color: var(--brand);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  width: auto;
+  height: 36px;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
 }
 .hero__mute {
   position: absolute;
@@ -601,7 +609,13 @@ p {
 }
 .row {
   position: relative;
+  z-index: 1;
   padding: 10px 0;
+}
+/* Lift the active row so an enlarged card paints over its neighbours. */
+.row:hover,
+.row:focus-within {
+  z-index: 20;
 }
 .row__heading {
   font-size: clamp(17px, 1.5vw, 21px);
@@ -637,12 +651,23 @@ p {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  overflow-y: visible;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scroll-padding: 0 var(--gutter);
-  padding: 4px var(--gutter) 80px;
-  margin-bottom: -76px;
+  padding: 4px var(--gutter);
   scrollbar-width: none;
+}
+/* Paged mode (pointer devices): no scroll container, so nothing clips vertically. */
+.row__viewport--paged {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+.row__viewport--paged .row__track {
+  overflow: visible;
+  scroll-snap-type: none;
+  transition: transform 0.75s var(--ease);
+  will-change: transform;
 }
 .row__track::-webkit-scrollbar {
   display: none;
@@ -657,8 +682,8 @@ p {
 .row__arrow {
   position: absolute;
   top: 4px;
-  bottom: 80px;
-  z-index: 15;
+  bottom: 4px;
+  z-index: 30;
   width: var(--gutter);
   display: grid;
   place-items: center;
@@ -723,6 +748,7 @@ p {
   padding: 3px 8px;
   border-radius: 3px 3px 0 0;
   background: var(--brand);
+  color: var(--on-brand);
   font-size: 11px;
   font-weight: 700;
   white-space: nowrap;
@@ -745,6 +771,7 @@ p {
   width: 26px;
   padding: 3px 0 4px;
   background: var(--brand);
+  color: var(--on-brand);
   font-size: 7px;
   font-weight: 800;
   line-height: 1;
@@ -808,11 +835,8 @@ p {
 }
 
 @media (hover: hover) and (min-width: 900px) {
-  .card {
-    transform-origin: center top;
-  }
   .card:hover {
-    transform: scale(1.14);
+    transform: scale(1.3);
     z-index: 10;
     transition: transform 0.3s var(--ease) 0.25s, z-index 0s;
   }
@@ -824,12 +848,7 @@ p {
     visibility: visible;
     transition-delay: 0.25s;
   }
-  .row__track > .card:first-child {
-    transform-origin: left top;
-  }
-  .row__track > .card:last-child {
-    transform-origin: right top;
-  }
+
 }
 
 /* Top 10 ranked cards */
@@ -1240,6 +1259,226 @@ p {
   font-size: 14px;
 }
 
+/* Résumé modal */
+.resume__hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 24px;
+  padding: 48px clamp(20px, 5%, 48px) 32px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(2, 203, 249, 0.22), transparent 55%),
+    linear-gradient(180deg, #202020, var(--bg-elev));
+  border-bottom: 1px solid var(--line);
+}
+.resume__hero .avatar {
+  border-radius: 12px;
+}
+.resume__heading {
+  flex: 1;
+  min-width: 220px;
+  display: grid;
+  gap: 4px;
+}
+.resume__eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.resume__name {
+  font-family: 'Bebas Neue', var(--font);
+  font-weight: 400;
+  font-size: clamp(40px, 5vw, 60px);
+  letter-spacing: 0.03em;
+  line-height: 0.95;
+}
+.resume__role {
+  color: var(--text-2);
+  font-size: 15px;
+}
+.resume__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.resume__focus {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  font-size: 14px;
+}
+.resume__focus span {
+  color: var(--text-2);
+}
+.resume__contact {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 8px 0 0;
+  padding: 0;
+  font-size: 14px;
+}
+.resume__contact a {
+  color: var(--text-2);
+}
+.resume__contact a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.resume__body {
+  padding-top: 32px;
+}
+.resume__section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.resume__highlights {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.resume__highlights strong {
+  color: var(--brand);
+  font-size: 20px;
+  white-space: nowrap;
+}
+.resume__section {
+  margin-top: 48px;
+}
+.resume__roles {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  border-top: 1px solid #404040;
+}
+.resume__role {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 22px;
+  border-bottom: 1px solid #404040;
+}
+.resume__dates {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
+}
+.resume__role h4 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.resume__role h4 span {
+  color: var(--brand);
+  font-weight: 600;
+}
+.resume__role-summary {
+  margin-top: 8px;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.resume__bullets {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.resume__bullets li::marker {
+  color: var(--brand);
+}
+.resume__subrole {
+  margin-top: 16px;
+}
+.resume__subrole h5 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.resume__subrole h5 span {
+  margin-left: 6px;
+  font-weight: 500;
+  color: var(--text-3);
+}
+.resume__skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
+  margin-top: 16px;
+}
+.resume__skill-group h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 10px;
+}
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+.chips li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  color: var(--text-2);
+}
+.resume__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.resume__card {
+  background: #2f2f2f;
+  border-radius: 6px;
+  padding: 18px;
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+.resume__card h4 {
+  font-size: 17px;
+}
+.resume__card > p:last-child {
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.55;
+}
+@media (max-width: 640px) {
+  .resume__hero {
+    padding-top: 64px;
+  }
+  .resume__highlights,
+  .resume__skills,
+  .resume__cards {
+    grid-template-columns: 1fr;
+  }
+  .resume__role {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 4px;
+  }
+}
+
 /* ————————————————————————————————————————————————
    Pages
    ———————————————————————————————————————————————— */
@@ -1538,11 +1777,14 @@ p {
   font-size: 14px;
   margin: 0 0 12px;
 }
-.footer__cols a {
+.footer__cols a,
+.footer__link {
   display: block;
   padding: 4px 0;
+  text-align: left;
 }
-.footer__cols a:hover {
+.footer__cols a:hover,
+.footer__link:hover {
   color: #fff;
   text-decoration: underline;
 }
@@ -1629,13 +1871,7 @@ p {
   .row__arrow {
     display: none;
   }
-  .row__track {
-    padding-bottom: 4px;
-    margin-bottom: 0;
-  }
-  .row__arrow {
-    bottom: 4px;
-  }
+
   .card__hover {
     display: none;
   }

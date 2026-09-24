@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { CATEGORIES } from '../data/titles';
+import { GET_IN_TOUCH_URL, LINKEDIN_URL } from '../config';
+import { useOpenModal } from '../hooks/useOpenTitle';
+import Avatar from './Avatar';
 import { BellIcon, ChevronIcon, SearchIcon } from './Icons';
 
 const NAV = [
@@ -26,6 +29,7 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(onSearch);
   const inputRef = useRef<HTMLInputElement>(null);
   const navRef = useRef<HTMLElement>(null);
+  const openModal = useOpenModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -135,22 +139,28 @@ export default function Navbar() {
 
         <div className="navbar__menu">
           <button className="navbar__profile" aria-label="Profile menu" onClick={() => toggle('profile')} aria-expanded={menu === 'profile'}>
-            <span className="avatar">MH</span>
+            <Avatar />
             <ChevronIcon size={14} />
           </button>
           {menu === 'profile' && (
             <div className="dropdown" role="menu">
               <div className="dropdown__header">
-                <span className="avatar">MH</span>
+                <Avatar />
                 <div>
                   <strong>Miles Hillier</strong>
                   <span>Product Designer & Design Leader</span>
                 </div>
               </div>
               <a className="dropdown__item" href="#about">About Me</a>
-              <a className="dropdown__item" href="#" onClick={(e) => e.preventDefault()}>Résumé (PDF)</a>
-              <a className="dropdown__item" href="#" onClick={(e) => e.preventDefault()}>LinkedIn</a>
-              <a className="dropdown__item" href="mailto:hello@example.com">Get in Touch</a>
+              <button className="dropdown__item" role="menuitem" onClick={() => openModal('/resume')}>
+                Résumé
+              </button>
+              <a className="dropdown__item" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              <a className="dropdown__item" href={GET_IN_TOUCH_URL} target="_blank" rel="noopener noreferrer">
+                Get in Touch
+              </a>
             </div>
           )}
         </div>

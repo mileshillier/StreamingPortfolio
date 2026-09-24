@@ -24,6 +24,12 @@ export const CATEGORIES: Category[] = [
     shortName: 'Leadership',
     blurb: 'Building teams, shaping culture, and scaling design inside organizations.',
   },
+  {
+    id: 'documentary',
+    name: 'Documentaries',
+    shortName: 'Documentaries',
+    blurb: 'The stories behind the work — the career, the craft, and the people along the way.',
+  },
 ];
 
 export const categoryById = (id: CategoryId): Category =>
@@ -31,7 +37,10 @@ export const categoryById = (id: CategoryId): Category =>
 
 type ChapterSeed = [title: string, synopsis: string];
 
-const CHAPTER_TEMPLATES: Record<CategoryId, { name: string; chapters: ChapterSeed[] }[]> = {
+type SeasonSeed = { name: string; chapters: ChapterSeed[] };
+
+// Default chapter outlines per category. Documentaries always supply their own.
+const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]> = {
   product: [
     {
       name: 'Discovery',
@@ -89,9 +98,9 @@ const CHAPTER_TEMPLATES: Record<CategoryId, { name: string; chapters: ChapterSee
   ],
 };
 
-const buildSeasons = (id: string, category: CategoryId): Season[] => {
+const buildSeasons = (id: string, outline: SeasonSeed[]): Season[] => {
   let n = 0;
-  return CHAPTER_TEMPLATES[category].map((season) => ({
+  return outline.map((season) => ({
     name: season.name,
     chapters: season.chapters.map(([title, synopsis], i) => {
       n += 1;
@@ -106,9 +115,14 @@ const buildSeasons = (id: string, category: CategoryId): Season[] => {
   }));
 };
 
-type TitleInput = Omit<Title, 'seasons'>;
+type TitleInput =
+  | (Omit<Title, 'seasons' | 'category'> & { category: Exclude<CategoryId, 'documentary'>; outline?: SeasonSeed[] })
+  | (Omit<Title, 'seasons' | 'category'> & { category: 'documentary'; outline: SeasonSeed[] });
 
-const define = (t: TitleInput): Title => ({ ...t, seasons: buildSeasons(t.id, t.category) });
+const define = ({ outline, ...t }: TitleInput): Title => ({
+  ...t,
+  seasons: buildSeasons(t.id, outline ?? CHAPTER_TEMPLATES[t.category as Exclude<CategoryId, 'documentary'>]),
+});
 
 export const TITLES: Title[] = [
   // ——— Product Design (UX/UI) ———
@@ -582,6 +596,151 @@ export const TITLES: Title[] = [
     logo: { font: "'Archivo Black', sans-serif", uppercase: true, letterSpacing: '0.02em' },
     badge: 'Coming Soon',
     match: 94,
+  }),
+
+  // ——— Documentaries ———
+  define({
+    id: 'miles-to-go',
+    title: 'Miles to Go',
+    subtitle: 'An Unfinished Biography',
+    tagline: 'A career so far — and plenty of road ahead.',
+    category: 'documentary',
+    client: 'Miles Hillier',
+    role: 'Subject & Narrator',
+    year: 2026,
+    format: 'Series',
+    genre: 'Biography',
+    rating: 'DOC-PG',
+    advisories: ['origin stories', 'career pivots', 'dad jokes'],
+    description:
+      'From sketchbooks and side projects to leading design teams, this documentary follows one designer’s winding road — the lucky breaks, the hard lessons, and why the best chapter hasn’t been written yet.',
+    team: ['Miles Hillier', 'Family & Friends', 'Former Managers', 'Mentors'],
+    disciplines: ['Product Design', 'Art Direction', 'Design Leadership'],
+    tools: ['Pencils', 'Photoshop', 'Figma', 'Curiosity'],
+    moods: ['Inspiring', 'Candid', 'Heartfelt'],
+    outcomes: [
+      { value: '20', label: 'Years in design' },
+      { value: '3', label: 'Disciplines mastered' },
+      { value: '∞', label: 'Miles to go' },
+    ],
+    imageSeed: 'miles-to-go-road',
+    accent: '#02cbf9',
+    logo: { font: "'Bebas Neue', sans-serif", letterSpacing: '0.06em', uppercase: true },
+    badge: 'New Chapter',
+    match: 99,
+    outline: [
+      {
+        name: 'The Early Years',
+        chapters: [
+          ['Origin Story', 'A kid with a sketchbook, a borrowed computer, and an unreasonable interest in how things are made.'],
+          ['First Pixels', 'Freelance logos, band posters, and the first time someone paid for a design.'],
+          ['The Big Break', 'An in-house job, a real product, and the realization that design is a team sport.'],
+        ],
+      },
+      {
+        name: 'Finding the Craft',
+        chapters: [
+          ['Learning to Listen', 'Discovering user research — and how often the first idea is wrong.'],
+          ['From Maker to Leader', 'Trading some time in Figma for one-on-ones, hiring loops, and roadmaps.'],
+          ['What’s Next', 'Where the road leads from here, and the kind of work still worth doing.'],
+        ],
+      },
+    ],
+  }),
+  define({
+    id: 'behind-the-scroll',
+    title: 'Behind the Scroll',
+    subtitle: 'The Making of This Portfolio',
+    tagline: 'Why build a portfolio when you can launch a streaming service?',
+    category: 'documentary',
+    client: 'Miles Hillier',
+    role: 'Designer & Developer',
+    year: 2026,
+    format: 'Feature',
+    genre: 'Making-Of',
+    rating: 'DOC-G',
+    advisories: ['meta humor', 'hover states', 'scope creep'],
+    description:
+      'A behind-the-scenes look at turning a design portfolio into a binge-worthy streaming experience — from the first sketch on a napkin to the last hover state, with a surprising amount of arguing about badge colors.',
+    team: ['Miles Hillier', 'Claude', 'Beta Testers'],
+    disciplines: ['Concept', 'UI Design', 'Front-End Development'],
+    tools: ['Figma', 'React', 'Vite', 'GitHub Pages'],
+    moods: ['Witty', 'Self-Aware', 'Crafted'],
+    outcomes: [
+      { value: '1', label: 'Portfolio, reimagined' },
+      { value: '19', label: 'Titles streaming' },
+      { value: '0', label: 'Subscriptions required' },
+    ],
+    imageSeed: 'behind-the-scroll-studio',
+    accent: '#a855f7',
+    logo: { font: "'Space Mono', monospace", weight: 700, letterSpacing: '-0.02em' },
+    badge: 'Recently Added',
+    match: 97,
+    outline: [
+      {
+        name: 'Pre-Production',
+        chapters: [
+          ['The Pitch', 'Every portfolio looks the same. What if this one looked like a streaming service?'],
+          ['Storyboards', 'Mapping case studies to titles, project phases to seasons, and process to chapters.'],
+          ['Casting the Work', 'Choosing which projects make the cut — and which stay in the vault.'],
+        ],
+      },
+      {
+        name: 'Post-Production',
+        chapters: [
+          ['Building the Set', 'Rows, heroes, hover states, and a detail screen that feels like pressing play.'],
+          ['Color Grading', 'Finding the right brand blue and making every badge readable.'],
+          ['Premiere Night', 'Shipping to the web and hitting “share.”'],
+        ],
+      },
+    ],
+  }),
+  define({
+    id: 'the-supporting-cast',
+    title: 'The Supporting Cast',
+    subtitle: 'Every Great Career Has an Ensemble',
+    tagline: 'No one ships alone.',
+    category: 'documentary',
+    client: 'Collaborators Everywhere',
+    role: 'Grateful Colleague',
+    year: 2025,
+    format: 'Series',
+    genre: 'Ensemble',
+    rating: 'DOC-PG',
+    advisories: ['gratitude', 'inside jokes', 'whiteboard sessions'],
+    description:
+      'A tribute to the designers, engineers, researchers, and product partners who made the work better — the mentors who opened doors, the teammates who pushed back, and the people who made hard projects fun.',
+    team: ['Mentors', 'Designers', 'Engineers', 'Product Partners', 'Researchers'],
+    disciplines: ['Collaboration', 'Mentorship', 'Teamwork'],
+    tools: ['Whiteboards', 'Coffee', 'Slack', 'Trust'],
+    moods: ['Heartfelt', 'Uplifting'],
+    outcomes: [
+      { value: '100+', label: 'Collaborators' },
+      { value: '12', label: 'Teams' },
+      { value: '1', label: 'Standing ovation' },
+    ],
+    imageSeed: 'supporting-cast-team',
+    accent: '#f59e0b',
+    logo: { font: "'Playfair Display', serif", weight: 900, italic: true },
+    match: 96,
+    outline: [
+      {
+        name: 'The Mentors',
+        chapters: [
+          ['The First Believer', 'The manager who took a chance on an unproven designer.'],
+          ['Tough Love', 'The critique that stung — and changed everything.'],
+          ['Open Doors', 'The people who made introductions, shared credit, and made room at the table.'],
+        ],
+      },
+      {
+        name: 'The Ensemble',
+        chapters: [
+          ['Partners in Crime', 'The engineers and PMs who turned sketches into shipped products.'],
+          ['The Next Generation', 'Designers once mentored, now leading teams of their own.'],
+          ['Curtain Call', 'A thank-you to everyone who made the work — and the journey — better.'],
+        ],
+      },
+    ],
   }),
 ];
 
