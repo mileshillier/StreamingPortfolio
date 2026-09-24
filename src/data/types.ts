@@ -54,6 +54,10 @@ export interface Title {
   outcomes: { value: string; label: string }[];
   imageSeed: string;
   accent: string;
+  /** Optional second brand colour for outcome figures, pull quotes, and the reading progress bar. Falls back to `accent`. */
+  highlight?: string;
+  /** Optional client logo (imported image URL), shown in place of the client name. */
+  clientLogo?: string;
   logo: LogoStyle;
   badge?: Badge;
   match: number;

@@ -1,3 +1,4 @@
+import meltwaterLogo from '../assets/clients/meltwater.png';
 import type { Category, CategoryId, Season, Title } from './types';
 
 /*
@@ -163,6 +164,7 @@ export const TITLES: Title[] = [
     tagline: 'One system, many products, and the trust it took to bring them together.',
     category: 'product',
     client: 'Meltwater',
+    clientLogo: meltwaterLogo,
     role: 'Lead Product Designer',
     year: 2022,
     format: 'Limited Series',
@@ -182,6 +184,7 @@ export const TITLES: Title[] = [
     ],
     imageSeed: 'common-ground-meltwater',
     accent: '#1D9F9F',
+    highlight: '#B627A1',
     logo: { font: "'Space Grotesk', sans-serif", weight: 700, letterSpacing: '-0.03em' },
     match: 96,
     outline: [

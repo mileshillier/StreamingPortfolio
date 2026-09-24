@@ -1986,3 +1986,12 @@ p {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* Client logo shown in place of the client name. Source files are dark, so render them white. */
+.client-logo {
+  display: inline-block;
+  height: 0.9em;
+  width: auto;
+  vertical-align: -0.05em;
+  filter: brightness(0) invert(1);
+}
