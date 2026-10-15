@@ -76,7 +76,7 @@ titleFont:
 
 _Two acquisitions, one half-finished merge, and four quoting tools where there should have been one._
 
-![Placeholder — side-by-side screenshots of the four original quoting tools.](ch1.jpg)
+![The universal quoter: annuities and life insurance in one place.](ch1.jpg)
 
 I joined Hexure in February 2024 as Principal Product, UX/UI Design System Designer. Acquisitions had left the company with four separate quoting tools:
 
@@ -103,7 +103,7 @@ The deeper I looked, the more problems surfaced that nobody had asked me to solv
 
 _A full audit of four tools, support call notes, and interviews across product, sales, support, and the field._
 
-![Placeholder — audit board mapping overlapping fields, flows, and components across the four tools.](ch2.jpg)
+![Audit board: every filter as it existed across the tools, and possible groupings of like filters.](ch2.jpg)
 
 I started with what already existed. I ran a complete audit of all four quoting tools, documenting every flow and UX gap in Figma. I reviewed the designs the previous designer had been working on, and read through notes from customer support calls to see where users were struggling most.
 
@@ -113,7 +113,7 @@ Then I interviewed eight or nine people to find out what was working and what wa
 
 _The overlap between the tools becomes the case for one platform and one system._
 
-![Placeholder — diagram of what the four tools shared and what was unique to each.](ch3.jpg)
+![The grouped filters, turned into flyout components for the annuity filter bar.](ch3.jpg)
 
 Two findings shaped everything that followed. First, regulations, products, and the way product packages were distributed weren’t consistent across insurance software. A single tool would have to handle that variety instead of assuming one standard.
 
@@ -127,7 +127,7 @@ I distilled everything into three shared goals: efficiency, accuracy, and consis
 
 _One quoting flow designed to serve four sets of users._
 
-![Placeholder — early wireframes or prototype of the unified quoting flow.](ch4.jpg)
+![Annuity results with state and premium pre-selected on load.](ch4.jpg)
 
 I sketched and mapped early navigation and workflow concepts directly in Figma, and worked closely with the PM to define the core features and a single navigation model for every product. The flow was built around what the research showed: show more up front. Putting the information agents needed on screen, instead of behind menus, also let them adjust their quotes faster.
 
@@ -147,7 +147,7 @@ Testing with agents led to one of the biggest wins. I noticed them selecting the
 
 _A shared design system becomes the foundation six product teams build on._
 
-![Placeholder — design system overview: tokens, core components, and documentation.](ch5.jpg)
+![Design system components: the annuity filter bar and its flyouts.](ch5.jpg)
 
 Hexure’s products had drifted into many different versions of themselves, and plenty of them looked like they were built for Windows 95. The previous designer had started a design system, but it only existed as a work in progress in Figma. I audited it, then rebuilt it, working with a development team in India to build it out in code. The result covered colors and type styles, a Figma component library, coded components, documentation, and a process for teams to request and contribute changes.
 
@@ -161,7 +161,7 @@ I led end-to-end product design across multiple teams and departments, for both 
 
 _A prototype, a phased plan, and a business case that put the platform at the center of Hexure’s strategy._
 
-![Placeholder — the final prototype, or a before-and-after comparison.](ch6.jpg)
+![The responsive annuity results dashboard on tablet.](ch6.jpg)
 
 The rollout plan had to work for every department leader, so I shaped it in stages: a small group of agents first, then annuities, bringing Hexure’s and IXN’s users together, then life insurance from Vive.
 
@@ -177,7 +177,7 @@ The unified quoting platform became the foundation of Hexure’s quoting moderni
 
 _Simple isn’t always better, especially for people who use a tool all day._
 
-![Placeholder — the final platform overview or a team photo.](ch7.jpg)
+![The universal quoter, designed to scale from desktop to tablet.](ch7.jpg)
 
 The biggest lesson was that simple isn’t always better. I went in assuming the cleaner interface would win. Watching agents work showed me that, for people who quote all day, seeing everything up front beats a tidy screen. Good design for experts starts with how they actually work, not with how the screen looks.
 
