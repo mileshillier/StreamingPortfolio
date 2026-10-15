@@ -85,7 +85,7 @@ I joined Hexure in February 2024 as Principal Product, UX/UI Design System Desig
 
 The tools were used by distributors and sales agents to quote annuity and life insurance products for their clients. Their biggest complaint was constantly switching between tools. Each one did some things better than the others, so no single tool covered a full day’s work. Some were slow to search and to return accurate numbers, and some were simply hard to look at.
 
-Stakeholders had originally asked the previous designer to merge the two annuity tools, Hexure’s and IXN’s. Then Vive came along. Its life insurance tool had a strong track record and could fit naturally into one global tool supporting both annuities and life insurance. Along the way, several leadership reorgs meant the original stakeholders were lost in the shuffle, so the brief had no clear owner.
+Stakeholders had originally asked the previous designer to merge the two annuity tools, Hexure’s and IXN’s. Then Vive came along. Its life insurance tool had a strong track record and could fit naturally into one global tool supporting both annuities and life insurance. Along the way, several leadership reorgs meant the original stakeholders were lost in the shuffle, so the brief had no clear owner. It took shape as I dug in and learned more.
 
 Instead of picking up where the old merge left off, or throwing it out, I took time to understand what the previous designer had been trying to do. I gathered feedback from internal and external users, evaluated the use cases and how much flexibility the platform would need in the future, and started putting the pieces together.
 
@@ -110,7 +110,9 @@ _The overlap between the tools becomes the case for one platform and one system.
 
 ![Placeholder — diagram of what the four tools shared and what was unique to each.](ch3.jpg)
 
-The biggest surprise was that a more complex interface was performing better than a simpler one. [Which tool, and why: what did the complex one give users that the simple one didn’t?]
+Two findings shaped everything that followed. First, regulations, products, and the way product packages were distributed weren’t consistent across insurance software. A single tool would have to handle that variety instead of assuming one standard.
+
+Second, and most surprising, a more complex interface was performing better than a simpler one. [Which tool, and why: what did the complex one give users that the simple one didn’t?]
 
 [The goal that came out of it, in one sentence.]
 
