@@ -13,9 +13,9 @@ subtitle: The Hexure Quoting Platform Story
 tagline: Four quoting tools, six product teams, and one system to hold them together.
 description: >-
   Hexure’s customers were quoting across four separate tools, each with its own
-  patterns and quirks. This is the story of consolidating them into one platform,
-  built on a shared design system that six product teams adopted.
-  Quotes that used to take 5–10 minutes now take three or less.
+  patterns and quirks. This is the story of designing one platform to replace them,
+  built on a rebuilt design system that six product teams adopted, and the prototype
+  that got leadership behind a projected $3.45M–$5.45M in first-year revenue.
 
 category: product            # product, brand, leadership, or documentary
 client: Hexure
@@ -39,11 +39,11 @@ moods: [Ambitious, Collaborative]
 
 outcomes:
   - value: "4 → 1"
-    label: Quoting tools consolidated
-  - value: "6"
-    label: Product teams on the shared system
+    label: Quoting tools unified in one design
+  - value: "$3.45–5.45M"
+    label: Projected first-year revenue
   - value: "≤3 min"
-    label: Per quote, down from 5–10
+    label: Per quote in testing, down from 5–10
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
@@ -141,7 +141,7 @@ Presenting the prototype to cross-functional stakeholders got everyone aligned o
 
 The hardest calls weren’t about layout. I had to give up some visual polish in favor of density and speed, which isn’t easy for a designer to do. And I had to shape a rollout plan that worked for every department leader, each with different priorities, so I spent as much time on stakeholder strategy as on screens.
 
-Testing with agents led to one of the biggest wins. I noticed them selecting the same things every time, like their state and annual contribution amounts. When I asked how often they changed those values, they said rarely. So the platform started selecting them automatically on load, which made it quicker to search and get to a quote.
+Testing with agents led to one of the biggest wins. I noticed them selecting the same things every time, like their state and annual contribution amounts. When I asked how often they changed those values, they said rarely. So the design started selecting them automatically on load, which made it quicker to search and get to a quote.
 
 ## The System · 2 min
 
@@ -149,28 +149,29 @@ _A shared design system becomes the foundation six product teams build on._
 
 ![Placeholder — design system overview: tokens, core components, and documentation.](ch5.jpg)
 
-Hexure’s products had drifted into many different versions of themselves, and plenty of them looked like they were built for Windows 95. Alongside the platform, I built a shared design system to fix that: colors and type styles, a Figma component library, coded components, documentation, and a process for teams to request and contribute changes.
+Hexure’s products had drifted into many different versions of themselves, and plenty of them looked like they were built for Windows 95. The previous designer had started a design system, but it only existed as a work in progress in Figma. I audited it, then rebuilt it, working with a development team in India to build it out in code. The result covered colors and type styles, a Figma component library, coded components, documentation, and a process for teams to request and contribute changes.
 
-That meant designing flexible components that could scale between annuity and life insurance quoting. The universal quoter was the system’s first real test. As I built it, I made sure every element on screen was part of the design system from the start, with no one-off pieces. That proved the system could carry a complex, high-stakes product, and six product teams went on to adopt it.
+That meant designing flexible components that could scale between annuity and life insurance quoting. The universal quoter was the system’s first real test. As I designed it, I made sure every element on screen was part of the design system from the start, with no one-off pieces. That proved the system could carry a complex, high-stakes product, and six product teams went on to adopt it.
 
 I didn’t have to force it on them. I got teams excited by inviting them to contribute, so the system was partly theirs, and by showing them the value it would bring to their own products.
 
 I led end-to-end product design across multiple teams and departments, for both internal and customer-facing work.
 
-## Launch Day · 2 min
+## The Green Light · 2 min
 
-_Four tools retired into one, with the results to show for it._
+_A prototype, a phased plan, and a business case that put the platform at the center of Hexure’s strategy._
 
-![Placeholder — the final quoting platform, or a before-and-after comparison.](ch6.jpg)
+![Placeholder — the final prototype, or a before-and-after comparison.](ch6.jpg)
 
-The rollout plan had to work for every department leader, so we launched in stages. A small group of agents tested the platform first. Then annuities went live, bringing Hexure’s and IXN’s users together, and life insurance from Vive followed.
+The rollout plan had to work for every department leader, so I shaped it in stages: a small group of agents first, then annuities, bringing Hexure’s and IXN’s users together, then life insurance from Vive.
 
-The results:
+The unified quoting platform became the foundation of Hexure’s quoting modernization strategy, aligning leadership, product, and engineering around a shared vision before engineering began. Where it landed:
 
-- Quoting tools: four consolidated into one platform
-- Design system: adopted by six product teams
-- Time to quote: down from 5–10 minutes to three minutes or less
-- One application and one sign-in, so agents no longer switch software to explore different plans and packages
+- Quoting tools: four unified into one design, with one application and one sign-in
+- Time to quote: down from 5–10 minutes to three minutes or less in testing
+- Projected revenue increase: $3.45M–$5.45M in year one, and $7.25M–$11.25M by year three
+- Design system: rebuilt and adopted by six product teams
+- Design established as a strategic driver of growth
 
 ## Epilogue: What We Learned · 1 min
 
@@ -182,4 +183,4 @@ The biggest lesson was that simple isn’t always better. I went in assuming the
 
 A few other lessons stuck with me. Rapid prototyping can unite leadership early and speed up decisions. Visual documentation builds alignment with people who aren’t designers. And designing a universal tool takes both modular thinking and empathy for every system it replaces.
 
-If I did it again, I’d set up proper measurement from day one, so results like the faster time to quote were backed by harder data from the start.
+If I did it again, I’d set up proper measurement from day one, so results like the faster time to quote were backed by harder data from the start. And it showed me that strategic design can change a company’s direction even before engineering begins.
