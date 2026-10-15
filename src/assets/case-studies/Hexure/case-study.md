@@ -153,7 +153,7 @@ _Four tools retired into one, with the results to show for it._
 
 ![Placeholder — the final quoting platform, or a before-and-after comparison.](ch6.jpg)
 
-[How it rolled out: all at once, phased by product, or piloted with a group of customers first?]
+The rollout plan had to work for every department leader, so we launched in stages. A small group of agents tested the platform first. Then annuities went live, bringing Hexure’s and IXN’s users together, and life insurance from Vive followed.
 
 The results:
 
