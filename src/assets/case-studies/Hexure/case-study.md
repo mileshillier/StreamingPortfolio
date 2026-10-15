@@ -15,7 +15,7 @@ description: >-
   Hexure’s customers were quoting across four separate tools, each with its own
   patterns and quirks. This is the story of consolidating them into one platform,
   built on a shared design system that six product teams adopted.
-  [One line on why it mattered to the business.]
+  Quotes that used to take 5–10 minutes now take three or less.
 
 category: product            # product, brand, leadership, or documentary
 client: Hexure
@@ -40,8 +40,8 @@ outcomes:
     label: Quoting tools consolidated
   - value: "6"
     label: Product teams on the shared system
-  - value: "[metric]"
-    label: "[a third result: time saved, errors, adoption, or revenue]"
+  - value: "≤3 min"
+    label: Per quote, down from 5–10
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
@@ -159,7 +159,8 @@ The results:
 
 - Quoting tools: four consolidated into one platform
 - Design system: adopted by six product teams
-- [Another result: faster quotes, fewer support tickets, less engineering duplication, customer feedback]
+- Time to quote: down from 5–10 minutes to three minutes or less
+- One application and one sign-in, so agents no longer switch software to explore different plans and packages
 
 ## Epilogue: What We Learned · 1 min
 
