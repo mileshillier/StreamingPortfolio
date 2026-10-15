@@ -124,9 +124,11 @@ _One quoting flow designed to serve four sets of users._
 
 ![Placeholder — early wireframes or prototype of the unified quoting flow.](ch4.jpg)
 
-[How you approached the unified flow: what you kept, what you cut, and how you handled the edge cases that only one tool supported.]
+I built the unified flow around what the research showed: show more up front. Putting the information agents needed on screen, instead of behind menus, also made the platform quicker to adapt as requirements changed. Smart defaults did the rest. The tool auto-selected the most likely options on load, so agents could search and get to a quote faster.
 
-[How you tested it, and one thing you changed because of what you learned.]
+The hardest calls weren’t about layout. I had to give up some visual polish in favor of density and speed, which isn’t easy for a designer to do. And I had to shape a rollout plan that worked for every department leader, each with different priorities, so I spent as much time on stakeholder strategy as on screens.
+
+I tested the designs with users, and their feedback put the spotlight on auto-defaults and filtering. [What did they say, and what did you change because of it?]
 
 ## The System · 2 min
 
