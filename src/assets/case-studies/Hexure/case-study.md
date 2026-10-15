@@ -50,8 +50,8 @@ outcomes:
 cover: cover.jpg
 logo: logo.png
 
-accent: "#2F6BFF"            # [swap for a Hexure brand colour] artwork glow, subtitle, season labels
-highlight: "#2F6BFF"         # result numbers, pull quotes, progress bar
+accent: "#E82425"            # Hexure red: artwork glow, subtitle, season labels
+highlight: "#E82425"         # result numbers, pull quotes, progress bar
 titleFont:
   font: "'Bebas Neue', sans-serif"
   letterSpacing: 0.04em
