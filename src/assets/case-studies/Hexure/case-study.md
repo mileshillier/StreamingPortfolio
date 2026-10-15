@@ -164,10 +164,10 @@ The results:
 
 ## Epilogue: What We Learned · 1 min
 
-_Consolidation is a people problem as much as a product one._
+_Simple isn’t always better, especially for people who use a tool all day._
 
 ![Placeholder — the final platform overview or a team photo.](ch7.jpg)
 
-[The biggest lesson from the project.]
+The biggest lesson was that simple isn’t always better. I went in assuming the cleaner interface would win. Watching agents work showed me that, for people who quote all day, seeing everything up front beats a tidy screen. Good design for experts starts with how they actually work, not with how the screen looks.
 
-[One honest thing you would do differently.]
+If I did it again, I’d set up proper measurement from day one, so results like the faster time to quote were backed by harder data from the start.
