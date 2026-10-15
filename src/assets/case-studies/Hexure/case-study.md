@@ -72,11 +72,18 @@ titleFont:
 
 ## The Brief · 2 min
 
-_Four quoting tools, four sets of patterns, and customers caught in between._
+_Two acquisitions, one half-finished merge, and four quoting tools where there should have been one._
 
 ![Placeholder — side-by-side screenshots of the four original quoting tools.](ch1.jpg)
 
-I joined Hexure in February 2024 as Principal Product, UX/UI Design System Designer. The company had four separate quoting tools. [What each one did, and why there were four: acquisitions, different product lines, or tools built by separate teams?]
+I joined Hexure in February 2024 as Principal Product, UX/UI Design System Designer. Acquisitions had left the company with four separate quoting tools:
+
+1. Hexure’s original annuity quoting tool.
+2. An annuity quoting tool from IXN, an acquired company.
+3. A half-finished attempt by a previous designer to merge the first two, which was only partly in use for annuities.
+4. A life insurance quoting tool from Vive, acquired after that merge attempt had stalled.
+
+[Did you pick up from the previous designer’s half-merged version, or start fresh?]
 
 [Who felt the pain most: agents, carriers, internal staff? What did that cost the business, in support load, slower sales, or duplicate engineering?]
 
