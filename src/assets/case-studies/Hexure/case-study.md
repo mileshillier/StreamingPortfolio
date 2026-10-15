@@ -124,11 +124,11 @@ _One quoting flow designed to serve four sets of users._
 
 ![Placeholder — early wireframes or prototype of the unified quoting flow.](ch4.jpg)
 
-I built the unified flow around what the research showed: show more up front. Putting the information agents needed on screen, instead of behind menus, also made the platform quicker to adapt as requirements changed. Smart defaults did the rest. The tool auto-selected the most likely options on load, so agents could search and get to a quote faster.
+I built the unified flow around what the research showed: show more up front. Putting the information agents needed on screen, instead of behind menus, also let them adjust their quotes faster.
 
 The hardest calls weren’t about layout. I had to give up some visual polish in favor of density and speed, which isn’t easy for a designer to do. And I had to shape a rollout plan that worked for every department leader, each with different priorities, so I spent as much time on stakeholder strategy as on screens.
 
-I tested the designs with users, and their feedback put the spotlight on auto-defaults and filtering. [What did they say, and what did you change because of it?]
+Testing with agents led to one of the biggest wins. I noticed them selecting the same things every time, like their state and annual contribution amounts. When I asked how often they changed those values, they said rarely. So the platform started selecting them automatically on load, which made it quicker to search and get to a quote.
 
 ## The System · 2 min
 
