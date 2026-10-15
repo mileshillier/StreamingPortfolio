@@ -85,7 +85,7 @@ I joined Hexure in February 2024 as Principal Product, UX/UI Design System Desig
 
 [Did you pick up from the previous designer’s half-merged version, or start fresh?]
 
-[Who felt the pain most: agents, carriers, internal staff? What did that cost the business, in support load, slower sales, or duplicate engineering?]
+The tools were used by distributors and sales agents to quote annuity and life insurance products for their clients. Their biggest complaint was constantly switching between tools. Each one did some things better than the others, so no single tool covered a full day’s work. Some were slow to search and to return accurate numbers, and some were simply hard to look at.
 
 The brief was to consolidate the four tools into one platform. [Was it framed that way from the start, or did you push for consolidation after seeing the overlap?]
 
