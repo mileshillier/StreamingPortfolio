@@ -83,11 +83,11 @@ I joined Hexure in February 2024 as Principal Product, UX/UI Design System Desig
 3. A half-finished attempt by a previous designer to merge the first two, which was only partly in use for annuities.
 4. A life insurance quoting tool from Vive, acquired after that merge attempt had stalled.
 
-[Did you pick up from the previous designer’s half-merged version, or start fresh?]
-
 The tools were used by distributors and sales agents to quote annuity and life insurance products for their clients. Their biggest complaint was constantly switching between tools. Each one did some things better than the others, so no single tool covered a full day’s work. Some were slow to search and to return accurate numbers, and some were simply hard to look at.
 
-The brief was to consolidate the four tools into one platform. [Was it framed that way from the start, or did you push for consolidation after seeing the overlap?]
+Stakeholders had originally asked the previous designer to merge the two annuity tools, Hexure’s and IXN’s. Then Vive came along. Its life insurance tool had a strong track record and could fit naturally into one global tool supporting both annuities and life insurance. Along the way, several leadership reorgs meant the original stakeholders were lost in the shuffle, so the brief had no clear owner.
+
+Instead of picking up where the old merge left off, or throwing it out, I took time to understand what the previous designer had been trying to do. I gathered feedback from internal and external users, evaluated the use cases and how much flexibility the platform would need in the future, and started putting the pieces together.
 
 ## Into the Field · 2 min
 
