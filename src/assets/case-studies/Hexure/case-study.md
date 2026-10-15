@@ -87,21 +87,27 @@ I joined Hexure in February 2024 as Principal Product, UX/UI Design System Desig
 
 The tools were used by distributors and sales agents to quote annuity and life insurance products for their clients. Their biggest complaint was constantly switching between tools. Each one did some things better than the others, so no single tool covered a full day’s work. Some were slow to search and to return accurate numbers, and some were simply hard to look at.
 
-Stakeholders had originally asked the previous designer to merge the two annuity tools, Hexure’s and IXN’s. Then Vive came along. Its life insurance tool had a strong track record and could fit naturally into one global tool supporting both annuities and life insurance. Along the way, several leadership reorgs meant the original stakeholders were lost in the shuffle, so the brief had no clear owner. It took shape as I dug in and learned more.
+Stakeholders had originally asked the previous designer to merge the two annuity tools, Hexure’s and IXN’s. Then Vive came along. Its life insurance tool had a strong track record and could fit naturally into one global tool supporting both annuities and life insurance. Leadership’s request became a simplified quoting tool that would unify the fragmented systems and position Hexure to expand into the life insurance market. Along the way, several leadership reorgs meant the original stakeholders were lost in the shuffle, so the brief had no clear owner. It took shape as I dug in and learned more.
 
 Instead of picking up where the old merge left off, or throwing it out, I took time to understand what the previous designer had been trying to do. I gathered feedback from internal and external users, evaluated the use cases and how much flexibility the platform would need in the future, and started putting the pieces together.
 
+The deeper I looked, the more problems surfaced that nobody had asked me to solve:
+
+- Agents re-entered the same client data again and again across systems.
+- Quote reports lacked consistency and looked unprofessional.
+- Product teams were maintaining duplicate systems with conflicting logic.
+- There was no shared design language and no way to reuse data across platforms.
+- The fragmented tools were hurting Hexure’s credibility and slowing growth.
+
 ## Into the Field · 2 min
 
-_An audit of four tools and conversations across product, engineering, sales, and leadership._
+_A full audit of four tools, support call notes, and interviews across product, sales, support, and the field._
 
 ![Placeholder — audit board mapping overlapping fields, flows, and components across the four tools.](ch2.jpg)
 
-I started with what already existed. I reviewed the designs the previous designer had been working on, and read through notes from customer support calls to see where users were struggling most.
+I started with what already existed. I ran a complete audit of all four quoting tools, documenting every flow and UX gap in Figma. I reviewed the designs the previous designer had been working on, and read through notes from customer support calls to see where users were struggling most.
 
-Then I interviewed eight or nine people to find out what was working and what wasn’t. Most were internal, but a few came from the distributor and carrier side.
-
-I worked with product managers to define user needs, with engineering on what was feasible, and with sales and leadership so the design direction matched business goals.
+Then I interviewed eight or nine people to find out what was working and what wasn’t. Most were internal stakeholders from Product, Sales, and Support, and a few came from the distributor and carrier side.
 
 ## The Synthesis Wall · 2 min
 
@@ -113,7 +119,7 @@ Two findings shaped everything that followed. First, regulations, products, and 
 
 Second, and most surprising, a more complex interface was performing better than a simpler one. Agents could see more information up front instead of hunting for it behind dropdowns or messy navigation. Tabs and filters, pre-set with the information that best fit the agent’s location, meant less clicking around and more selling.
 
-That gave the project a clear goal: one quoting tool for annuities and life insurance that shows agents what they need up front, so they spend less time clicking and more time selling.
+I distilled everything into three shared goals: efficiency, accuracy, and consistency. Together they gave the project a clear target: one quoting tool for annuities and life insurance that shows agents what they need up front, so they spend less time clicking and more time selling.
 
 # Design & Delivery
 
@@ -123,7 +129,15 @@ _One quoting flow designed to serve four sets of users._
 
 ![Placeholder — early wireframes or prototype of the unified quoting flow.](ch4.jpg)
 
-I built the unified flow around what the research showed: show more up front. Putting the information agents needed on screen, instead of behind menus, also let them adjust their quotes faster.
+I sketched and mapped early navigation and workflow concepts directly in Figma, and worked closely with the PM to define the core features and a single navigation model for every product. The flow was built around what the research showed: show more up front. Putting the information agents needed on screen, instead of behind menus, also let them adjust their quotes faster.
+
+I turned the concepts into a high-fidelity, clickable prototype covering three core flows:
+
+1. Navigation: switching seamlessly between annuities and life insurance.
+2. Filtering and input: start simple, then refine step by step.
+3. Quote results: a summary first, with deeper detail available on demand.
+
+Presenting the prototype to cross-functional stakeholders got everyone aligned on a shared vision before any engineering began.
 
 The hardest calls weren’t about layout. I had to give up some visual polish in favor of density and speed, which isn’t easy for a designer to do. And I had to shape a rollout plan that worked for every department leader, each with different priorities, so I spent as much time on stakeholder strategy as on screens.
 
@@ -137,7 +151,7 @@ _A shared design system becomes the foundation six product teams build on._
 
 Hexure’s products had drifted into many different versions of themselves, and plenty of them looked like they were built for Windows 95. Alongside the platform, I built a shared design system to fix that: colors and type styles, a Figma component library, coded components, documentation, and a process for teams to request and contribute changes.
 
-The universal quoter was the system’s first real test. As I built it, I made sure every element on screen was part of the design system from the start, with no one-off pieces. That proved the system could carry a complex, high-stakes product, and six product teams went on to adopt it.
+That meant designing flexible components that could scale between annuity and life insurance quoting. The universal quoter was the system’s first real test. As I built it, I made sure every element on screen was part of the design system from the start, with no one-off pieces. That proved the system could carry a complex, high-stakes product, and six product teams went on to adopt it.
 
 I didn’t have to force it on them. I got teams excited by inviting them to contribute, so the system was partly theirs, and by showing them the value it would bring to their own products.
 
@@ -165,5 +179,7 @@ _Simple isn’t always better, especially for people who use a tool all day._
 ![Placeholder — the final platform overview or a team photo.](ch7.jpg)
 
 The biggest lesson was that simple isn’t always better. I went in assuming the cleaner interface would win. Watching agents work showed me that, for people who quote all day, seeing everything up front beats a tidy screen. Good design for experts starts with how they actually work, not with how the screen looks.
+
+A few other lessons stuck with me. Rapid prototyping can unite leadership early and speed up decisions. Visual documentation builds alignment with people who aren’t designers. And designing a universal tool takes both modular thinking and empathy for every system it replaces.
 
 If I did it again, I’d set up proper measurement from day one, so results like the faster time to quote were backed by harder data from the start.
