@@ -29,8 +29,10 @@ badge: New Chapter           # optional: New Chapter, Recently Added, Award Winn
 match: 97
 
 team:
-  - Miles Hillier
-  - "[PM, engineering, and design partner names or roles]"
+  - Miles Hillier (sole designer)
+  - 3 Product Managers
+  - 3 Engineers
+  - VP of Product
 disciplines: [Product Design, Design Systems, UX Strategy]
 tools: [Figma, "[other tools you used]"]
 moods: [Ambitious, Collaborative]
