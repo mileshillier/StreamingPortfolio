@@ -95,7 +95,9 @@ _An audit of four tools and conversations across product, engineering, sales, an
 
 ![Placeholder — audit board mapping overlapping fields, flows, and components across the four tools.](ch2.jpg)
 
-[How you researched it: an audit of the four tools, user interviews, sales calls, analytics? Roughly how many people did you talk to?]
+I started with what already existed. I reviewed the designs the previous designer had been working on, and read through notes from customer support calls to see where users were struggling most.
+
+Then I interviewed eight or nine people to find out what was working and what wasn’t. Most were internal, but a few came from the distributor and carrier side.
 
 I worked with product managers to define user needs, with engineering on what was feasible, and with sales and leadership so the design direction matched business goals. [What did each group want, and where did they disagree?]
 
