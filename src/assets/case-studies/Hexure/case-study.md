@@ -99,7 +99,7 @@ I started with what already existed. I reviewed the designs the previous designe
 
 Then I interviewed eight or nine people to find out what was working and what wasn’t. Most were internal, but a few came from the distributor and carrier side.
 
-I worked with product managers to define user needs, with engineering on what was feasible, and with sales and leadership so the design direction matched business goals. [What did each group want, and where did they disagree?]
+I worked with product managers to define user needs, with engineering on what was feasible, and with sales and leadership so the design direction matched business goals.
 
 > [A short quote from a PM, engineer, or customer about the old tools, if you have one you can use.]
 > — [Name], [Title] at Hexure
@@ -114,7 +114,7 @@ Two findings shaped everything that followed. First, regulations, products, and 
 
 Second, and most surprising, a more complex interface was performing better than a simpler one. Agents could see more information up front instead of hunting for it behind dropdowns or messy navigation. Tabs and filters, pre-set with the information that best fit the agent’s location, meant less clicking around and more selling.
 
-[The goal that came out of it, in one sentence.]
+That gave the project a clear goal: one quoting tool for annuities and life insurance that shows agents what they need up front, so they spend less time clicking and more time selling.
 
 # Design & Delivery
 
