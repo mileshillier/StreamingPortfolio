@@ -112,7 +112,7 @@ _The overlap between the tools becomes the case for one platform and one system.
 
 Two findings shaped everything that followed. First, regulations, products, and the way product packages were distributed weren’t consistent across insurance software. A single tool would have to handle that variety instead of assuming one standard.
 
-Second, and most surprising, a more complex interface was performing better than a simpler one. [Which tool, and why: what did the complex one give users that the simple one didn’t?]
+Second, and most surprising, a more complex interface was performing better than a simpler one. Agents could see more information up front instead of hunting for it behind dropdowns or messy navigation. Tabs and filters, pre-set with the information that best fit the agent’s location, meant less clicking around and more selling.
 
 [The goal that came out of it, in one sentence.]
 
