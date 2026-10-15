@@ -136,7 +136,9 @@ _A shared design system becomes the foundation six product teams build on._
 
 ![Placeholder — design system overview: tokens, core components, and documentation.](ch5.jpg)
 
-Alongside the platform, I built a shared design system that six product teams adopted. [What it included (tokens, components, documentation, a contribution model), and how you got teams to adopt it instead of keeping their own patterns.]
+Hexure’s products had drifted into many different versions of themselves, and plenty of them looked like they were built for Windows 95. Alongside the platform, I built a shared design system to fix that: colors and type styles, a Figma component library, coded components, documentation, and a process for teams to request and contribute changes.
+
+The universal quoter was the system’s first real test. As I built it, I made sure every element on screen was part of the design system from the start, with no one-off pieces. That proved the system could carry a complex, high-stakes product, and six product teams went on to adopt it. [How did you win those teams over: training, office hours, leadership backing, or just making it the easiest option?]
 
 I led end-to-end product design across multiple teams and departments, for both internal and customer-facing work. [One concrete example of keeping the teams aligned.]
 
