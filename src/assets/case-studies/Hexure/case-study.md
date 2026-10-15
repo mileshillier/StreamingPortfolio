@@ -34,7 +34,7 @@ team:
   - 3 Engineers
   - VP of Product
 disciplines: [Product Design, Design Systems, UX Strategy]
-tools: [Figma, "[other tools you used]"]
+tools: [Figma, Storybook, Jira]
 moods: [Ambitious, Collaborative]
 
 outcomes:
