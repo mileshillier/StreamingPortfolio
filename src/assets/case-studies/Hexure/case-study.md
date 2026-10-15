@@ -42,8 +42,8 @@ outcomes:
     label: Quoting tools unified in one design
   - value: "$3.45–5.45M"
     label: Projected first-year revenue
-  - value: "≤3 min"
-    label: Per quote in testing, down from 5–10
+  - value: "~3 min"
+    label: Average quote in testing, down from 5–10
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
@@ -168,7 +168,7 @@ The rollout plan had to work for every department leader, so I shaped it in stag
 The unified quoting platform became the foundation of Hexure’s quoting modernization strategy, aligning leadership, product, and engineering around a shared vision before engineering began. Where it landed:
 
 - Quoting tools: four unified into one design, with one application and one sign-in
-- Time to quote: down from 5–10 minutes to three minutes or less in testing
+- Time to quote: down from 5–10 minutes to about three minutes on average in testing
 - Projected revenue increase: $3.45M–$5.45M in year one, and $7.25M–$11.25M by year three
 - Design system: rebuilt and adopted by six product teams
 - Design established as a strategic driver of growth
