@@ -110,7 +110,7 @@ _The overlap between the tools becomes the case for one platform and one system.
 
 ![Placeholder — diagram of what the four tools shared and what was unique to each.](ch3.jpg)
 
-[The two to four key insights. For example: how much of the quoting flow the tools had in common, where users got stuck, and what had to stay product-specific.]
+The biggest surprise was that a more complex interface was performing better than a simpler one. [Which tool, and why: what did the complex one give users that the simple one didn’t?]
 
 [The goal that came out of it, in one sentence.]
 
