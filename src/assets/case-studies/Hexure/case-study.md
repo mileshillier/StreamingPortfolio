@@ -103,9 +103,6 @@ Then I interviewed eight or nine people to find out what was working and what wa
 
 I worked with product managers to define user needs, with engineering on what was feasible, and with sales and leadership so the design direction matched business goals.
 
-> [A short quote from a PM, engineer, or customer about the old tools, if you have one you can use.]
-> — [Name], [Title] at Hexure
-
 ## The Synthesis Wall · 2 min
 
 _The overlap between the tools becomes the case for one platform and one system._
@@ -145,9 +142,6 @@ The universal quoter was the system’s first real test. As I built it, I made s
 I didn’t have to force it on them. I got teams excited by inviting them to contribute, so the system was partly theirs, and by showing them the value it would bring to their own products.
 
 I led end-to-end product design across multiple teams and departments, for both internal and customer-facing work.
-
-> [A quote from a designer or engineer on another team about using the system.]
-> — [Name], [Title] at Hexure
 
 ## Launch Day · 2 min
 
