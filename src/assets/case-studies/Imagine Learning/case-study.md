@@ -100,7 +100,7 @@ I started by studying the competition. Tools like i-Ready, myLexia, and Achieve3
 
 Next I went to the people closest to the classroom. Imagine Learning’s field representatives worked directly with teachers and districts, so I interviewed them to understand day-to-day frustrations and data needs. Then I interviewed teachers and admins to check what I’d heard, and to learn how reports actually shaped decisions in the classroom and the district office.
 
-[What was the biggest surprise from those interviews? For example, something teachers needed that no competitor offered.]
+The biggest surprise was a use case no stakeholder had considered, and it mattered enormously to teachers: parents. Teachers needed reports they could bring to parent-teacher conferences to show how each child was doing. But the project was scoped around school and district admins, who needed reports to submit to the government and justify how their funding was spent, so that’s where the MVP focused.
 
 ## The Status Map · 2 min
 
