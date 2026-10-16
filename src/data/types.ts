@@ -70,6 +70,8 @@ export interface Title {
   clientLogo?: string;
   /** Real cover image (`cover.jpg` in the case study folder). Placeholder art when absent. */
   cover?: string;
+  /** Wide header image for the hero and title pages; falls back to `cover`. Use it when the cover has text that would clash with the title. */
+  banner?: string;
   logo: LogoStyle;
   badge?: Badge;
   match: number;

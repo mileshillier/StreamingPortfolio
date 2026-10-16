@@ -47,7 +47,8 @@ outcomes:
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
-cover: cover.jpg
+cover: cover.jpg             # cards and thumbnails
+banner: banner.jpg           # page headers (dark, so the title stays readable)
 logo: logo.png
 
 accent: "#E82425"            # Hexure red: artwork glow, subtitle, season labels
