@@ -20,7 +20,7 @@ description: >-
 category: product            # product, brand, leadership, or documentary
 client: Imagine Learning
 role: Senior UX/UI Designer
-year: 2016                   # [confirm the year the MVP shipped]
+year: 2017                   # MVP shipped May 2017
 format: Limited Series       # Series, Feature, Limited Series, or Short
 genre: EdTech
 rating: UX-PG
@@ -29,10 +29,13 @@ badge: New Chapter           # optional: New Chapter, Recently Added, Award Winn
 match: 95
 
 team:
-  - Miles Hillier
-  - "[team: how many PMs, developers, and QA?]"
+  - Miles Hillier (sole designer)
+  - 1 Product Manager
+  - 1 Front-end Developer
+  - 3 Back-end Developers
+  - 1 QA Engineer
 disciplines: [Product Design, Data Visualization, User Research]
-tools: [Pendo, "[design tools you used, e.g. Sketch]"]
+tools: [Sketch, Adobe Illustrator, Pendo]
 moods: [Data-Driven, Collaborative]
 
 outcomes:
@@ -129,7 +132,7 @@ _Early access links, live walkthroughs, and usage data shape every sprint._
 
 I shared early access links with field reps and walked through the reports with them to get real-time usability feedback. I also set up Pendo analytics to track how people actually used the dashboard and where they got stuck.
 
-Each sprint, we adjusted features and flows based on what the field reps told us and what the usage data showed. I led the PMs, developers, and QA through the rollout across every audience. [One concrete example of something you changed because of the feedback or data.]
+Each sprint, we adjusted features and flows based on what the field reps told us and what the usage data showed. As the only designer, I led a team of one PM, one front-end developer, three back-end developers, and one QA engineer through the rollout across every audience. [One concrete example of something you changed because of the feedback or data.]
 
 ## Report Day · 2 min
 
@@ -137,7 +140,7 @@ _From nothing to a working analytics dashboard in three months._
 
 ![The district growth report in the Imagine Learning Portal.](ch6.jpg)
 
-We delivered the MVP in just three months, taking Imagine Learning from no reporting infrastructure at all to a fully working analytics dashboard. The results:
+We delivered the MVP in just three months, shipping it in May 2017, my last month at the company, taking Imagine Learning from no reporting infrastructure at all to a fully working analytics dashboard. The results:
 
 - Manual reporting time: cut by several hours per teacher, every week
 - Compliance: automated insights supporting district and state requirements
