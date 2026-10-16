@@ -48,7 +48,7 @@ outcomes:
 cover: cover.jpg
 logo: logo.png
 
-accent: "#F28C28"            # [swap for an Imagine Learning brand colour] artwork glow, subtitle, season labels
+accent: "#D43538"            # Imagine Learning red: artwork glow, subtitle, season labels
 titleFont:
   font: "'Bebas Neue', sans-serif"
   letterSpacing: 0.04em
@@ -73,7 +73,7 @@ titleFont:
 
 _Hours of spreadsheets, funding on the line, and no way to see how students were really doing._
 
-![Placeholder — the reporting dashboard, or a before-and-after of manual spreadsheets.](ch1.jpg)
+![District, school, group, and student reports, from overview to growth test.](ch1.jpg)
 
 I joined Imagine Learning in 2015 as a Senior UX/UI Designer. Teachers and administrators were using its programs every day, but they had almost no visibility into student progress. To justify their programs and the government funding behind them, educators spent countless hours compiling reports by hand.
 
@@ -91,7 +91,7 @@ Once I dug in, the problems ran deeper than the brief:
 
 _Competitor teardowns, field reps, and the teachers and admins who live with the reports._
 
-![Placeholder — competitive analysis board, or notes from field rep interviews.](ch2.jpg)
+![The competitive set: Achieve3000, i-Ready, and myLexia.](ch2.jpg)
 
 I started by studying the competition. Tools like i-Ready, myLexia, and Achieve3000 set the bar for what educators expected, and showed where there were gaps to fill.
 
@@ -103,7 +103,7 @@ Next I went to the people closest to the classroom. Imagine Learning’s field r
 
 _Every report, every level, and every stage of development on one living map._
 
-![Placeholder — the status map of District, School, Group/Class, and Student reports.](ch3.jpg)
+![The status map: every report at the district, school, group, and student level.](ch3.jpg)
 
 With four levels of reporting (District, School, Group/Class, and Student) and several audiences, it was easy to lose track. I created a dynamic “status map” that showed every report type and its stage of development, so the whole team could see the full picture at a glance.
 
@@ -115,7 +115,7 @@ With four levels of reporting (District, School, Group/Class, and Student) and s
 
 _Sketches and whiteboards become report modules that scale from one student to a whole district._
 
-![Placeholder — whiteboard sketches or early dashboard wireframes.](ch4.jpg)
+![Whiteboarding which reports existed at each level, and which were still coming soon.](ch4.jpg)
 
 I sketched and whiteboarded dashboard layouts to find patterns, overlaps, and chances for consistency across the four levels. The answer was a set of flexible report modules: the same building blocks could show a single student’s progress or a district-wide summary.
 
@@ -125,7 +125,7 @@ From there I built early prototypes showing the flow and hierarchy of the report
 
 _Early access links, live walkthroughs, and usage data shape every sprint._
 
-![Placeholder — prototype walkthrough, or a Pendo analytics view.](ch5.jpg)
+![Pendo page use: Progress, Student, and Skills reports stood out.](ch5.jpg)
 
 I shared early access links with field reps and walked through the reports with them to get real-time usability feedback. I also set up Pendo analytics to track how people actually used the dashboard and where they got stuck.
 
@@ -135,7 +135,7 @@ Each sprint, we adjusted features and flows based on what the field reps told us
 
 _From nothing to a working analytics dashboard in three months._
 
-![Placeholder — the finished reporting dashboard.](ch6.jpg)
+![The district growth report in the Imagine Learning Portal.](ch6.jpg)
 
 We delivered the MVP in just three months, taking Imagine Learning from no reporting infrastructure at all to a fully working analytics dashboard. The results:
 
@@ -150,7 +150,7 @@ The dashboard became a foundational tool for Imagine Learning, giving educators 
 
 _Small logic gaps grow into big reporting problems._
 
-![Placeholder — the final dashboard overview or a team photo.](ch7.jpg)
+![The district reporting overview: scaled scores, usage, and organizations.](ch7.jpg)
 
 Three lessons stuck with me. Collaboration between field reps, educators, and designers creates more empathetic and accurate reporting tools. Continuous feedback loops, through Pendo data and live walkthroughs, make iteration faster and keep it focused on users. And early alignment on data structures is critical, because small logic gaps can scale into major reporting issues.
 
