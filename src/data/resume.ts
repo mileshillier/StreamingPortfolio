@@ -109,7 +109,7 @@ export const RESUME = {
       company: 'Hexure',
       dates: 'Feb 2024 – Jun 2025',
       bullets: [
-        'Consolidated four quoting tools into one unified platform with a shared design system adopted by six product teams.',
+        'Designed a unified platform to consolidate four quoting tools, projected to add $3.45M–$5.45M in first-year revenue, and rebuilt the shared design system adopted by six product teams.',
         'Led end-to-end product design across multiple teams and departments for internal and customer-facing initiatives.',
         'Partnered with PMs to define user needs, with engineering on handoff, and with sales and leadership to align design direction with business goals.',
       ],
