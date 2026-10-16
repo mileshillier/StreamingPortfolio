@@ -100,7 +100,7 @@ I started by studying the competition. Tools like i-Ready, myLexia, and Achieve3
 
 Next I went to the people closest to the classroom. Imagine Learning’s field representatives worked directly with teachers and districts, so I interviewed them to understand day-to-day frustrations and data needs. Then I interviewed teachers and admins to check what I’d heard, and to learn how reports actually shaped decisions in the classroom and the district office.
 
-The biggest surprise was a use case no stakeholder had considered, and it mattered enormously to teachers: parents. Teachers needed reports they could bring to parent-teacher conferences to show how each child was doing. But the project was scoped around school and district admins, who needed reports to submit to the government and justify how their funding was spent, so that’s where the MVP focused. I still made sure some of what teachers needed for those conferences made it into the first release.
+The biggest surprise was a use case no stakeholder had considered, and it mattered enormously to teachers: parents. Teachers needed reports they could bring to parent-teacher conferences to show how each child was doing. But the project was scoped around school and district admins, who needed reports to submit to the government and justify how their funding was spent, so that’s where the MVP focused. I still made sure part of it made it into the first release, by getting student-level reports into scope.
 
 ## The Status Map · 2 min
 
@@ -110,7 +110,7 @@ _Every report, every level, and every stage of development on one living map._
 
 With four levels of reporting (District, School, Group/Class, and Student) and several audiences, it was easy to lose track. I created a dynamic “status map” that showed every report type and its stage of development, so the whole team could see the full picture at a glance.
 
-[What did the map help you decide? For example, which reports to build first for the MVP.]
+The map also made the case for widening the scope. The original plan stopped at the school and district, but every one of those reports was built from student data rolling up through the levels. For the interface to follow the same flow, and for the numbers to bubble up correctly, the student level had to be part of it. I made sure we extended the scope to include student-level reports in the MVP.
 
 # Design & Delivery
 
