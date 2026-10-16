@@ -77,7 +77,7 @@ export default function WatchPage() {
       </div>
 
       <header className="watch__hero">
-        <Artwork seed={title.imageSeed} src={title.cover} accent={title.accent} width={1920} height={1080} className="watch__hero-art" eager />
+        <Artwork seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} width={1920} height={1080} className="watch__hero-art" eager />
         <div className="watch__hero-shade" />
         <div className="watch__hero-content">
           <TitleLogo title={title} size="xl" showSubtitle as="h1" />

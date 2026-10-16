@@ -70,7 +70,7 @@ function DetailHeader({ title }: { title: Title }) {
 
   return (
     <header className="detail-hero">
-      <Artwork key={title.id} seed={title.imageSeed} src={title.cover} accent={title.accent} width={1600} height={900} className="detail-hero__art" eager />
+      <Artwork key={title.id} seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} width={1600} height={900} className="detail-hero__art" eager />
       <div className="detail-hero__shade" />
       <div className="detail-hero__content">
         <TitleLogo title={title} size="lg" showSubtitle as="h2" />
