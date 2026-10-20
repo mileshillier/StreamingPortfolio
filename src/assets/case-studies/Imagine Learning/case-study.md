@@ -48,7 +48,9 @@ outcomes:
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
-cover: cover.jpg
+cover: cover.jpg             # key art with the title built in: cards and thumbnails
+coverHasTitle: true          # the cover already shows the title, so cards don't add it again
+banner: banner.jpg           # page headers
 logo: logo.png
 logoInColor: true            # keep the logo's own colours instead of turning it white
 

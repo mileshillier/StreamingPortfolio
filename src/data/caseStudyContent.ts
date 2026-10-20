@@ -128,6 +128,7 @@ function toTitle(path: string, source: string): Title {
     imageSeed: `${id}-${client.toLowerCase()}`,
     cover: images.file(meta.cover as string | undefined),
     banner: images.file(meta.banner as string | undefined),
+    coverHasTitle: meta.coverHasTitle === true,
     clientLogo: images.file(meta.logo as string | undefined),
     clientLogoInColor: meta.logoInColor === true,
     accent: String(meta.accent),

@@ -247,7 +247,7 @@ function MoreLikeThis({ title }: { title: Title }) {
             <article key={t.id} className="mini-card">
               <button className="mini-card__art" onClick={() => openTitle(t.id)} aria-label={`Open ${t.title}`}>
                 <Artwork seed={t.imageSeed} src={t.cover} accent={t.accent} width={480} height={270} />
-                <TitleLogo title={t} size="sm" />
+                {!t.coverHasTitle && <TitleLogo title={t} size="sm" />}
                 <span className="mini-card__len">{chapterCount(t)} Chapters</span>
               </button>
               <div className="mini-card__body">

@@ -74,6 +74,8 @@ export interface Title {
   cover?: string;
   /** Wide header image for the hero and title pages; falls back to `cover`. Use it when the cover has text that would clash with the title. */
   banner?: string;
+  /** The cover artwork already shows the title, so thumbnails skip drawing it again. */
+  coverHasTitle?: boolean;
   logo: LogoStyle;
   badge?: Badge;
   match: number;
