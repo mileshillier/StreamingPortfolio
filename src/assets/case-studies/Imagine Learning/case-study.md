@@ -162,6 +162,6 @@ _Small logic gaps grow into big reporting problems._
 
 ![The district reporting overview: scaled scores, usage, and organizations.](ch7.jpg)
 
-Three lessons stuck with me. Collaboration between field reps, educators, and designers creates more empathetic and accurate reporting tools. Continuous feedback loops, through Pendo data and live walkthroughs, make iteration faster and keep it focused on users. And early alignment on data structures is critical, because small logic gaps can scale into major reporting issues.
+Two lessons stuck with me. Collaboration between field reps, educators, and designers creates more empathetic and accurate reporting tools. And continuous feedback loops, through Pendo data and live walkthroughs, make iteration faster and keep it focused on users. The Print button would never have been found any other way.
 
-[One honest thing you’d do differently.]
+If I did it again, I’d lock down the data structure across all four report levels before designing a single screen. Early data logic issues put the accuracy of our rollups at risk, and small logic gaps can scale into major reporting issues once numbers flow from student to district.
