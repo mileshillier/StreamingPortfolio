@@ -18,9 +18,10 @@ Files are picked up automatically:
 | File | Used for |
 |---|---|
 | `cover.jpg` | Main image: cards, headers, and the detail popup (16:9, ~1920×1080) |
+| `coverHasTitle: true` (setting) | Use when `cover.jpg` is key art with the title built in, so cards don't draw the title a second time |
 | `banner.jpg` | Optional header image for the title page, popup, and featured hero. Use it when the cover has a big logo or text that would clash with the title. Falls back to `cover.jpg` |
 | `ch1.jpg`, `ch2.jpg`, … | One per chapter, numbered in reading order across seasons (16:9, ~1600×900) |
-| `logo.png` or `logo.svg` | Client logo, shown in place of the client name (dark logos are rendered white) |
+| `logo.png` or `logo.svg` | Client logo, shown in place of the client name. Logos are rendered white; add `logoInColor: true` to the settings to keep their colours |
 
 `.jpg`, `.jpeg`, `.png`, and `.webp` all work. In `case-study.md` the image
 file names are written out, so you can use any name there. Any image that is missing falls

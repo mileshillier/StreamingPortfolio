@@ -2018,3 +2018,6 @@ p {
   vertical-align: -0.05em;
   filter: brightness(0) invert(1);
 }
+.client-logo--color {
+  filter: none;
+}

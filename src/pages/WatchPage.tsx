@@ -168,7 +168,7 @@ export default function WatchPage() {
         <section className="watch__next">
           <p>Next Episode</p>
           <Link to={`/watch/${next.id}`} className="next-card">
-            <Artwork seed={next.imageSeed} src={next.cover} accent={next.accent} width={960} height={540} />
+            <Artwork seed={next.imageSeed} src={next.banner ?? next.cover} accent={next.accent} width={960} height={540} />
             <div className="next-card__shade" />
             <div className="next-card__content">
               <TitleLogo title={next} size="md" />

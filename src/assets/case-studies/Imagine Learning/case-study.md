@@ -1,0 +1,170 @@
+---
+# ─────────────────────────────────────────────────────────────────────────────
+# Report Card: everything on the site for this case study lives in this file.
+# Save it and the site updates. Anything in [square brackets] shows up red
+# while review mode is on, so use brackets for notes that still need attention.
+#
+# Tip: wrap a value in double quotes if it starts with [ or # or contains a colon.
+# ─────────────────────────────────────────────────────────────────────────────
+
+id: report-card              # used in the page address: /watch/report-card
+title: Report Card
+subtitle: The Imagine Learning Reporting Story
+tagline: From zero reporting to a working analytics dashboard in three months.
+description: >-
+  Teachers and administrators couldn’t see how their students were doing without
+  hours of manual spreadsheets, and the funding behind their programs depended on
+  proving it. This is the story of building Imagine Learning’s first reporting
+  dashboard, from student to district, in just three months.
+
+category: product            # product, brand, leadership, or documentary
+client: Imagine Learning
+role: Senior UX/UI Designer
+year: 2017                   # MVP shipped May 2017
+format: Limited Series       # Series, Feature, Limited Series, or Short
+genre: EdTech
+rating: UX-PG
+advisories: [data, funding, field research]
+badge: New Chapter           # optional: New Chapter, Recently Added, Award Winner, Top 10, Coming Soon
+match: 95
+
+team:
+  - Miles Hillier (sole designer)
+  - 1 Product Manager
+  - 1 Front-end Developer
+  - 3 Back-end Developers
+  - 1 QA Engineer
+disciplines: [Product Design, Data Visualization, User Research]
+tools: [Sketch, Adobe Illustrator, Pendo]
+moods: [Data-Driven, Collaborative]
+
+outcomes:
+  - value: "3 mo"
+    label: From zero reporting to MVP
+  - value: "4"
+    label: Report levels, student to district
+  - value: Hours
+    label: Of manual reporting saved per teacher, each week
+
+# Images: file names are relative to this folder. A missing file falls back to
+# placeholder art (outlined red in review mode).
+cover: cover.jpg             # key art with the title built in: cards and thumbnails
+coverHasTitle: true          # the cover already shows the title, so cards don't add it again
+banner: banner.jpg           # page headers
+logo: logo.png
+logoInColor: true            # keep the logo's own colours instead of turning it white
+
+accent: "#0397D7"            # Imagine Learning blue (from the logo): artwork glow, subtitle, season labels
+titleFont:
+  font: "'Bebas Neue', sans-serif"
+  letterSpacing: 0.04em
+  uppercase: true
+---
+
+<!--
+  How the chapters below are written:
+
+  # Season name                     → starts a season
+  ## Chapter title · 2 min          → starts a chapter (read time is optional)
+  _One-line summary_                → the chapter's synopsis (italic line under the title)
+  ![Caption](ch1.jpg)               → the chapter image and its caption
+  Plain paragraphs                  → body text
+  - item  or  1. item               → bulleted or numbered list
+  > Quote text                      → pull quote; a final "> — Name, Title" line is the credit
+-->
+
+# Discovery
+
+## The Brief · 2 min
+
+_Hours of spreadsheets, funding on the line, and no way to see how students were really doing._
+
+![District, school, group, and student reports, from overview to growth test.](ch1.jpg)
+
+I joined Imagine Learning in 2015 as a Senior UX/UI Designer. Teachers and administrators were using its programs every day, but they had almost no visibility into student progress. To justify their programs and the government funding behind them, educators spent countless hours compiling reports by hand.
+
+The request was to create a reporting solution that automatically turned student activity data into meaningful insights for teachers, school admins, and district leaders, while meeting the federal and state reporting requirements tied to that funding.
+
+Once I dug in, the problems ran deeper than the brief:
+
+- No one had a clear picture of what “effective reporting” looked like for each role.
+- Educators spent hours building spreadsheets for parent and admin meetings.
+- Inconsistent or incomplete data made school-level reports unreliable.
+- Teachers, schools, and districts each needed their own tailored view.
+- Early data logic issues risked inaccurate numbers when metrics rolled up from one level to the next.
+
+## Into the Field · 2 min
+
+_Competitor teardowns, field reps, and the teachers and admins who live with the reports._
+
+![The competitive set: Achieve3000, i-Ready, and myLexia.](ch2.jpg)
+
+I started by studying the competition. Tools like i-Ready, myLexia, and Achieve3000 set the bar for what educators expected, and showed where there were gaps to fill.
+
+Next I went to the people closest to the classroom. Imagine Learning’s field representatives worked directly with teachers and districts, so I interviewed them to understand day-to-day frustrations and data needs. Then I interviewed teachers and admins to check what I’d heard, and to learn how reports actually shaped decisions in the classroom and the district office.
+
+The biggest surprise was a use case no stakeholder had considered, and it mattered enormously to teachers: parents. Teachers needed reports they could bring to parent-teacher conferences to show how each child was doing. But the project was scoped around school and district admins, who needed reports to submit to the government and justify how their funding was spent, so that’s where the MVP focused. I still made sure part of it made it into the first release, by getting student-level reports into scope.
+
+## The Status Map · 2 min
+
+_Every report, every level, and every stage of development on one living map._
+
+![The status map: every report at the district, school, group, and student level.](ch3.jpg)
+
+With four levels of reporting (District, School, Group/Class, and Student) and several audiences, it was easy to lose track. I created a dynamic “status map” that showed every report type and its stage of development, so the whole team could see the full picture at a glance.
+
+The map also made the case for widening the scope. The original plan stopped at the school and district, but every one of those reports was built from student data rolling up through the levels. For the interface to follow the same flow, and for the numbers to bubble up correctly, the student level had to be part of it. I made sure we extended the scope to include student-level reports in the MVP.
+
+# Design & Delivery
+
+## Rough Cuts · 2 min
+
+_Sketches and whiteboards become report modules that scale from one student to a whole district._
+
+![Whiteboarding which reports existed at each level, and which were still coming soon.](ch4.jpg)
+
+I sketched and whiteboarded dashboard layouts to find patterns, overlaps, and chances for consistency across the four levels. The answer was a set of flexible report modules: the same building blocks could show a single student’s progress or a district-wide summary.
+
+From there I built early prototypes showing the flow and hierarchy of the reports, from the district view down to the individual student.
+
+## Field Testing · 2 min
+
+_Early access links, live walkthroughs, and usage data shape every sprint._
+
+![Pendo page use: Progress, Student, and Skills reports stood out.](ch5.jpg)
+
+I shared early access links with field reps and walked through the reports with them to get real-time usability feedback. I also set up Pendo analytics to track how people actually used the dashboard and where they got stuck.
+
+Each sprint, we adjusted features and flows based on what the field reps told us and what the usage data showed. As the only designer, I led a team of one PM, one front-end developer, three back-end developers, and one QA engineer through the rollout across every audience.
+
+One small side quest taught me the most. Every page had a Print button at the top, and when I asked coworkers why, nobody knew. So I tagged the button in Pendo to see how often it was used. The answer: hundreds of clicks a week. We still didn’t know why, so I set up a small test. After ten clicks from the same person, a short pop-up asked what they were trying to do, so we could help them get there faster.
+
+It turned out teachers and school admins were going page by page through class rosters, printing student lists one screen at a time. So I designed a Print Class Roster button that printed every roster in their search results with a single click. We kept printing on the pages where it made sense, and the button at the top of every page became useless and was removed.
+
+The feedback was immediate. Teachers and administrators were saving hours of clicking and paging, and they were thrilled.
+
+## Report Day · 2 min
+
+_From nothing to a working analytics dashboard in three months._
+
+![The district growth report in the Imagine Learning Portal.](ch6.jpg)
+
+We delivered the MVP in just three months, shipping it in May 2017, my last month at the company, taking Imagine Learning from no reporting infrastructure at all to a fully working analytics dashboard. The results:
+
+- Manual reporting time: cut by several hours per teacher, every week
+- Printing: one Print Class Roster click replaced hours of printing page by page
+- Compliance: automated insights supporting district and state requirements
+- Funding: continuous program accountability, helping secure ongoing government funding
+- Visibility: clear views for every level, from teacher to school to district
+
+The dashboard became a foundational tool for Imagine Learning, giving educators real-time data, improving classroom decisions, and helping secure continued funding for student programs.
+
+## Epilogue: What We Learned · 1 min
+
+_Small logic gaps grow into big reporting problems._
+
+![The district reporting overview: scaled scores, usage, and organizations.](ch7.jpg)
+
+Two lessons stuck with me. Collaboration between field reps, educators, and designers creates more empathetic and accurate reporting tools. And continuous feedback loops, through Pendo data and live walkthroughs, make iteration faster and keep it focused on users. The Print button would never have been found any other way.
+
+If I did it again, I’d lock down the data structure across all four report levels before designing a single screen. Early data logic issues put the accuracy of our rollups at risk, and small logic gaps can scale into major reporting issues once numbers flow from student to district.
