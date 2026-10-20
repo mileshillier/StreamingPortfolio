@@ -32,7 +32,7 @@ team:
   - "Miles Hillier (co-founder: logo strategy, creative direction, photography, social & email)"
   - "Bethanie Hillier (co-founder: logo design, Shopify store, photography, social & email)"
 disciplines: [Brand Strategy, Creative Direction, Photography, Social & Email]
-tools: [Shopify, Etsy, "[AI image tool?]", "[photo editing software?]"]
+tools: [Shopify, Etsy, ChatGPT, Lightroom, Photoshop]
 moods: [Purposeful, Handmade]
 
 outcomes:                    # from the Etsy shop page, October 2026
