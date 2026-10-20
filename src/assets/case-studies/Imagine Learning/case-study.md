@@ -132,7 +132,13 @@ _Early access links, live walkthroughs, and usage data shape every sprint._
 
 I shared early access links with field reps and walked through the reports with them to get real-time usability feedback. I also set up Pendo analytics to track how people actually used the dashboard and where they got stuck.
 
-Each sprint, we adjusted features and flows based on what the field reps told us and what the usage data showed. As the only designer, I led a team of one PM, one front-end developer, three back-end developers, and one QA engineer through the rollout across every audience. [One concrete example of something you changed because of the feedback or data.]
+Each sprint, we adjusted features and flows based on what the field reps told us and what the usage data showed. As the only designer, I led a team of one PM, one front-end developer, three back-end developers, and one QA engineer through the rollout across every audience.
+
+One small side quest taught me the most. Every page had a Print button at the top, and when I asked coworkers why, nobody knew. So I tagged the button in Pendo to see how often it was used. The answer: hundreds of clicks a week. We still didn’t know why, so I set up a small test. After ten clicks from the same person, a short pop-up asked what they were trying to do, so we could help them get there faster.
+
+It turned out teachers and school admins were going page by page through class rosters, printing student lists one screen at a time. So I designed a Print Class Roster button that printed every roster in their search results with a single click. We kept printing on the pages where it made sense, and the button at the top of every page became useless and was removed.
+
+The feedback was immediate. Teachers and administrators were saving hours of clicking and paging, and they were thrilled.
 
 ## Report Day · 2 min
 
@@ -143,6 +149,7 @@ _From nothing to a working analytics dashboard in three months._
 We delivered the MVP in just three months, shipping it in May 2017, my last month at the company, taking Imagine Learning from no reporting infrastructure at all to a fully working analytics dashboard. The results:
 
 - Manual reporting time: cut by several hours per teacher, every week
+- Printing: one Print Class Roster click replaced hours of printing page by page
 - Compliance: automated insights supporting district and state requirements
 - Funding: continuous program accountability, helping secure ongoing government funding
 - Visibility: clear views for every level, from teacher to school to district
