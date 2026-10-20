@@ -68,6 +68,8 @@ export interface Title {
   highlight?: string;
   /** Client logo (`logo.png` in the case study folder), shown in place of the client name. */
   clientLogo?: string;
+  /** Show the client logo in its own colours instead of turning it white. */
+  clientLogoInColor?: boolean;
   /** Real cover image (`cover.jpg` in the case study folder). Placeholder art when absent. */
   cover?: string;
   /** Wide header image for the hero and title pages; falls back to `cover`. Use it when the cover has text that would clash with the title. */

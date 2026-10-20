@@ -50,8 +50,9 @@ outcomes:
 # placeholder art (outlined red in review mode).
 cover: cover.jpg
 logo: logo.png
+logoInColor: true            # keep the logo's own colours instead of turning it white
 
-accent: "#D43538"            # Imagine Learning red: artwork glow, subtitle, season labels
+accent: "#0397D7"            # Imagine Learning blue (from the logo): artwork glow, subtitle, season labels
 titleFont:
   font: "'Bebas Neue', sans-serif"
   letterSpacing: 0.04em

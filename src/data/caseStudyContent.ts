@@ -129,6 +129,7 @@ function toTitle(path: string, source: string): Title {
     cover: images.file(meta.cover as string | undefined),
     banner: images.file(meta.banner as string | undefined),
     clientLogo: images.file(meta.logo as string | undefined),
+    clientLogoInColor: meta.logoInColor === true,
     accent: String(meta.accent),
     highlight: meta.highlight ? String(meta.highlight) : undefined,
     logo: {
