@@ -10,7 +10,8 @@ React 18 + React Router 6 + TypeScript + Vite 5, plain CSS in `src/styles/global
 - Miles is new to git and the terminal. Give plain-language, step-by-step
   instructions, **one step at a time**, and wait for him to say a step is done
   before moving on.
-- He works locally in `~/StreamingPortfolio` with the dev server running and
+- He works locally in `/Users/mileshillier/Claude/Projects/StreamingPortfolio`
+  with the dev server running and
   the browser open, so he sees every change as you make it.
 - **Never commit or push until Miles says he's done.** Then:
   1. `npm run build` (typecheck + build) must pass.
