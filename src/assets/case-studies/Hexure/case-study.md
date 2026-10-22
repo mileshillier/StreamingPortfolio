@@ -71,7 +71,7 @@ titleFont:
   > Quote text                      → pull quote; a final "> — Name, Title" line is the credit
 -->
 
-# Discovery
+# The Four Into One Story
 
 ## The Brief · 2 min
 
@@ -121,8 +121,6 @@ Two findings shaped everything that followed. First, regulations, products, and 
 Second, and most surprising, a more complex interface was performing better than a simpler one. Agents could see more information up front instead of hunting for it behind dropdowns or messy navigation. Tabs and filters, pre-set with the information that best fit the agent’s location, meant less clicking around and more selling.
 
 I distilled everything into three shared goals: efficiency, accuracy, and consistency. Together they gave the project a clear target: one quoting tool for annuities and life insurance that shows agents what they need up front, so they spend less time clicking and more time selling.
-
-# Design & Delivery
 
 ## Rough Cuts · 2 min
 

@@ -47,16 +47,11 @@ type SeasonSeed = { name: string; chapters: ChapterSeed[] };
 const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]> = {
   product: [
     {
-      name: 'Discovery',
+      name: 'The Story',
       chapters: [
         ['The Brief', 'Stakeholders arrive with a problem statement, a deadline, and three conflicting definitions of success.'],
         ['Into the Field', 'Twenty-four interviews, two diary studies, and one very honest usability session change the direction of the project.'],
         ['The Synthesis Wall', 'Hundreds of sticky notes collapse into five insights and a single job-to-be-done the whole team can rally behind.'],
-      ],
-    },
-    {
-      name: 'Design & Delivery',
-      chapters: [
         ['Rough Cuts', 'Low-fidelity flows are tested, torn apart, and rebuilt in a week of rapid prototyping.'],
         ['The System', 'Components, tokens, and interaction patterns are formalized so engineering can ship with confidence.'],
         ['Launch Day', 'The release goes live. Dashboards light up, support tickets drop, and the team finally sleeps.'],
@@ -71,11 +66,6 @@ const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]
         ['Origins', 'Digging into the archive, the founders, and the feeling the brand was always meant to have.'],
         ['Moodboards & Mayhem', 'Three creative territories are explored, pitched, and pressure-tested with real audiences.'],
         ['The Mark', 'A logo is sketched hundreds of times before one simple idea clicks into place.'],
-      ],
-    },
-    {
-      name: 'The World',
-      chapters: [
         ['Type, Color & Motion', 'The identity grows into a full system — typography, palette, photography, and motion principles.'],
         ['On Set', 'Art directing the campaign shoot: lighting tests, wardrobe calls, and one lucky golden hour.'],
         ['Out in the Wild', 'The brand rolls out across packaging, signage, social, and a very large billboard.'],
@@ -84,16 +74,11 @@ const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]
   ],
   leadership: [
     {
-      name: 'Building the Team',
+      name: 'The Story',
       chapters: [
         ['Day One', 'Inheriting a team, a backlog, and a reputation. Listening before changing anything.'],
         ['The Hiring Bar', 'Designing an interview loop that is fair, rigorous, and actually predicts great work.'],
         ['Rituals', 'Critique, demos, and design reviews that people look forward to instead of dreading.'],
-      ],
-    },
-    {
-      name: 'Scaling Up',
-      chapters: [
         ['Career Ladders', 'Defining what growth looks like for ICs and managers — and writing it down.'],
         ['A Seat at the Table', 'Partnering with product and engineering leadership to make design a strategic function.'],
         ['The Long Game', 'Measuring the impact of design on the business, and planning the next three years.'],

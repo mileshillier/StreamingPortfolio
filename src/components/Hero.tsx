@@ -7,7 +7,7 @@ import logo from '../assets/logo.svg';
 import Artwork from './Artwork';
 import TitleLogo from './TitleLogo';
 import { SHOW_SOUND_CONTROLS } from '../config';
-import { InfoIcon, PlayIcon, SparkIcon, VolumeIcon } from './Icons';
+import { BookIcon, InfoIcon, SparkIcon, VolumeIcon } from './Icons';
 
 const CAPTIONS = [
   '…for a lifetime supply of pixels.',
@@ -54,10 +54,10 @@ export default function Hero({ title }: { title: Title }) {
           <p className="hero__tagline">{title.tagline}</p>
           <div className="hero__actions">
             <Link to={`/watch/${title.id}`} className="btn btn--primary">
-              <PlayIcon size={18} /> Play
+              <BookIcon size={18} /> View Case Study
             </Link>
             <button className="btn btn--glass" onClick={() => openTitle(title.id)}>
-              <InfoIcon size={18} /> More Info
+              <InfoIcon size={18} /> Summary
             </button>
           </div>
         </div>

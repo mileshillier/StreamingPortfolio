@@ -48,7 +48,10 @@ Each real case study is one folder: `src/assets/case-studies/<Client>/`.
 The folder name must match the `client` field (case-insensitive, spaces kept),
 e.g. `Imagine Learning`. See `src/assets/case-studies/README.md` and any
 existing `case-study.md` for the format: YAML settings at the top, then
-seasons (`#`) and chapters (`##`) in Markdown.
+one season (`#`) and its chapters (`##`) in Markdown.
+
+- **Every case study has only Season 1.** Use a single `#` heading, e.g.
+  `# The <Title> Story`, with all chapters under it. Don't split into seasons.
 
 - Images: `cover.jpg` (cards), optional `banner.jpg` (page headers), `logo.png`,
   and `ch1.jpg`, `ch2.jpg`, … in reading order. Resize to web sizes

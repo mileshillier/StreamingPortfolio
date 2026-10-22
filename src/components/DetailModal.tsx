@@ -10,7 +10,7 @@ import Artwork from './Artwork';
 import ClientName from './ClientName';
 import Flagged from './Flagged';
 import TitleLogo from './TitleLogo';
-import { ChevronIcon, CloseIcon, PlayIcon, PlusIcon, ThumbIcon, TrashIcon, VolumeIcon } from './Icons';
+import { BookIcon, ChevronIcon, CloseIcon, PlayIcon, PlusIcon, ThumbIcon, TrashIcon, VolumeIcon } from './Icons';
 
 export default function DetailModal() {
   const { id } = useParams();
@@ -77,7 +77,7 @@ function DetailHeader({ title }: { title: Title }) {
         <div className="detail-hero__row">
           <div className="detail-hero__actions">
             <Link to={`/watch/${title.id}`} className="btn btn--primary btn--square">
-              <PlayIcon size={20} /> Play
+              <BookIcon size={20} /> View Case Study
             </Link>
             <button
               className={`round-btn ${saved ? 'is-on' : ''}`}

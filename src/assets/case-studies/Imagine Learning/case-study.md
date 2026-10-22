@@ -73,7 +73,7 @@ titleFont:
   > Quote text                      → pull quote; a final "> — Name, Title" line is the credit
 -->
 
-# Discovery
+# The Report Card Story
 
 ## The Brief · 2 min
 
@@ -114,8 +114,6 @@ _Every report, every level, and every stage of development on one living map._
 With four levels of reporting (District, School, Group/Class, and Student) and several audiences, it was easy to lose track. I created a dynamic “status map” that showed every report type and its stage of development, so the whole team could see the full picture at a glance.
 
 The map also made the case for widening the scope. The original plan stopped at the school and district, but every one of those reports was built from student data rolling up through the levels. For the interface to follow the same flow, and for the numbers to bubble up correctly, the student level had to be part of it. I made sure we extended the scope to include student-level reports in the MVP.
-
-# Design & Delivery
 
 ## Rough Cuts · 2 min
 

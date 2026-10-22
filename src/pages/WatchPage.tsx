@@ -96,7 +96,7 @@ export default function WatchPage() {
       <article className="watch__body">
         <section className="watch__overview">
           <div>
-            <h2>Previously on…</h2>
+            <h2>In the beginning…</h2>
             <p>{title.description}</p>
           </div>
           <ul className="outcomes outcomes--large">

@@ -67,7 +67,7 @@ titleFont:
   > Quote text                      → pull quote; a final "> — Name, Title" line is the credit
 -->
 
-# Discovery
+# The Common Ground Story
 
 ## The Brief · 2 min
 
@@ -106,8 +106,6 @@ Synthesis surfaced four insights that explained why adoption had stalled:
 4. Developers had no intake process. Requests arrived ad hoc, with no way to balance shared resources.
 
 Instead of one big fix, I split the work by audience: designers, product managers, and developers. Each group needed different tools, education, and reasons to buy in. The goal that tied them together: help any team find, use, and trust the right component without having to ask around.
-
-# Design & Delivery
 
 ## Rough Cuts · 2 min
 
