@@ -77,7 +77,7 @@ export default function WatchPage() {
       </div>
 
       <header className="watch__hero">
-        <Artwork seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} width={1920} height={1080} className="watch__hero-art" eager />
+        <Artwork seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} position={title.imagePosition} width={1920} height={1080} className="watch__hero-art" eager />
         <div className="watch__hero-shade" />
         <div className="watch__hero-content">
           <TitleLogo title={title} size="xl" showSubtitle as="h1" />
@@ -123,7 +123,7 @@ export default function WatchPage() {
                 <h3>{ch.title}</h3>
                 <p className="watch__lede">{ch.synopsis}</p>
                 <figure>
-                  <Artwork seed={ch.imageSeed} src={ch.image} accent={title.accent} width={1600} height={900} />
+                  <Artwork seed={ch.imageSeed} src={ch.image} accent={title.accent} position={title.imagePosition} width={1600} height={900} />
                   {!ch.image ? (
                     <figcaption>
                       <Flagged text={ch.figure ?? 'Placeholder — project artifact, screen, or process photo.'} all />
@@ -168,7 +168,7 @@ export default function WatchPage() {
         <section className="watch__next">
           <p>Next Episode</p>
           <Link to={`/watch/${next.id}`} className="next-card">
-            <Artwork seed={next.imageSeed} src={next.banner ?? next.cover} accent={next.accent} width={960} height={540} />
+            <Artwork seed={next.imageSeed} src={next.banner ?? next.cover} accent={next.accent} position={next.imagePosition} width={960} height={540} />
             <div className="next-card__shade" />
             <div className="next-card__content">
               <TitleLogo title={next} size="md" />

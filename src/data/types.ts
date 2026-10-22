@@ -76,6 +76,8 @@ export interface Title {
   banner?: string;
   /** The cover artwork already shows the title, so thumbnails skip drawing it again. */
   coverHasTitle?: boolean;
+  /** Where the cover and chapter images are anchored when cropped, as a CSS object-position (e.g. "top right"). Defaults to centred. */
+  imagePosition?: string;
   logo: LogoStyle;
   badge?: Badge;
   match: number;

@@ -199,34 +199,7 @@ export const TITLES: Title[] = [
   }),
   caseStudy('Hexure'),
   caseStudy('Imagine Learning'),
-  define({
-    id: 'wayfinder',
-    title: 'Wayfinder',
-    tagline: 'Trip planning that feels like the trip.',
-    category: 'product',
-    client: 'Roam Travel Co.',
-    role: 'Product Designer',
-    year: 2022,
-    format: 'Short',
-    genre: 'Travel',
-    rating: 'UX-G',
-    advisories: ['wanderlust', 'maps', 'microinteractions'],
-    description:
-      'A concept-to-launch travel companion that turns scattered bookings into one beautiful, shareable itinerary.',
-    team: ['Miles Hillier', 'Isla Moreno'],
-    disciplines: ['Mobile Design', 'Motion Design', 'Visual Design'],
-    tools: ['Figma', 'After Effects', 'Rive'],
-    moods: ['Joyful', 'Polished'],
-    outcomes: [
-      { value: '250K', label: 'Downloads in 90 days' },
-      { value: '4.7★', label: 'App store rating' },
-      { value: '#3', label: 'Travel chart' },
-    ],
-    imageSeed: 'wayfinder-travel',
-    accent: '#06b6d4',
-    logo: { font: "'Righteous', sans-serif", letterSpacing: '0.02em' },
-    match: 89,
-  }),
+  caseStudy('Rentler'),
 
   // ——— Brand & Art Direction ———
   define({

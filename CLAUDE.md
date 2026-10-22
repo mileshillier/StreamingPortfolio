@@ -65,7 +65,7 @@ seasons (`#`) and chapters (`##`) in Markdown.
   in `src/config.ts`.
 
 Live case studies: Common Ground (Meltwater), Four Into One (Hexure),
-Report Card (Imagine Learning). Everything else in `titles.ts` is placeholder.
+Report Card (Imagine Learning), Already Claimed (Rentler). Everything else in `titles.ts` is placeholder.
 
 ## Other files
 
@@ -78,9 +78,11 @@ Report Card (Imagine Learning). Everything else in `titles.ts` is placeholder.
 ## Open items
 
 - More case studies: Progressive Leasing (universal loan application,
-  $35–45M GMV, 67% faster completion), Rentler (82% less drop-off),
-  BurbleNeuro (rebrand, which would fill the Brand row), Wooly, and
-  "Claimed Properties, Fraud, & Frustration" (2018, on the old site).
+  $35–45M GMV, 67% faster completion), BurbleNeuro (rebrand, which would
+  fill the Brand row), and Wooly.
+- Already Claimed (Rentler, 2018) is live. It is the same project as the
+  old site's "Claimed Properties, Fraud, & Frustration"; the 82% less drop-off
+  came from that fix.
 - Footer: the "Read.cv" and "Press Kit" links are dead, and the legal line still
   says placeholder content (`src/components/Footer.tsx`).
 - Replace `public/resume.pdf` with an up-to-date version.

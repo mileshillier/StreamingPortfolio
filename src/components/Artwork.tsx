@@ -12,13 +12,15 @@ interface ArtworkProps {
   alt?: string;
   className?: string;
   eager?: boolean;
+  /** CSS object-position for the image, e.g. "top right". */
+  position?: string;
 }
 
 /**
  * Placeholder key art. Renders a tinted gradient immediately and fades the
  * photo in on load, so a failed image request still looks intentional.
  */
-export default function Artwork({ seed, src, accent, width = 1280, height = 720, alt = '', className = '', eager }: ArtworkProps) {
+export default function Artwork({ seed, src, accent, width = 1280, height = 720, alt = '', className = '', eager, position }: ArtworkProps) {
   const flagged = FLAG_PLACEHOLDERS && !src;
   const [state, setState] = useState<'loading' | 'loaded' | 'error'>('loading');
 
@@ -33,6 +35,7 @@ export default function Artwork({ seed, src, accent, width = 1280, height = 720,
           alt={alt}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
+          style={position ? { objectPosition: position } : undefined}
           className={state === 'loaded' ? 'is-loaded' : ''}
           onLoad={() => setState('loaded')}
           onError={() => setState('error')}
