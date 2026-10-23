@@ -45,6 +45,8 @@ outcomes:
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
 cover: cover.jpg
+banner: banner.jpg           # same art without the title, for page headers
+coverHasTitle: true          # the cover already shows the title, so cards don't add it again
 logo: logo.png
 
 accent: "#1D9F9F"            # teal: artwork glow, subtitle, season labels
