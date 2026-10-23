@@ -50,7 +50,8 @@ outcomes:                    # from the old case study on mileshillier.com
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
-cover: cover.jpg             # key art: a couple shopping, applying on a phone (AI-generated in Figma)
+cover: cover.jpg             # key art: a couple shopping, applying on a phone (AI-generated in Figma), with the P badge
+banner: banner.jpg           # the same art without the badge, for page headers
 logo: logo.png
 
 accent: "#1E88E5"            # Progressive Leasing blue: artwork glow, subtitle, season labels
