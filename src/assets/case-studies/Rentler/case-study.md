@@ -46,7 +46,7 @@ outcomes:
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
-cover: cover.jpg             # Rentler's renter app on a spread of phones
+cover: cover.jpg             # horror-movie key art: a teal haunted house with someone already in the window
 logo: logo.png
 imagePosition: top right     # crop the cover and chapter images from the top right instead of the centre
 
