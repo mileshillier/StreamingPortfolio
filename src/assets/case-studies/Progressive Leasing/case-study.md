@@ -50,7 +50,7 @@ outcomes:                    # from the old case study on mileshillier.com
 
 # Images: file names are relative to this folder. A missing file falls back to
 # placeholder art (outlined red in review mode).
-cover: cover.jpg             # in-store tablets showing the application
+cover: cover.jpg             # key art: a couple shopping, applying on a phone (AI-generated in Figma)
 logo: logo.png
 
 accent: "#1E88E5"            # Progressive Leasing blue: artwork glow, subtitle, season labels
