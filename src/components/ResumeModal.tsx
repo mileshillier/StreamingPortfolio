@@ -26,7 +26,7 @@ export default function ResumeModal() {
         className="modal resume"
         role="dialog"
         aria-modal="true"
-        aria-label={`${RESUME.name} — résumé`}
+        aria-label={`${RESUME.name}, résumé`}
         tabIndex={-1}
         onMouseDown={(e) => e.stopPropagation()}
       >

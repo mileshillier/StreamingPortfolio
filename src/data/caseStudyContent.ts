@@ -37,7 +37,7 @@ function parseBody(md: string, id: string, images: ReturnType<typeof caseStudyIm
     if (items) body().push(items.ordered ? { ordered: true, list: items.list } : { list: items.list });
     if (quote.length) {
       const last = quote[quote.length - 1];
-      const cite = /^[—–-]\s*/.test(last) ? last.replace(/^[—–-]\s*/, '') : '';
+      const cite = /^[\u2014\u2013-]\s*/.test(last) ? last.replace(/^[\u2014\u2013-]\s*/, '') : '';
       const text = (cite ? quote.slice(0, -1) : quote).join(' ');
       chapter.quote = { text, cite };
     }
@@ -128,6 +128,7 @@ function toTitle(path: string, source: string): Title {
     imageSeed: `${id}-${client.toLowerCase()}`,
     cover: images.file(meta.cover as string | undefined),
     banner: images.file(meta.banner as string | undefined),
+    video: images.file(meta.video as string | undefined),
     coverHasTitle: meta.coverHasTitle === true,
     imagePosition: meta.imagePosition ? String(meta.imagePosition) : undefined,
     clientLogo: images.file(meta.logo as string | undefined),

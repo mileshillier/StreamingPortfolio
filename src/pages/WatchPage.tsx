@@ -4,13 +4,13 @@ import Artwork from '../components/Artwork';
 import ClientName from '../components/ClientName';
 import Flagged from '../components/Flagged';
 import TitleLogo from '../components/TitleLogo';
-import { BackIcon, PlayIcon } from '../components/Icons';
+import { ArrowRightIcon, BackIcon } from '../components/Icons';
 import { TITLES, categoryById, chapterCount, getTitle, titlesInCategory } from '../data/titles';
 import type { ChapterBlock } from '../data/types';
 import NotFoundPage from './NotFoundPage';
 
 const PLACEHOLDER_BODY = [
-  'Placeholder narrative: describe the situation, the constraints, and what was at stake. Keep it human — who was affected, and why did it matter to the business?',
+  'Placeholder narrative: describe the situation, the constraints, and what was at stake. Keep it human: who was affected, and why did it matter to the business?',
   'Placeholder narrative: walk through the decisions made in this phase, the alternatives considered, and the evidence that tipped the balance. Show the messy middle, not just the polished result.',
 ];
 
@@ -77,7 +77,7 @@ export default function WatchPage() {
       </div>
 
       <header className="watch__hero">
-        <Artwork seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} position={title.imagePosition} width={1920} height={1080} className="watch__hero-art" eager />
+        <Artwork seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} position={title.imagePosition} width={1920} height={1080} className="watch__hero-art" video={title.video} eager />
         <div className="watch__hero-shade" />
         <div className="watch__hero-content">
           <TitleLogo title={title} size="xl" showSubtitle as="h1" />
@@ -126,7 +126,7 @@ export default function WatchPage() {
                   <Artwork seed={ch.imageSeed} src={ch.image} accent={title.accent} position={title.imagePosition} width={1600} height={900} />
                   {!ch.image ? (
                     <figcaption>
-                      <Flagged text={ch.figure ?? 'Placeholder — project artifact, screen, or process photo.'} all />
+                      <Flagged text={ch.figure ?? 'Placeholder: project artifact, screen, or process photo.'} all />
                     </figcaption>
                   ) : (
                     ch.figure &&
@@ -148,7 +148,7 @@ export default function WatchPage() {
                   <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
                     “<Flagged text={ch.quote.text} />”
                     <cite>
-                      — <Flagged text={ch.quote.cite} />
+                      <Flagged text={ch.quote.cite} />
                     </cite>
                   </blockquote>
                 )}
@@ -156,7 +156,7 @@ export default function WatchPage() {
                   <blockquote style={{ borderColor: title.highlight ?? title.accent }}>
                     <Flagged text="“Placeholder pull quote from a stakeholder, customer, or teammate about the impact of this work.”" all />
                     <cite>
-                      <Flagged text={`— Name, Title at ${title.client}`} all />
+                      <Flagged text={`Name, Title at ${title.client}`} all />
                     </cite>
                   </blockquote>
                 )}
@@ -166,7 +166,7 @@ export default function WatchPage() {
         ))}
 
         <section className="watch__next">
-          <p>Next Episode</p>
+          <p>Next Case Study</p>
           <Link to={`/watch/${next.id}`} className="next-card">
             <Artwork seed={next.imageSeed} src={next.banner ?? next.cover} accent={next.accent} position={next.imagePosition} width={960} height={540} />
             <div className="next-card__shade" />
@@ -174,7 +174,7 @@ export default function WatchPage() {
               <TitleLogo title={next} size="md" />
               <span>{next.tagline}</span>
               <span className="btn btn--primary btn--sm">
-                <PlayIcon size={16} /> Play Next
+                View Next <ArrowRightIcon size={16} />
               </span>
             </div>
           </Link>

@@ -1,8 +1,8 @@
 /**
- * Images dropped into `src/assets/case-studies/<Client>/` — see the README there.
+ * Images (and cover videos) dropped into `src/assets/case-studies/<Client>/`. See the README there.
  * Folder names match the title's `client`, ignoring case.
  */
-const files = import.meta.glob<string>('../assets/case-studies/*/*.{jpg,jpeg,png,webp,svg}', {
+const files = import.meta.glob<string>('../assets/case-studies/*/*.{jpg,jpeg,png,webp,svg,mp4,webm}', {
   eager: true,
   import: 'default',
 });

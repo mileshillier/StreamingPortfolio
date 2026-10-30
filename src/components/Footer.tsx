@@ -16,7 +16,7 @@ export default function Footer() {
         </p>
         <p>
           Product designer, art director, and design leader. I build products people love to use and teams people love to
-          be on. This portfolio is presented as a streaming service — every case study is a title, and every phase of the
+          be on. This portfolio is presented as a streaming service: every case study is a title, and every phase of the
           work is a chapter.
         </p>
         <a className="btn btn--primary btn--sm" href={GET_IN_TOUCH_URL} target="_blank" rel="noopener noreferrer">

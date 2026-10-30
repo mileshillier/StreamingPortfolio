@@ -1,6 +1,6 @@
 /*
  * Résumé content, rendered as a page in the résumé modal. The downloadable PDF
- * lives at public/resume.pdf — update both when the résumé changes.
+ * lives at public/resume.pdf; update both when the résumé changes.
  */
 
 export interface Role {

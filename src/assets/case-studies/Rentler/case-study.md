@@ -66,7 +66,7 @@ titleFont:
   ![Caption](ch1.jpg)               → the chapter image and its caption
   Plain paragraphs                  → body text
   - item  or  1. item               → bulleted or numbered list
-  > Quote text                      → pull quote; a final "> — Name, Title" line is the credit
+  > Quote text                      → pull quote; a final "> - Name, Title" line is the credit
 -->
 
 # The Already Claimed Story

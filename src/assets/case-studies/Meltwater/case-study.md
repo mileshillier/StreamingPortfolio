@@ -66,7 +66,7 @@ titleFont:
   ![Caption](ch1.jpg)               → the chapter image and its caption
   Plain paragraphs                  → body text
   - item  or  1. item               → bulleted or numbered list
-  > Quote text                      → pull quote; a final "> — Name, Title" line is the credit
+  > Quote text                      → pull quote; a final "> - Name, Title" line is the credit
 -->
 
 # The Common Ground Story
@@ -117,7 +117,7 @@ I restructured the libraries with Brad Frost’s Atomic Design approach, organiz
 I didn’t treat the new structure as finished until designers had used it. In working sessions, I watched where people got lost, then adjusted names and groupings. Instead of separate libraries for each product, I went with one shared library, with styling overrides where a product needed its own look.
 
 > Since you restructured the design system and improved the naming, I can actually find what I am looking for. No more wasted time trying to find assets and just detaching things to make it work.
-> — Angelica, Design Manager at Meltwater
+> - Angelica, Design Manager at Meltwater
 
 ## The System · 2 min
 
@@ -130,7 +130,7 @@ For developers, I built a Trello pipeline to intake and prioritize requests and 
 For product managers, I aligned roadmaps so design system work became part of team goals instead of a side project. I also led the evangelizing, showing PMs and stakeholders how the system saved time and reduced rework on their own teams.
 
 > Having documentation clearly defined, I can now see exactly what and how to use the right component for the job.
-> — Heather, Senior Product Designer at Meltwater
+> - Heather, Senior Product Designer at Meltwater
 
 ## Rolling Release · 2 min
 

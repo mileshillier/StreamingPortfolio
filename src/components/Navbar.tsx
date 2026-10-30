@@ -13,7 +13,7 @@ const NAV = [
 ];
 
 const NOTIFICATIONS = [
-  { title: 'New Chapter', body: 'Northstar — “Epilogue: What We Learned” is now streaming.' },
+  { title: 'New Chapter', body: 'Calm by Design: The Burble Story is now streaming.' },
   { title: 'Coming Soon', body: 'The Merger premieres this fall.' },
   { title: 'Recently Added', body: 'Atlas: Building a Design System.' },
 ];
@@ -69,7 +69,7 @@ export default function Navbar() {
 
   return (
     <header ref={navRef} className={`navbar ${scrolled ? 'navbar--solid' : ''}`}>
-      <Link to="/" className="navbar__brand" aria-label="Miles Hillier — home">
+      <Link to="/" className="navbar__brand" aria-label="Miles Hillier, home">
         MILES<span>HILLIER</span>
       </Link>
 

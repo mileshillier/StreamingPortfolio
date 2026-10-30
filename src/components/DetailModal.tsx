@@ -10,7 +10,7 @@ import Artwork from './Artwork';
 import ClientName from './ClientName';
 import Flagged from './Flagged';
 import TitleLogo from './TitleLogo';
-import { BookIcon, ChevronIcon, CloseIcon, PlayIcon, PlusIcon, ThumbIcon, TrashIcon, VolumeIcon } from './Icons';
+import { BookIcon, ChevronIcon, CloseIcon, PlayIcon, MinusIcon, PlusIcon, ThumbIcon, VolumeIcon } from './Icons';
 
 export default function DetailModal() {
   const { id } = useParams();
@@ -70,7 +70,7 @@ function DetailHeader({ title }: { title: Title }) {
 
   return (
     <header className="detail-hero">
-      <Artwork key={title.id} seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} position={title.imagePosition} width={1600} height={900} className="detail-hero__art" eager />
+      <Artwork key={title.id} seed={title.imageSeed} src={title.banner ?? title.cover} accent={title.accent} position={title.imagePosition} width={1600} height={900} className="detail-hero__art" video={title.video} eager />
       <div className="detail-hero__shade" />
       <div className="detail-hero__content">
         <TitleLogo title={title} size="lg" showSubtitle as="h2" />
@@ -86,7 +86,7 @@ function DetailHeader({ title }: { title: Title }) {
               aria-label={saved ? 'Remove from My List' : 'Add to My List'}
               title={saved ? 'Remove from My List' : 'Add to My List'}
             >
-              {saved ? <TrashIcon size={18} /> : <PlusIcon size={18} />}
+              {saved ? <MinusIcon size={18} /> : <PlusIcon size={18} />}
             </button>
             <button
               className={`round-btn ${liked ? 'is-on' : ''}`}
@@ -264,7 +264,7 @@ function MoreLikeThis({ title }: { title: Title }) {
                     onClick={() => toggleSaved(t.id)}
                     aria-label={saved ? `Remove ${t.title} from My List` : `Add ${t.title} to My List`}
                   >
-                    {saved ? <TrashIcon size={14} /> : <PlusIcon size={14} />}
+                    {saved ? <MinusIcon size={14} /> : <PlusIcon size={14} />}
                   </button>
                 </div>
                 <p>{t.description}</p>

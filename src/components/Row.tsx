@@ -28,6 +28,7 @@ export default function Row({ heading, titles, ranked, seeAllHref, progress, id 
   const [offset, setOffset] = useState(0);
   const [maxOffset, setMaxOffset] = useState(0);
   const [scrollEdges, setScrollEdges] = useState({ start: true, end: false });
+  const [wheeling, setWheeling] = useState(false);
 
   const measure = useCallback(() => {
     const track = trackRef.current;
@@ -57,6 +58,29 @@ export default function Row({ heading, titles, ranked, seeAllHref, progress, id 
     window.addEventListener('resize', measure);
     return () => window.removeEventListener('resize', measure);
   }, [measure, titles.length]);
+
+  // Paged rows don't scroll natively, so sideways trackpad swipes (or
+  // Shift + mouse wheel) move the row directly. Vertical scrolling is left
+  // alone so the page still scrolls past the row.
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!paged || !viewport) return;
+    let idle: number | undefined;
+    const onWheel = (e: WheelEvent) => {
+      const dx = e.shiftKey && !e.deltaX ? e.deltaY : e.deltaX;
+      if (!dx || Math.abs(dx) < Math.abs(e.shiftKey ? 0 : e.deltaY)) return;
+      e.preventDefault();
+      setWheeling(true);
+      setOffset((o) => Math.max(0, Math.min(maxOffset, o + dx)));
+      window.clearTimeout(idle);
+      idle = window.setTimeout(() => setWheeling(false), 150);
+    };
+    viewport.addEventListener('wheel', onWheel, { passive: false });
+    return () => {
+      viewport.removeEventListener('wheel', onWheel);
+      window.clearTimeout(idle);
+    };
+  }, [paged, maxOffset]);
 
   const page = (dir: 1 | -1) => {
     const track = trackRef.current;
@@ -111,7 +135,7 @@ export default function Row({ heading, titles, ranked, seeAllHref, progress, id 
           </button>
         )}
         <div
-          className={`row__track ${ranked ? 'row__track--ranked' : ''}`}
+          className={`row__track ${ranked ? 'row__track--ranked' : ''} ${wheeling ? 'is-wheeling' : ''}`}
           ref={trackRef}
           onScroll={paged ? undefined : measure}
           onFocus={onFocus}

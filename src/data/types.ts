@@ -10,7 +10,7 @@ export interface Category {
 export interface Chapter {
   number: number;
   title: string;
-  /** Reading time in minutes — the portfolio equivalent of runtime. */
+  /** Reading time in minutes: the portfolio equivalent of runtime. */
   minutes: number;
   synopsis: string;
   imageSeed: string;
@@ -72,6 +72,8 @@ export interface Title {
   clientLogoInColor?: boolean;
   /** Real cover image (`cover.jpg` in the case study folder). Placeholder art when absent. */
   cover?: string;
+  /** Looping video (`cover.mp4`) played muted behind the hero and page headers, over the cover or banner image. */
+  video?: string;
   /** Wide header image for the hero and title pages; falls back to `cover`. Use it when the cover has text that would clash with the title. */
   banner?: string;
   /** The cover artwork already shows the title, so thumbnails skip drawing it again. */

@@ -5,7 +5,7 @@ import { useMyList } from '../context/MyListContext';
 import { useOpenTitle } from '../hooks/useOpenTitle';
 import Artwork from './Artwork';
 import TitleLogo from './TitleLogo';
-import { ChevronIcon, PlusIcon, TrashIcon } from './Icons';
+import { ChevronIcon, MinusIcon, PlusIcon } from './Icons';
 
 type Origin = 'left center' | 'center' | 'right center';
 
@@ -57,7 +57,7 @@ export default function TitleCard({ title, rank, progress }: TitleCardProps) {
           {rank}
         </span>
       )}
-      <button className="card__button" onClick={() => openTitle(title.id)} aria-label={`${title.title} — ${categoryById(title.category).shortName}. Open details`}>
+      <button className="card__button" onClick={() => openTitle(title.id)} aria-label={`${title.title}, ${categoryById(title.category).shortName}. Open details`}>
         <Artwork seed={title.imageSeed} src={title.cover} accent={title.accent} position={title.imagePosition} width={640} height={360} className="card__art" />
         <div className="card__shade" />
         {!title.coverHasTitle && <TitleLogo title={title} size="sm" />}
@@ -80,7 +80,7 @@ export default function TitleCard({ title, rank, progress }: TitleCardProps) {
             onClick={() => toggleSaved(title.id)}
             title={saved ? 'Remove from My List' : 'Add to My List'}
           >
-            {saved ? <TrashIcon size={14} /> : <PlusIcon size={14} />}
+            {saved ? <MinusIcon size={14} /> : <PlusIcon size={14} />}
           </button>
           <button className="round-btn round-btn--sm round-btn--push" tabIndex={-1} onClick={() => openTitle(title.id)} title="More info">
             <ChevronIcon size={14} />

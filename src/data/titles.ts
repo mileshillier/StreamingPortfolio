@@ -4,7 +4,7 @@ import type { Category, CategoryId, Chapter, Season, Title } from './types';
 
 /*
  * All content below is placeholder copy. Swap in real case studies by editing
- * the entries in `TITLES` — every screen in the app is driven from this file.
+ * the entries in `TITLES`; every screen in the app is driven from this file.
  */
 
 export const CATEGORIES: Category[] = [
@@ -12,7 +12,7 @@ export const CATEGORIES: Category[] = [
     id: 'product',
     name: 'Product Design (UX/UI)',
     shortName: 'Product Design',
-    blurb: 'End-to-end product work — research, interaction design, and shipped interfaces.',
+    blurb: 'End-to-end product work: research, interaction design, and shipped interfaces.',
   },
   {
     id: 'brand',
@@ -30,7 +30,7 @@ export const CATEGORIES: Category[] = [
     id: 'documentary',
     name: 'Documentaries',
     shortName: 'Documentaries',
-    blurb: 'The stories behind the work — the career, the craft, and the people along the way.',
+    blurb: 'The stories behind the work: the career, the craft, and the people along the way.',
   },
 ];
 
@@ -66,7 +66,7 @@ const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]
         ['Origins', 'Digging into the archive, the founders, and the feeling the brand was always meant to have.'],
         ['Moodboards & Mayhem', 'Three creative territories are explored, pitched, and pressure-tested with real audiences.'],
         ['The Mark', 'A logo is sketched hundreds of times before one simple idea clicks into place.'],
-        ['Type, Color & Motion', 'The identity grows into a full system — typography, palette, photography, and motion principles.'],
+        ['Type, Color & Motion', 'The identity grows into a full system: typography, palette, photography, and motion principles.'],
         ['On Set', 'Art directing the campaign shoot: lighting tests, wardrobe calls, and one lucky golden hour.'],
         ['Out in the Wild', 'The brand rolls out across packaging, signage, social, and a very large billboard.'],
       ],
@@ -79,7 +79,7 @@ const CHAPTER_TEMPLATES: Record<Exclude<CategoryId, 'documentary'>, SeasonSeed[]
         ['Day One', 'Inheriting a team, a backlog, and a reputation. Listening before changing anything.'],
         ['The Hiring Bar', 'Designing an interview loop that is fair, rigorous, and actually predicts great work.'],
         ['Rituals', 'Critique, demos, and design reviews that people look forward to instead of dreading.'],
-        ['Career Ladders', 'Defining what growth looks like for ICs and managers — and writing it down.'],
+        ['Career Ladders', 'Defining what growth looks like for ICs and managers, and writing it down.'],
         ['A Seat at the Table', 'Partnering with product and engineering leadership to make design a strategic function.'],
         ['The Long Game', 'Measuring the impact of design on the business, and planning the next three years.'],
       ],
@@ -121,44 +121,15 @@ const define = ({ outline, ...t }: TitleInput): Title => {
 };
 
 export const TITLES: Title[] = [
-  // ——— Product Design (UX/UI) ———
-  define({
-    id: 'northstar',
-    title: 'Northstar',
-    subtitle: 'A Design Transformation Series',
-    tagline: 'Four million members. One app. Zero room for error.',
-    category: 'product',
-    client: 'Meridian Credit Union',
-    role: 'Lead Product Designer',
-    year: 2026,
-    format: 'Series',
-    genre: 'Fintech',
-    rating: 'UX-13',
-    advisories: ['research', 'prototyping', 'stakeholder drama'],
-    description:
-      'When a legacy banking app hits a one-star crisis, a small design team sets out to rebuild it from the ground up — without breaking anything for the four million members who rely on it every day.',
-    team: ['Miles Hillier', 'Jordan Reyes', 'Priya Shah', 'Theo Nakamura'],
-    disciplines: ['UX Research', 'Interaction Design', 'Design Systems'],
-    tools: ['Figma', 'Maze', 'Dovetail', 'Framer'],
-    moods: ['Ambitious', 'Data-Driven'],
-    outcomes: [
-      { value: '+1.9★', label: 'App store rating' },
-      { value: '-38%', label: 'Support tickets' },
-      { value: '4.1M', label: 'Monthly members' },
-    ],
-    imageSeed: 'northstar-hero',
-    accent: '#3b82f6',
-    logo: { font: "'Bebas Neue', sans-serif", letterSpacing: '0.04em', uppercase: true },
-    badge: 'New Chapter',
-    match: 98,
-  }),
+  // --- Product Design (UX/UI) ---
+  caseStudy('BurbleNeuro'),
   caseStudy('Meltwater'),
   caseStudy('Progressive Leasing'),
   caseStudy('Hexure'),
   caseStudy('Imagine Learning'),
   caseStudy('Rentler'),
 
-  // ——— Brand & Art Direction ———
+  // --- Brand & Art Direction ---
   define({
     id: 'ember-and-oak',
     title: 'Ember & Oak',
@@ -204,7 +175,7 @@ export const TITLES: Title[] = [
     rating: 'BR-13',
     advisories: ['neon', 'film grain', 'vinyl'],
     description:
-      'Album art direction and visual world-building for an indie band’s sophomore record — from cover art to tour visuals and a limited vinyl run.',
+      'Album art direction and visual world-building for an indie band’s sophomore record, from cover art to tour visuals and a limited vinyl run.',
     team: ['Miles Hillier', 'Jules Martin'],
     disciplines: ['Art Direction', 'Photography', 'Print'],
     tools: ['Photoshop', 'Capture One', 'InDesign'],
@@ -251,7 +222,7 @@ export const TITLES: Title[] = [
     match: 93,
   }),
 
-  // ——— Design Leadership ———
+  // --- Design Leadership ---
   define({
     id: 'the-hiring-season',
     title: 'The Hiring Season',
@@ -265,7 +236,7 @@ export const TITLES: Title[] = [
     rating: 'LD-13',
     advisories: ['interviews', 'offers', 'org charts'],
     description:
-      'A behind-the-scenes look at scaling a design organization — the hiring loop, the onboarding program, and the culture that held it all together.',
+      'A behind-the-scenes look at scaling a design organization: the hiring loop, the onboarding program, and the culture that held it all together.',
     team: ['Miles Hillier', 'People Ops', 'Design Leads'],
     disciplines: ['Hiring', 'Org Design', 'Mentorship'],
     tools: ['Greenhouse', 'Notion', 'Lattice'],
@@ -323,7 +294,7 @@ export const TITLES: Title[] = [
     rating: 'LD-G',
     advisories: ['honest feedback', 'whiteboards', 'snacks'],
     description:
-      'Turning design critique from a dreaded meeting into the most valuable hour of the week — with a format now used across the company.',
+      'Turning design critique from a dreaded meeting into the most valuable hour of the week, with a format now used across the company.',
     team: ['Miles Hillier', 'The Design Team'],
     disciplines: ['Facilitation', 'Coaching', 'Culture'],
     tools: ['FigJam', 'Loom', 'Slack'],
@@ -342,7 +313,7 @@ export const TITLES: Title[] = [
     id: 'north-of-now',
     title: 'North of Now',
     subtitle: 'A Product Vision',
-    tagline: 'Where the product goes next — and how we got everyone to agree.',
+    tagline: 'Where the product goes next, and how we got everyone to agree.',
     category: 'leadership',
     client: 'Loom & Ladder',
     role: 'Design Director',
@@ -352,7 +323,7 @@ export const TITLES: Title[] = [
     rating: 'LD-13',
     advisories: ['vision decks', 'workshops', 'executive alignment'],
     description:
-      'A three-year product vision built through workshops with executives, customers, and engineers — then turned into a roadmap the company actually followed.',
+      'A three-year product vision built through workshops with executives, customers, and engineers, then turned into a roadmap the company actually followed.',
     team: ['Miles Hillier', 'VP Product', 'CTO', 'Strategy Team'],
     disciplines: ['Vision', 'Workshop Facilitation', 'Storytelling'],
     tools: ['Keynote', 'FigJam', 'Figma'],
@@ -398,12 +369,12 @@ export const TITLES: Title[] = [
     match: 94,
   }),
 
-  // ——— Documentaries ———
+  // --- Documentaries ---
   define({
     id: 'miles-to-go',
     title: 'Miles to Go',
     subtitle: 'An Unfinished Biography',
-    tagline: 'A career so far — and plenty of road ahead.',
+    tagline: 'A career so far, and plenty of road ahead.',
     category: 'documentary',
     client: 'Miles Hillier',
     role: 'Subject & Narrator',
@@ -413,7 +384,7 @@ export const TITLES: Title[] = [
     rating: 'DOC-PG',
     advisories: ['origin stories', 'career pivots', 'dad jokes'],
     description:
-      'From sketchbooks and side projects to leading design teams, this documentary follows one designer’s winding road — the lucky breaks, the hard lessons, and why the best chapter hasn’t been written yet.',
+      'From sketchbooks and side projects to leading design teams, this documentary follows one designer’s winding road: the lucky breaks, the hard lessons, and why the best chapter hasn’t been written yet.',
     team: ['Miles Hillier', 'Family & Friends', 'Former Managers', 'Mentors'],
     disciplines: ['Product Design', 'Art Direction', 'Design Leadership'],
     tools: ['Pencils', 'Photoshop', 'Figma', 'Curiosity'],
@@ -440,7 +411,7 @@ export const TITLES: Title[] = [
       {
         name: 'Finding the Craft',
         chapters: [
-          ['Learning to Listen', 'Discovering user research — and how often the first idea is wrong.'],
+          ['Learning to Listen', 'Discovering user research, and how often the first idea is wrong.'],
           ['From Maker to Leader', 'Trading some time in Figma for one-on-ones, hiring loops, and roadmaps.'],
           ['What’s Next', 'Where the road leads from here, and the kind of work still worth doing.'],
         ],
@@ -461,7 +432,7 @@ export const TITLES: Title[] = [
     rating: 'DOC-G',
     advisories: ['meta humor', 'hover states', 'scope creep'],
     description:
-      'A behind-the-scenes look at turning a design portfolio into a binge-worthy streaming experience — from the first sketch on a napkin to the last hover state, with a surprising amount of arguing about badge colors.',
+      'A behind-the-scenes look at turning a design portfolio into a binge-worthy streaming experience, from the first sketch on a napkin to the last hover state, with a surprising amount of arguing about badge colors.',
     team: ['Miles Hillier', 'Claude', 'Beta Testers'],
     disciplines: ['Concept', 'UI Design', 'Front-End Development'],
     tools: ['Figma', 'React', 'Vite', 'GitHub Pages'],
@@ -482,7 +453,7 @@ export const TITLES: Title[] = [
         chapters: [
           ['The Pitch', 'Every portfolio looks the same. What if this one looked like a streaming service?'],
           ['Storyboards', 'Mapping case studies to titles, project phases to seasons, and process to chapters.'],
-          ['Casting the Work', 'Choosing which projects make the cut — and which stay in the vault.'],
+          ['Casting the Work', 'Choosing which projects make the cut, and which stay in the vault.'],
         ],
       },
       {
@@ -509,7 +480,7 @@ export const TITLES: Title[] = [
     rating: 'DOC-PG',
     advisories: ['gratitude', 'inside jokes', 'whiteboard sessions'],
     description:
-      'A tribute to the designers, engineers, researchers, and product partners who made the work better — the mentors who opened doors, the teammates who pushed back, and the people who made hard projects fun.',
+      'A tribute to the designers, engineers, researchers, and product partners who made the work better: the mentors who opened doors, the teammates who pushed back, and the people who made hard projects fun.',
     team: ['Mentors', 'Designers', 'Engineers', 'Product Partners', 'Researchers'],
     disciplines: ['Collaboration', 'Mentorship', 'Teamwork'],
     tools: ['Whiteboards', 'Coffee', 'Slack', 'Trust'],
@@ -528,7 +499,7 @@ export const TITLES: Title[] = [
         name: 'The Mentors',
         chapters: [
           ['The First Believer', 'The manager who took a chance on an unproven designer.'],
-          ['Tough Love', 'The critique that stung — and changed everything.'],
+          ['Tough Love', 'The critique that stung, and changed everything.'],
           ['Open Doors', 'The people who made introductions, shared credit, and made room at the table.'],
         ],
       },
@@ -537,14 +508,14 @@ export const TITLES: Title[] = [
         chapters: [
           ['Partners in Crime', 'The engineers and PMs who turned sketches into shipped products.'],
           ['The Next Generation', 'Designers once mentored, now leading teams of their own.'],
-          ['Curtain Call', 'A thank-you to everyone who made the work — and the journey — better.'],
+          ['Curtain Call', 'A thank-you to everyone who made the work (and the journey) better.'],
         ],
       },
     ],
   }),
 ];
 
-export const FEATURED_ID = 'northstar';
+export const FEATURED_ID = 'calm-by-design';
 
 export const getTitle = (id: string | undefined): Title | undefined =>
   TITLES.find((t) => t.id === id);
@@ -553,7 +524,7 @@ export const titlesInCategory = (id: CategoryId): Title[] =>
   TITLES.filter((t) => t.category === id);
 
 export const TOP_10_IDS = [
-  'northstar',
+  'calm-by-design',
   'wooly',
   'the-hiring-season',
   'universal-application',

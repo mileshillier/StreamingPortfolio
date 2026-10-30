@@ -19,6 +19,7 @@ Files are picked up automatically:
 |---|---|
 | `cover.jpg` | Main image: cards, headers, and the detail popup (16:9, ~1920×1080) |
 | `coverHasTitle: true` (setting) | Use when `cover.jpg` is key art with the title built in, so cards don't draw the title a second time |
+| `cover.mp4` + `video: cover.mp4` (setting) | Optional looping video that plays muted behind the hero, popup, and title page header, over the cover or banner. Keep it short and small (720p, a few MB). Skipped for viewers who turn on reduced motion |
 | `banner.jpg` | Optional header image for the title page, popup, and featured hero. Use it when the cover has a big logo or text that would clash with the title. Falls back to `cover.jpg` |
 | `ch1.jpg`, `ch2.jpg`, … | One per chapter, numbered in reading order across seasons (16:9, ~1600×900) |
 | `imagePosition: top right` (setting) | Which part of the cover and chapter images stays in view when they're cropped to fit (any CSS `object-position`, e.g. `top`, `left`, `top right`). Defaults to the centre |

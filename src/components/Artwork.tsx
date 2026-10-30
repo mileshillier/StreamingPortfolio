@@ -14,15 +14,20 @@ interface ArtworkProps {
   eager?: boolean;
   /** CSS object-position for the image, e.g. "top right". */
   position?: string;
+  /** Looping muted video played over the image. Skipped when the viewer prefers reduced motion. */
+  video?: string;
 }
+
+const reducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /**
  * Placeholder key art. Renders a tinted gradient immediately and fades the
  * photo in on load, so a failed image request still looks intentional.
  */
-export default function Artwork({ seed, src, accent, width = 1280, height = 720, alt = '', className = '', eager, position }: ArtworkProps) {
+export default function Artwork({ seed, src, accent, width = 1280, height = 720, alt = '', className = '', eager, position, video }: ArtworkProps) {
   const flagged = FLAG_PLACEHOLDERS && !src;
   const [state, setState] = useState<'loading' | 'loaded' | 'error'>('loading');
+  const [playing, setPlaying] = useState(false);
 
   return (
     <div
@@ -39,6 +44,20 @@ export default function Artwork({ seed, src, accent, width = 1280, height = 720,
           className={state === 'loaded' ? 'is-loaded' : ''}
           onLoad={() => setState('loaded')}
           onError={() => setState('error')}
+        />
+      )}
+      {video && !reducedMotion && (
+        <video
+          src={video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden
+          style={position ? { objectPosition: position } : undefined}
+          className={playing ? 'is-loaded' : ''}
+          onPlaying={() => setPlaying(true)}
         />
       )}
     </div>
